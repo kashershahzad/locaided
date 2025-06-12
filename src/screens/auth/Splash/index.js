@@ -17,7 +17,6 @@ const Splash = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
-    // Start spinning animation
     const spin = () => {
       spinValue.setValue(0);
       Animated.timing(
@@ -31,13 +30,11 @@ const Splash = () => {
       ).start(() => spin());
     };
     spin();
-
-    // Navigate after 2 seconds
     const timer = setTimeout(() => {
       navigation.replace('Onboarding');
     }, 2000);
 
-    return () => clearTimeout(timer); // Clean up on unmount
+    return () => clearTimeout(timer); 
   }, [navigation]);
 
   const spin = spinValue.interpolate({
