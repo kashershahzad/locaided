@@ -23,6 +23,7 @@ const Topbar = ({ title }) => {
 const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
+        gap:50,
         alignItems: 'center',
         paddingHorizontal: 20,
         paddingVertical: 15,
