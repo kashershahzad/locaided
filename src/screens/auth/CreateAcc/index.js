@@ -13,10 +13,12 @@ import {
     Image
 } from 'react-native';
 import Topbar from '../../../../components/auth/Topbar';
+import { useNavigation } from '@react-navigation/native';
 
 const { width, height } = Dimensions.get('window');
 
 const CreateAccount = () => {
+    const navigation = useNavigation()
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -27,6 +29,7 @@ const CreateAccount = () => {
     const handleContinue = () => {
         // Handle account creation logic here
         console.log('Creating account with:', { fullName, email, password });
+        navigation.navigate('PhoneNumber')
     };
 
     return (

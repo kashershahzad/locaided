@@ -12,8 +12,10 @@ import {
     Image
 } from 'react-native';
 import Topbar from '../../../../components/auth/Topbar';
+import { useNavigation } from '@react-navigation/native';
 
 const { width, height } = Dimensions.get('window');
+
 
 const countryCodes = [
     { code: '+1', country: 'US', flag: '🇺🇸' },
@@ -27,6 +29,7 @@ const countryCodes = [
 ];
 
 const PhoneNumber = () => {
+    const navigation = useNavigation()
     const [selectedCountry, setSelectedCountry] = useState(countryCodes[0]);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [modalVisible, setModalVisible] = useState(false);
@@ -102,6 +105,7 @@ const PhoneNumber = () => {
                         phoneNumber.length > 0 ? styles.buttonActive : styles.buttonInactive
                     ]}
                     disabled={phoneNumber.length === 0}
+                    onPress={()=>{navigation.navigate('Verify')}}
                 >
                     <Text style={[
                         styles.buttonText,

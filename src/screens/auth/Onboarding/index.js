@@ -10,8 +10,10 @@ import {
     Modal,
     Animated
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Onboarding = () => {
+    const navigation = useNavigation()
     const [loginModalVisible, setLoginModalVisible] = useState(false);
     const [createAccountModalVisible, setCreateAccountModalVisible] = useState(false);
     const [slideAnim] = useState(new Animated.Value(0));
@@ -102,7 +104,7 @@ const Onboarding = () => {
                             <Text style={modalStyles.buttonText}>Continue with Phone</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={modalStyles.emailButton}>
+                        <TouchableOpacity onPress={()=>{navigation.navigate('Emaillogin')}} style={modalStyles.emailButton}>
                             <Image style={modalStyles.appleIcon} source={require('../../../../assets/auth/mail.png')} />
                             <Text style={modalStyles.emailButtonText}>Continue with Email</Text>
                         </TouchableOpacity>
@@ -113,10 +115,7 @@ const Onboarding = () => {
                     <View style={modalStyles.createAccountContainer}>
                         <Text style={modalStyles.noAccountText}>DON'T HAVE AN ACCOUNT?</Text>
                         <TouchableOpacity
-                            onPress={() => {
-                                closeModal();
-                                setTimeout(() => openModal('create'), 300);
-                            }}
+                            onPress={()=>{navigation.navigate('CreateAccount')}}
                         >
                             <Text style={modalStyles.createAccountLink}>Create account</Text>
                         </TouchableOpacity>

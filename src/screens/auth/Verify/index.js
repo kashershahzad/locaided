@@ -12,10 +12,12 @@ import {
   Image
 } from 'react-native';
 import Topbar from '../../../../components/auth/Topbar';
+import { useNavigation } from '@react-navigation/native';
 
 const { width } = Dimensions.get('window');
 
 const Verify = () => {
+  const navigation = useNavigation()
   const [code, setCode] = useState(['', '', '', '', '', '']);
   const inputRefs = useRef([]);
 
@@ -47,6 +49,7 @@ const Verify = () => {
     if (verificationCode.length === 6) {
       // Handle verification logic here
       console.log('Verification code:', verificationCode);
+      navigation.navigate('Locationaccess')
     }
   };
 

@@ -10,7 +10,7 @@ import Ready from "../../screens/auth/Ready";
 const AuthStack = () => {
     const Stack = createNativeStackNavigator();
     return (
-        <Stack.Navigator  initialRouteName="Ready"  screenOptions={{
+        <Stack.Navigator  initialRouteName="Splash"  screenOptions={{
             headerShown: false,
         }}>
             <Stack.Screen name="Splash" component={Splash} />

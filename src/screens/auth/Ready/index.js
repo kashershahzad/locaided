@@ -53,6 +53,7 @@ const Ready = () => {
         </View>
         <TouchableOpacity style={styles.continueButton}>
           <Text style={styles.continueButtonText}>Continue</Text>
+          <Image source={require('../../../../assets/auth/points.png')} />
           <View style={styles.pointsBadgeButton}>
             <Text style={styles.pointsTextButton}>50 Points</Text>
           </View>
@@ -74,6 +75,7 @@ const Ready = () => {
         </View>
         <TouchableOpacity style={styles.continueButton}>
           <Text style={styles.continueButtonText}>Continue</Text>
+           <Image source={require('../../../../assets/auth/points.png')} />
           <View style={styles.pointsBadgeButton}>
             <Text style={styles.pointsTextButton}>25 Points</Text>
           </View>
@@ -95,6 +97,7 @@ const Ready = () => {
         </View>
         <TouchableOpacity style={styles.continueButton}>
           <Text style={styles.continueButtonText}>Continue</Text>
+           <Image source={require('../../../../assets/auth/points.png')} />
           <View style={styles.pointsBadgeButton}>
             <Text style={styles.pointsTextButton}>25 Points</Text>
           </View>
@@ -211,8 +214,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     borderRadius: 6,
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent:"center"
   },
   continueButtonText: {
     fontSize: 12,
@@ -220,88 +223,14 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   pointsBadgeButton: {
-    backgroundColor: '#fff3cd',
     paddingHorizontal: 6,
     paddingVertical: 2,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#ffeaa7',
   },
   pointsTextButton: {
     fontSize: 10,
-    color: '#d68910',
+    color: '#FF2557',
     fontWeight: '500',
   },
-  // Custom icons using basic shapes
-//   personIcon: {
-//     alignItems: 'center',
-//   },
-//   personHead: {
-//     width: 8,
-//     height: 8,
-//     borderRadius: 4,
-//     backgroundColor: '#666',
-//     marginBottom: 1,
-//   },
-//   personBody: {
-//     width: 12,
-//     height: 8,
-//     backgroundColor: '#666',
-//     borderTopLeftRadius: 6,
-//     borderTopRightRadius: 6,
-//   },
-//   editIcon: {
-//     position: 'relative',
-//   },
-//   editPencil: {
-//     width: 14,
-//     height: 2,
-//     backgroundColor: '#666',
-//     borderRadius: 1,
-//     transform: [{ rotate: '45deg' }],
-//     position: 'absolute',
-//     top: 6,
-//     left: 7,
-//   },
-//   editBase: {
-//     width: 12,
-//     height: 12,
-//     borderWidth: 1.5,
-//     borderColor: '#666',
-//     borderRadius: 1,
-//     marginTop: 8,
-//   },
-//   avatarIcon: {
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   avatarCircle: {
-//     width: 20,
-//     height: 20,
-//     borderRadius: 10,
-//     borderWidth: 2,
-//     borderColor: '#ccc',
-//     backgroundColor: '#f0f0f0',
-//   },
-//   phoneIcon: {
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-//   phoneBody: {
-//     width: 12,
-//     height: 20,
-//     backgroundColor: '#666',
-//     borderRadius: 3,
-//     position: 'relative',
-//   },
-//   phoneScreen: {
-//     width: 8,
-//     height: 14,
-//     backgroundColor: '#f0f0f0',
-//     borderRadius: 1,
-//     position: 'absolute',
-//     top: 3,
-//   },
   icon:{
     alignItems:'center',
     marginVertical:20
