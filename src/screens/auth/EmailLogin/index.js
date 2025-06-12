@@ -14,8 +14,10 @@ import {
 } from 'react-native';
 
 import Topbar from '../../../../components/auth/Topbar';
+import { useNavigation } from '@react-navigation/native';
 
 const Emaillogin = () => {
+    const navigation = useNavigation()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
@@ -33,7 +35,7 @@ const Emaillogin = () => {
 
                 <View style={styles.content}>
                     <View style={styles.logoSection}>
-                        <Image style={styles.logo} source={require('../../../../assets/auth/logo.png')}/>
+                        <Image style={styles.logo} source={require('../../../../assets/auth/logo.png')} />
                         <Text style={styles.tagline}>people. places. proof.</Text>
                     </View>
 
@@ -66,7 +68,7 @@ const Emaillogin = () => {
                             </TouchableOpacity>
                         </View>
                         <View style={styles.inputContainer}>
-                             <Image source={require('../../../../assets/auth/pass.png')} style={styles.inputIcon} />
+                            <Image source={require('../../../../assets/auth/pass.png')} style={styles.inputIcon} />
                             <TextInput
                                 style={styles.textInput}
                                 value={password}
@@ -79,7 +81,7 @@ const Emaillogin = () => {
                                 style={styles.eyeIcon}
                                 onPress={() => setShowPassword(!showPassword)}
                             >
-                                 <Image source={require('../../../../assets/auth/eye.png')} style={styles.inputIcon} />
+                                <Image source={require('../../../../assets/auth/eye.png')} style={styles.inputIcon} />
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -98,30 +100,27 @@ const Emaillogin = () => {
 
                     {/* Social Login Buttons */}
                     <TouchableOpacity style={styles.socialButton}>
-                         <Image source={require('../../../../assets/auth/apple.png')} style={styles.inputIcon} />
+                        <Image source={require('../../../../assets/auth/apple.png')} style={styles.inputIcon} />
                         <Text style={styles.socialButtonText}>Continue with Apple</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={[styles.socialButton, styles.googleButton]}>
-                         <Image source={require('../../../../assets/auth/google.png')} style={styles.inputIcon} />
+                        <Image source={require('../../../../assets/auth/google.png')} style={styles.inputIcon} />
                         <Text style={styles.socialButtonText}>Continue with Google</Text>
                     </TouchableOpacity>
 
-                    
-                    
+
+
                 </View>
                 <View style={styles.dottedLine} />
-                                        <View style={styles.createAccountContainer}>
-                                            <Text style={styles.noAccountText}>HAVE AN ACCOUNT?</Text>
-                                            <TouchableOpacity
-                                                // onPress={() => {
-                                                //     closeModal();
-                                                //     setTimeout(() => openModal('login'), 300);
-                                                // }}
-                                            >
-                                                <Text style={styles.createAccountLink}>Create Account</Text>
-                                            </TouchableOpacity>
-                                        </View>
+                <View style={styles.createAccountContainer}>
+                    <Text style={styles.noAccountText}>HAVE AN ACCOUNT?</Text>
+                    <TouchableOpacity
+                        onPress={() => { navigation.navigate('CreateAccount') }}
+                    >
+                        <Text style={styles.createAccountLink}>Create Account</Text>
+                    </TouchableOpacity>
+                </View>
             </KeyboardAvoidingView>
         </SafeAreaView>
     );
@@ -169,7 +168,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#333',
         marginBottom: 2,
-        marginTop:20
+        marginTop: 20
     },
     tagline: {
         fontSize: 12,
@@ -181,14 +180,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#333',
         marginBottom: 6,
-        textAlign:'center'
+        textAlign: 'center'
     },
     subtitle: {
         fontSize: 14,
         color: '#666',
         marginBottom: 20,
         lineHeight: 18,
-        textAlign:'center'
+        textAlign: 'center'
     },
     inputSection: {
         marginBottom: 16,
@@ -208,7 +207,7 @@ const styles = StyleSheet.create({
     forgotPassword: {
         fontSize: 13,
         color: 'black',
-        textDecorationLine:'underline',
+        textDecorationLine: 'underline',
     },
     inputContainer: {
         flexDirection: 'row',
@@ -218,20 +217,20 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         paddingHorizontal: 10,
         height: 40,
-        backgroundColor:'white'
+        backgroundColor: 'white'
     },
     inputIcon: {
         fontSize: 14,
         marginRight: 10,
         color: '#666',
-        backgroundColor:'white'
+        backgroundColor: 'white'
     },
     textInput: {
         flex: 1,
         fontSize: 14,
         color: '#333',
         height: '100%',
-        backgroundColor:'white'
+        backgroundColor: 'white'
     },
     eyeIcon: {
         padding: 2,
@@ -311,13 +310,13 @@ const styles = StyleSheet.create({
         color: '#333',
         fontWeight: '600',
     },
-        dottedLine: {
+    dottedLine: {
         height: 1,
         borderWidth: 1,
         borderColor: '#E1E4EA',
-        
+
     },
-        createAccountContainer: {
+    createAccountContainer: {
         alignItems: 'center',
         marginBottom: 20,
         paddingHorizontal: 20,
@@ -327,23 +326,23 @@ const styles = StyleSheet.create({
         color: '#999',
         letterSpacing: 0.5,
         marginBottom: 5,
-        position:"relative",
-        bottom:12,
-        backgroundColor:'white',
-        paddingHorizontal:8,
+        position: "relative",
+        bottom: 12,
+        backgroundColor: 'white',
+        paddingHorizontal: 8,
     },
     createAccountLink: {
         fontSize: 16,
         fontWeight: 'bold',
         color: 'black',
-        position:"relative",
-        bottom:8,
-        textAlign:'center',
-        borderWidth:1,
-        paddingHorizontal:90,
-        paddingVertical:10,
-        borderRadius:10,
-        borderColor:'#E1E4EA'
+        position: "relative",
+        bottom: 8,
+        textAlign: 'center',
+        borderWidth: 1,
+        paddingHorizontal: 90,
+        paddingVertical: 10,
+        borderRadius: 10,
+        borderColor: '#E1E4EA'
     },
 });
 

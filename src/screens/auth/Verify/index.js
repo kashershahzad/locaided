@@ -140,9 +140,8 @@ const styles = StyleSheet.create({
   },
   codeContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: width * 0.8,
     marginBottom: 40,
+    gap:10
   },
   codeInput: {
     width: 45,

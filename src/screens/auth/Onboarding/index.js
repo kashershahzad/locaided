@@ -194,7 +194,7 @@ const Onboarding = () => {
                             <Text style={modalStyles.buttonText}>Continue with Phone</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={modalStyles.emailButton}>
+                        <TouchableOpacity onPress={()=>{navigation.navigate('Emaillogin')}} style={modalStyles.emailButton}>
                             <Image style={modalStyles.appleIcon} source={require('../../../../assets/auth/mail.png')} />
                             <Text style={modalStyles.emailButtonText}>Continue with Email</Text>
                         </TouchableOpacity>
@@ -234,7 +234,7 @@ const Onboarding = () => {
                         source={require('../../../../assets/auth/Phone.png')}
                         style={style.image}
                     />
-                    <View style={style.shadowOverlay} />
+                    <Image source={require('../../../../assets/auth/Overlay.png')}style={style.shadowOverlay} />
 
                     <View style={style.textContainer}>
                         <Text style={style.heading}>Welcome to Locaided</Text>
@@ -270,21 +270,11 @@ const style = StyleSheet.create({
     },
     shadowOverlay: {
         position: 'absolute',
-        bottom: 150,
-        left: 0,
-        right: 0,
-        height: 100,
-        backgroundColor: 'white',
-        opacity: 0.5,
-        shadowColor: 'white',
-        shadowOffset: { width: 0, height: -10 },
-        shadowOpacity: 0.9,
-        shadowRadius: 20,
-        elevation: 20,
+       top:320
     },
     textContainer: {
         position: 'absolute',
-        bottom: -50,
+        bottom: -70,
         left: 0,
         right: 0,
         alignItems: 'center',
@@ -299,15 +289,16 @@ const style = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: 10,
+        marginTop:20
     },
     subheading: {
         color: '#525866',
-        fontSize: 15,
+        fontSize: 12,
         textAlign: 'center',
         lineHeight: 22,
     },
     frame: {
-        marginVertical: 20,
+        marginVertical: 10,
     },
     btn: {
         backgroundColor: "black",
