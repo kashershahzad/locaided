@@ -20,7 +20,7 @@ const PersonalInformation = () => {
     const navigation = useNavigation();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [username, setUsername] = useState('');
+    const [username, setUsername] = useState('joe34');
     const [dateOfBirth, setDateOfBirth] = useState('');
     const [gender, setGender] = useState('Male');
     const [showGenderDropdown, setShowGenderDropdown] = useState(false);

@@ -14,7 +14,7 @@ import Otp from "../../screens/profilesetup/Otp";
 const AuthStack = () => {
     const Stack = createNativeStackNavigator();
     return (
-        <Stack.Navigator  initialRouteName="Ready"  screenOptions={{
+        <Stack.Navigator  initialRouteName="Splash"  screenOptions={{
             headerShown: false,
         }}>
             <Stack.Screen name="Splash" component={Splash} />

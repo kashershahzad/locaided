@@ -10,6 +10,19 @@ const Ready = ({ route }) => {
   const personalInfoCompleted = route.params?.personalInfoCompleted || fromCompleteAndEarn;
   const phoneVerified = route.params?.phoneVerified || false;
 
+  // Completion messages for each section
+  const completionMessages = {
+    personalInfo: personalInfoCompleted
+      ? "You’ve successfully signed up."
+      : "Let others recognize and connect with you",
+    avatar: avatarCompleted
+      ? "Avatar set successfully."
+      : "Pick a character that represents you",
+    phone: phoneVerified
+      ? "You’ve verified phone number."
+      : "Build trust and unlock more features"
+  };
+
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -35,6 +48,7 @@ const Ready = ({ route }) => {
             <View style={styles.cardHeader}>
               <Text style={styles.cardTitle}>Locaided Account</Text>
               <View style={styles.pointsBadge}>
+                <Image source={require('../../../../assets/auth/points.png')} />
                 <Text style={styles.pointsText}>+25 Points</Text>
               </View>
             </View>
@@ -59,8 +73,19 @@ const Ready = ({ route }) => {
               </View>
             </View>
             <View style={styles.cardText}>
+              <View style={styles.header1}>
               <Text style={styles.cardTitle}>Personal Information</Text>
-              <Text style={styles.cardSubtitle}>Let others recognize connect with you.</Text>
+              {
+                personalInfoCompleted && (
+                  <View style={styles.pointsBadge}>
+                    <Image source={require('../../../../assets/auth/points.png')} />
+                    <Text style={styles.pointsText}>+25 Points</Text>
+                  </View>
+                )
+              }
+              </View>
+
+              <Text style={styles.cardSubtitle}>{completionMessages.personalInfo}</Text>
             </View>
             {personalInfoCompleted && (
               <View>
@@ -68,13 +93,15 @@ const Ready = ({ route }) => {
               </View>
             )}
           </View>
-          <TouchableOpacity style={styles.continueButton} >
-            <Text style={styles.continueButtonText}>Continue</Text>
-            <Image source={require('../../../../assets/auth/points.png')} />
-            <View style={styles.pointsBadgeButton}>
-              <Text style={styles.pointsTextButton}>50 Points</Text>
-            </View>
-          </TouchableOpacity>
+          {!personalInfoCompleted && (
+            <TouchableOpacity style={styles.continueButton}>
+              <Text style={styles.continueButtonText}>Continue</Text>
+              <Image source={require('../../../../assets/auth/points.png')} />
+              <View style={styles.pointsBadgeButton}>
+                <Text style={styles.pointsTextButton}>50 Points</Text>
+              </View>
+            </TouchableOpacity>
+          )}
         </View>
       </TouchableOpacity>
 
@@ -91,8 +118,19 @@ const Ready = ({ route }) => {
               </View>
             </View>
             <View style={styles.cardText}>
+
+              <View style={styles.header1}>
               <Text style={styles.cardTitle}>Choose an Avatar</Text>
-              <Text style={styles.cardSubtitle}>Pick a character that represents you.</Text>
+              {
+                avatarCompleted&& (
+                  <View style={styles.pointsBadge}>
+                    <Image source={require('../../../../assets/auth/points.png')} />
+                    <Text style={styles.pointsText}>+25 Points</Text>
+                  </View>
+                )
+              }
+              </View>
+              <Text style={styles.cardSubtitle}>{completionMessages.avatar}</Text>
             </View>
             {avatarCompleted && (
               <View>
@@ -100,13 +138,15 @@ const Ready = ({ route }) => {
               </View>
             )}
           </View>
-          <TouchableOpacity style={styles.continueButton}>
-            <Text style={styles.continueButtonText}>Continue</Text>
-            <Image source={require('../../../../assets/auth/points.png')} />
-            <View style={styles.pointsBadgeButton}>
-              <Text style={styles.pointsTextButton}>25 Points</Text>
-            </View>
-          </TouchableOpacity>
+          {!avatarCompleted && (
+            <TouchableOpacity style={styles.continueButton}>
+              <Text style={styles.continueButtonText}>Continue</Text>
+              <Image source={require('../../../../assets/auth/points.png')} />
+              <View style={styles.pointsBadgeButton}>
+                <Text style={styles.pointsTextButton}>25 Points</Text>
+              </View>
+            </TouchableOpacity>
+          )}
         </View>
       </TouchableOpacity>
 
@@ -123,8 +163,18 @@ const Ready = ({ route }) => {
               </View>
             </View>
             <View style={styles.cardText}>
-              <Text style={styles.cardTitle}>Phone Verification</Text>
-              <Text style={styles.cardSubtitle}>Build trust and unlock more features.</Text>
+              <View style={styles.header1}>
+              <Text style={styles.cardTitle}>Personal Information</Text>
+              {
+                phoneVerified  && (
+                  <View style={styles.pointsBadge}>
+                    <Image source={require('../../../../assets/auth/points.png')} />
+                    <Text style={styles.pointsText}>+25 Points</Text>
+                  </View>
+                )
+              }
+              </View>
+              <Text style={styles.cardSubtitle}>{completionMessages.phone}</Text>
             </View>
             {phoneVerified && (
               <View>
@@ -132,13 +182,15 @@ const Ready = ({ route }) => {
               </View>
             )}
           </View>
-          <TouchableOpacity style={styles.continueButton}>
-            <Text style={styles.continueButtonText}>Continue</Text>
-            <Image source={require('../../../../assets/auth/points.png')} />
-            <View style={styles.pointsBadgeButton}>
-              <Text style={styles.pointsTextButton}>25 Points</Text>
-            </View>
-          </TouchableOpacity>
+          {!phoneVerified && (
+            <TouchableOpacity style={styles.continueButton}>
+              <Text style={styles.continueButtonText}>Continue</Text>
+              <Image source={require('../../../../assets/auth/points.png')} />
+              <View style={styles.pointsBadgeButton}>
+                <Text style={styles.pointsTextButton}>25 Points</Text>
+              </View>
+            </TouchableOpacity>
+          )}
         </View>
       </TouchableOpacity>
     </View>
@@ -221,17 +273,14 @@ const styles = StyleSheet.create({
     lineHeight: 14,
   },
   pointsBadge: {
-    backgroundColor: '#fff3cd',
-    paddingHorizontal: 6,
-    paddingVertical: 1,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#ffeaa7',
+    flexDirection: 'row',
+    gap: 3
   },
   pointsText: {
     fontSize: 10,
-    color: '#d68910',
+    color: '#FF2557',
     fontWeight: '500',
+    fontWeight: 'bold'
   },
   continueButton: {
     backgroundColor: '#f8f9fa',
@@ -259,7 +308,11 @@ const styles = StyleSheet.create({
   icon: {
     alignItems: 'center',
     marginVertical: 20
+  },
+  header1:{
+    flexDirection:'row'
   }
+
 });
 
 export default Ready;
