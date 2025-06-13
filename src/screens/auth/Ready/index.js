@@ -1,12 +1,20 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const Ready = () => {
+const Ready = ({ route }) => {
+  const navigation = useNavigation()
+  // Get the parameters from navigation
+  const fromCompleteAndEarn = route.params?.fromCompleteAndEarn || false;
+  const avatarCompleted = route.params?.avatarCompleted || false;
+  const personalInfoCompleted = route.params?.personalInfoCompleted || fromCompleteAndEarn;
+  const phoneVerified = route.params?.phoneVerified || false;
+
   return (
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.icon}>
-        <Image source={require('../../../../assets/auth/Ready.png')}/>
+        <Image source={require('../../../../assets/auth/Ready.png')} />
       </View>
       <View style={styles.header}>
         <Text style={styles.title}>Your Account is Ready</Text>
@@ -39,70 +47,100 @@ const Ready = () => {
       </View>
 
       {/* Personal Information Card */}
-      <View style={styles.card}>
-        <View style={styles.cardContent}>
-          <View style={styles.iconContainer}>
-             <View style={styles.personIcon}>
-              <Image source={require('../../../../assets/auth/icon2.png')} />
+      <TouchableOpacity onPress={() => { navigation.navigate('PersonalInformation') }}>
+        <View style={[
+          styles.card,
+          personalInfoCompleted && styles.completedCard
+        ]}>
+          <View style={styles.cardContent}>
+            <View style={styles.iconContainer}>
+              <View style={styles.personIcon}>
+                <Image source={require('../../../../assets/auth/icon2.png')} />
+              </View>
             </View>
+            <View style={styles.cardText}>
+              <Text style={styles.cardTitle}>Personal Information</Text>
+              <Text style={styles.cardSubtitle}>Let others recognize connect with you.</Text>
+            </View>
+            {personalInfoCompleted && (
+              <View>
+                <Image source={require('../../../../assets/auth/tick.png')} />
+              </View>
+            )}
           </View>
-          <View style={styles.cardText}>
-            <Text style={styles.cardTitle}>Personal Information</Text>
-            <Text style={styles.cardSubtitle}>Let others recognize connect with you.</Text>
-          </View>
+          <TouchableOpacity style={styles.continueButton} >
+            <Text style={styles.continueButtonText}>Continue</Text>
+            <Image source={require('../../../../assets/auth/points.png')} />
+            <View style={styles.pointsBadgeButton}>
+              <Text style={styles.pointsTextButton}>50 Points</Text>
+            </View>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.continueButton}>
-          <Text style={styles.continueButtonText}>Continue</Text>
-          <Image source={require('../../../../assets/auth/points.png')} />
-          <View style={styles.pointsBadgeButton}>
-            <Text style={styles.pointsTextButton}>50 Points</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+      </TouchableOpacity>
 
       {/* Choose Avatar Card */}
-      <View style={styles.card}>
-        <View style={styles.cardContent}>
-          <View style={styles.iconContainer}>
-            <View style={styles.personIcon}>
-              <Image source={require('../../../../assets/auth/icon3.png')} />
+      <TouchableOpacity onPress={() => { navigation.navigate('Avtar') }}>
+        <View style={[
+          styles.card,
+          avatarCompleted && styles.completedCard
+        ]}>
+          <View style={styles.cardContent}>
+            <View style={styles.iconContainer}>
+              <View style={styles.personIcon}>
+                <Image source={require('../../../../assets/auth/icon3.png')} />
+              </View>
             </View>
+            <View style={styles.cardText}>
+              <Text style={styles.cardTitle}>Choose an Avatar</Text>
+              <Text style={styles.cardSubtitle}>Pick a character that represents you.</Text>
+            </View>
+            {avatarCompleted && (
+              <View>
+                <Image source={require('../../../../assets/auth/tick.png')} />
+              </View>
+            )}
           </View>
-          <View style={styles.cardText}>
-            <Text style={styles.cardTitle}>Choose an Avatar</Text>
-            <Text style={styles.cardSubtitle}>Pick a character that represents you.</Text>
-          </View>
+          <TouchableOpacity style={styles.continueButton}>
+            <Text style={styles.continueButtonText}>Continue</Text>
+            <Image source={require('../../../../assets/auth/points.png')} />
+            <View style={styles.pointsBadgeButton}>
+              <Text style={styles.pointsTextButton}>25 Points</Text>
+            </View>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.continueButton}>
-          <Text style={styles.continueButtonText}>Continue</Text>
-           <Image source={require('../../../../assets/auth/points.png')} />
-          <View style={styles.pointsBadgeButton}>
-            <Text style={styles.pointsTextButton}>25 Points</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+      </TouchableOpacity>
 
       {/* Phone Verification Card */}
-      <View style={styles.card}>
-        <View style={styles.cardContent}>
-          <View style={styles.iconContainer}>
-             <View style={styles.personIcon}>
-              <Image source={require('../../../../assets/auth/icon4.png')} />
+      <TouchableOpacity onPress={() => { navigation.navigate('PhoneVerify') }}>
+        <View style={[
+          styles.card,
+          phoneVerified && styles.completedCard
+        ]}>
+          <View style={styles.cardContent}>
+            <View style={styles.iconContainer}>
+              <View style={styles.personIcon}>
+                <Image source={require('../../../../assets/auth/icon4.png')} />
+              </View>
             </View>
+            <View style={styles.cardText}>
+              <Text style={styles.cardTitle}>Phone Verification</Text>
+              <Text style={styles.cardSubtitle}>Build trust and unlock more features.</Text>
+            </View>
+            {phoneVerified && (
+              <View>
+                <Image source={require('../../../../assets/auth/tick.png')} />
+              </View>
+            )}
           </View>
-          <View style={styles.cardText}>
-            <Text style={styles.cardTitle}>Phone Verification</Text>
-            <Text style={styles.cardSubtitle}>Build trust and unlock more features.</Text>
-          </View>
+          <TouchableOpacity style={styles.continueButton}>
+            <Text style={styles.continueButtonText}>Continue</Text>
+            <Image source={require('../../../../assets/auth/points.png')} />
+            <View style={styles.pointsBadgeButton}>
+              <Text style={styles.pointsTextButton}>25 Points</Text>
+            </View>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.continueButton}>
-          <Text style={styles.continueButtonText}>Continue</Text>
-           <Image source={require('../../../../assets/auth/points.png')} />
-          <View style={styles.pointsBadgeButton}>
-            <Text style={styles.pointsTextButton}>25 Points</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -195,19 +233,6 @@ const styles = StyleSheet.create({
     color: '#d68910',
     fontWeight: '500',
   },
-  checkmark: {
-    width: 18,
-    height: 18,
-    backgroundColor: '#ff6b8a',
-    borderRadius: 9,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  checkmarkText: {
-    color: '#fff',
-    fontSize: 12,
-    fontWeight: 'bold',
-  },
   continueButton: {
     backgroundColor: '#f8f9fa',
     paddingVertical: 8,
@@ -215,7 +240,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent:"center"
+    justifyContent: "center"
   },
   continueButtonText: {
     fontSize: 12,
@@ -231,9 +256,9 @@ const styles = StyleSheet.create({
     color: '#FF2557',
     fontWeight: '500',
   },
-  icon:{
-    alignItems:'center',
-    marginVertical:20
+  icon: {
+    alignItems: 'center',
+    marginVertical: 20
   }
 });
 
