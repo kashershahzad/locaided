@@ -276,7 +276,7 @@ export const modalStyles = StyleSheet.create({
     },
     termsText: {
         fontSize: 12,
-        color: '#999',
+         color: 'black',
         textAlign: 'center',
         paddingHorizontal: 10,
         lineHeight: 16,

@@ -103,6 +103,8 @@ const OnBoarding = () => {
                     marginBottom={5}
                     textAlign="center"
                     lineHeight={16}
+                    marginLeft={20}
+                    marginRight={20}
                 />
                 <View style={styles.progressContainer}>
                     {onboardingData.map((_, index) => (
@@ -161,7 +163,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         marginVertical: 20,
-        paddingHorizontal: 40,
+        paddingHorizontal: 60,
     },
     progressBar: {
         flex: 1,
