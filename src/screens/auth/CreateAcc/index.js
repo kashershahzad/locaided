@@ -27,7 +27,6 @@ const CreateAccount = () => {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const handleContinue = () => {
-        // Handle account creation logic here
         console.log('Creating account with:', { fullName, email, password });
         navigation.navigate('PhoneNumber')
     };
@@ -210,7 +209,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         backgroundColor: 'white',
         paddingHorizontal: 16,
-        height: 46,
+        height: 46, 
     },
     inputEmoji: {
         fontSize: 18,
@@ -230,7 +229,6 @@ const styles = StyleSheet.create({
         color: '#6B7280',
         textAlign: 'center',
         lineHeight: 20,
-        marginTop: 8,
         marginBottom: 24,
     },
     linkText: {
