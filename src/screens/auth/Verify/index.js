@@ -1,43 +1,34 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import {
   StatusBar,
   StyleSheet,
   Text,
   View,
-  TextInput,
   TouchableOpacity,
-  Modal,
-  FlatList,
   Dimensions,
   Image
 } from 'react-native';
+import {
+  CodeField,
+  Cursor,
+  useBlurOnFulfill,
+  useClearByFocusCell,
+} from 'react-native-confirmation-code-field';
 import Topbar from '../../../../components/auth/Topbar';
 import { useNavigation } from '@react-navigation/native';
 
 const { width } = Dimensions.get('window');
 
+const CELL_COUNT = 6;
+
 const Verify = () => {
-  const navigation = useNavigation()
-  const [code, setCode] = useState(['', '', '', '', '', '']);
-  const inputRefs = useRef([]);
-
-  const handleCodeChange = (text, index) => {
-    const newCode = [...code];
-    newCode[index] = text;
-    setCode(newCode);
-
-    // Auto-focus next input
-    if (text && index < 5) {
-      inputRefs.current[index + 1]?.focus();
-    }
-  };
-
-  const handleKeyPress = (e, index) => {
-    // Handle backspace to go to previous input
-    if (e.nativeEvent.key === 'Backspace' && !code[index] && index > 0) {
-      inputRefs.current[index - 1]?.focus();
-    }
-  };
+  const navigation = useNavigation();
+  const [value, setValue] = useState('');
+  const ref = useBlurOnFulfill({ value, cellCount: CELL_COUNT });
+  const [props, getCellOnLayoutHandler] = useClearByFocusCell({
+    value,
+    setValue,
+  });
 
   const handleResendCode = () => {
     // Handle resend code logic here
@@ -45,46 +36,51 @@ const Verify = () => {
   };
 
   const handleVerify = () => {
-    const verificationCode = code.join('');
-    if (verificationCode.length === 6) {
+    if (value.length === CELL_COUNT) {
       // Handle verification logic here
-      console.log('Verification code:', verificationCode);
-      navigation.navigate('Locationaccess')
+      console.log('Verification code:', value);
+      navigation.navigate('Locationaccess');
     }
   };
 
-  const isCodeComplete = code.every(digit => digit !== '');
+  const isCodeComplete = value.length === CELL_COUNT;
 
   return (
     <View style={styles.container}>
       <Topbar title='Verification Code' />
-      <View style={{alignItems:'center', marginVertical:10}}>
+      <View style={{ alignItems: 'center', marginVertical: 10 }}>
         <Image source={require('../../../../assets/auth/Verify.png')} />
       </View>
-      
+
       <View style={styles.content}>
         <Text style={styles.title}>Enter Your Verification Code</Text>
         <Text style={styles.subtitle}>We sent a code to +1 555-123-4567.</Text>
 
-        <View style={styles.codeContainer}>
-          {code.map((digit, index) => (
-            <TextInput
+        <CodeField
+          ref={ref}
+          {...props}
+          value={value}
+          onChangeText={setValue}
+          cellCount={CELL_COUNT}
+          rootStyle={styles.codeFieldRoot}
+          keyboardType="number-pad"
+          textContentType="oneTimeCode"
+          renderCell={({ index, symbol, isFocused }) => (
+            <View
+              onLayout={getCellOnLayoutHandler(index)}
               key={index}
-              ref={(ref) => (inputRefs.current[index] = ref)}
               style={[
-                styles.codeInput,
-                digit ? styles.codeInputFilled : null
+                styles.cell,
+                symbol && styles.cellFilled,
+                isFocused && styles.cellFocused
               ]}
-              value={digit}
-              onChangeText={(text) => handleCodeChange(text, index)}
-              onKeyPress={(e) => handleKeyPress(e, index)}
-              keyboardType="numeric"
-              maxLength={1}
-              textAlign="center"
-              selectTextOnFocus
-            />
-          ))}
-        </View>
+            >
+              <Text style={styles.cellText}>
+                {symbol || (isFocused ? <Cursor /> : null)}
+              </Text>
+            </View>
+          )}
+        />
 
         <View style={styles.resendContainer}>
           <Text style={styles.resendText}>Experiencing issues receiving the code?</Text>
@@ -138,25 +134,31 @@ const styles = StyleSheet.create({
     marginBottom: 40,
     lineHeight: 22,
   },
-  codeContainer: {
-    flexDirection: 'row',
+  codeFieldRoot: {
     marginBottom: 40,
-    gap:10
   },
-  codeInput: {
+  cell: {
     width: 45,
     height: 55,
     borderWidth: 2,
     borderColor: '#E5E5E5',
     borderRadius: 8,
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
+    marginHorizontal: 5,
+  },
+  cellText: {
     fontSize: 24,
     fontWeight: '600',
     color: '#000000',
-    backgroundColor: '#FFFFFF',
+    textAlign: 'center',
   },
-  codeInputFilled: {
+  cellFilled: {
     borderColor: '#007AFF',
     backgroundColor: '#F8F9FA',
+  },
+  cellFocused: {
+    borderColor: '#007AFF',
   },
   resendContainer: {
     alignItems: 'center',

@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#e1e5e9',
         paddingHorizontal: 12,
-        paddingVertical: 16,
+        paddingVertical: 15,
         minWidth: 100,
     },
     flagText: {
@@ -319,6 +319,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: '#666666',
         fontWeight: '300',
+        backgroundColor:'black'
     },
     countryList: {
         paddingHorizontal: 20,
