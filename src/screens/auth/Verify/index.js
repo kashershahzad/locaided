@@ -31,13 +31,11 @@ const Verify = () => {
   });
 
   const handleResendCode = () => {
-    // Handle resend code logic here
     console.log('Resend code');
   };
 
   const handleVerify = () => {
     if (value.length === CELL_COUNT) {
-      // Handle verification logic here
       console.log('Verification code:', value);
       navigation.navigate('Locationaccess');
     }
