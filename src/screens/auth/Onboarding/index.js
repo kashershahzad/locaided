@@ -79,10 +79,10 @@ const OnBoarding = () => {
                 initialScrollIndex={currentIndex}
                 pagingEnabled
                 renderItem={({ item }) => (
-                    <Animated.View style={styles.sliderItem}>
+                    <View style={styles.sliderItem}>
                         <ImageFast source={item.image} style={{ width: '100%', height: '100%' }} resizeMode='contain' />
                         <ImageFast source={require('../../../../assets/auth/Overlay.png')} style={{ width: '100%', height: '100%', position: 'absolute', top: 220, }} resizeMode='contain' />
-                    </Animated.View>
+                    </View>
                 )}
             />
             <View style={styles.container}>
