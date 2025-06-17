@@ -83,7 +83,7 @@ const style = StyleSheet.create({
     },
     textContainer: {
         position: 'absolute',
-        bottom: -50,
+        bottom: -70,
         left: 0,
         right: 0,
         alignItems: 'center',

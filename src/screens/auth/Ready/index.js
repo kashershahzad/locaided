@@ -94,13 +94,13 @@ const Ready = ({ route }) => {
             )}
           </View>
           {!personalInfoCompleted && (
-            <TouchableOpacity style={styles.continueButton}>
+            <View style={styles.continueButton}>
               <Text style={styles.continueButtonText}>Continue</Text>
               <Image source={require('../../../../assets/auth/points.png')} />
               <View style={styles.pointsBadgeButton}>
                 <Text style={styles.pointsTextButton}>50 Points</Text>
               </View>
-            </TouchableOpacity>
+            </View>
           )}
         </View>
       </TouchableOpacity>
@@ -139,13 +139,13 @@ const Ready = ({ route }) => {
             )}
           </View>
           {!avatarCompleted && (
-            <TouchableOpacity style={styles.continueButton}>
+            <View style={styles.continueButton}>
               <Text style={styles.continueButtonText}>Continue</Text>
               <Image source={require('../../../../assets/auth/points.png')} />
               <View style={styles.pointsBadgeButton}>
                 <Text style={styles.pointsTextButton}>25 Points</Text>
               </View>
-            </TouchableOpacity>
+            </View>
           )}
         </View>
       </TouchableOpacity>
@@ -183,13 +183,13 @@ const Ready = ({ route }) => {
             )}
           </View>
           {!phoneVerified && (
-            <TouchableOpacity style={styles.continueButton}>
+            <View style={styles.continueButton}>
               <Text style={styles.continueButtonText}>Continue</Text>
               <Image source={require('../../../../assets/auth/points.png')} />
               <View style={styles.pointsBadgeButton}>
                 <Text style={styles.pointsTextButton}>25 Points</Text>
               </View>
-            </TouchableOpacity>
+            </View>
           )}
         </View>
       </TouchableOpacity>
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: '#fff',
-    borderRadius: 12,
+    borderRadius: 16,
     padding: 12,
     marginBottom: 10,
     shadowColor: '#000',
@@ -283,10 +283,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   continueButton: {
-    backgroundColor: '#f8f9fa',
     paddingVertical: 8,
     paddingHorizontal: 12,
-    borderRadius: 6,
+    borderRadius: 8,
+    borderWidth:1,
+    borderColor:'#E1E4EA',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: "center"

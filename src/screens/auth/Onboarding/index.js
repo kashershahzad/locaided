@@ -117,8 +117,8 @@ const OnBoarding = () => {
                         />
                     ))}
                 </View>
-                <CustomButton title='Create Account' height={48} backgroundColor='black' color={'white'} borderRadius={10} onPress={() => setCreateAccountModalVisible(true)} />
-                <CustomButton onPress={() => { setLoginModalVisible(true) }} title='Login' height={48} color={'black'} borderColor={'black'} borderWidth={1} marginTop={10} borderRadius={10} />
+                <CustomButton title='Create Account' height={48} backgroundColor='black' color={'white'} borderRadius={16} onPress={() => setCreateAccountModalVisible(true)} />
+                <CustomButton onPress={() => { setLoginModalVisible(true) }} title='Login' height={48} color={'black'} borderColor={'#E1E4EA'} borderWidth={1} marginTop={10} borderRadius={16} />
             </View>
             <Login
                 visible={loginModalVisible}

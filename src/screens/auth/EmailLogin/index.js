@@ -112,9 +112,12 @@ const Emaillogin = () => {
 
 
                 </View>
-                <View style={styles.dottedLine} />
                 <View style={styles.createAccountContainer}>
-                    <Text style={styles.noAccountText}>HAVE AN ACCOUNT?</Text>
+                    <View style={styles.divider}>
+                        <View style={styles.dividerLine} />
+                        <Text style={styles.dividerText}>DON'T HAVE AN ACCOUNT</Text>
+                        <View style={styles.dividerLine} />
+                    </View>
                     <TouchableOpacity
                         onPress={() => { navigation.navigate('CreateAccount') }}
                     >
@@ -214,7 +217,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderWidth: 1,
         borderColor: '#ddd',
-        borderRadius: 6,
+        borderRadius: 12,
         paddingHorizontal: 10,
         height: 40,
         backgroundColor: 'white'
@@ -240,12 +243,12 @@ const styles = StyleSheet.create({
     },
     loginButton: {
         backgroundColor: 'black',
-        borderRadius: 6,
+        borderRadius: 16,
         height: 48,
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 4,
-        marginBottom: 20,
+        marginBottom: 10,
     },
     loginButtonText: {
         color: '#fff',
@@ -273,8 +276,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderWidth: 1,
         borderColor: '#ddd',
-        borderRadius: 6,
-        height: 40,
+        borderRadius: 16,
+        height: 45,
         marginBottom: 10,
         backgroundColor: '#fff',
     },
@@ -311,7 +314,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
     },
     dottedLine: {
-        height: 1,
+        
         borderWidth: 1,
         borderColor: '#E1E4EA',
 
@@ -341,7 +344,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         paddingHorizontal: 90,
         paddingVertical: 10,
-        borderRadius: 10,
+        borderRadius: 16,
+        marginTop:7,
         borderColor: '#E1E4EA'
     },
 });

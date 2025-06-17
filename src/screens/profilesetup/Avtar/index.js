@@ -64,7 +64,8 @@ const style = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#E1E4EA',
         padding: 10,
-        borderRadius: 10
+        paddingHorizontal:15,
+        borderRadius: 8,
     },
     des: {
         textDecorationLine: 'underline'
@@ -79,7 +80,7 @@ const style = StyleSheet.create({
     },
     completeButton: {
         backgroundColor: '#1a1a1a',
-        borderRadius: 15,
+        borderRadius: 16,
         paddingVertical: 16,
         flexDirection: 'row',
         alignItems: 'center',

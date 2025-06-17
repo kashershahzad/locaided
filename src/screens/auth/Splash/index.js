@@ -45,7 +45,7 @@ const Splash = () => {
   return (
     <View style={style.container}>
       <StatusBar backgroundColor="#0E121B" />
-      <Image source={require('../../../../assets/Logo.png')} />
+      <Image source={require('../../../../assets/bootsplash_logo.png')} />
       <Text style={style.text}>People. Places. Proof.</Text>
       <Animated.Image 
         style={[

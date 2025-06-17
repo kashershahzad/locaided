@@ -226,8 +226,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderWidth: 1,
         borderColor: '#e0e0e0',
-        borderRadius: 10,
-        backgroundColor: '#f8f9fa',
+        borderRadius: 12,
         paddingHorizontal: 10,
         height: 45,
     },
@@ -266,7 +265,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#e0e0e0',
         borderRadius: 10,
-        backgroundColor: '#f8f9fa',
+        backgroundColor: 'white',
         paddingHorizontal: 14,
         height: 45,
         

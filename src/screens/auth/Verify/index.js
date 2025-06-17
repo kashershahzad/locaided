@@ -48,7 +48,7 @@ const Verify = () => {
   return (
     <View style={styles.container}>
       <Topbar title='Verification Code' />
-      <View style={{ alignItems: 'center', marginVertical: 10 }}>
+      <View style={{ alignItems: 'center', marginTop: 10 }}>
         <Image source={require('../../../../assets/auth/Verify.png')} />
       </View>
 
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     paddingHorizontal: 24,
-    paddingTop: 40,
+    paddingTop: 20,
     alignItems: 'center',
   },
   title: {
@@ -125,7 +125,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#000000',
     textAlign: 'center',
-    marginBottom: 12,
   },
   subtitle: {
     fontSize: 16,
@@ -140,9 +139,9 @@ const styles = StyleSheet.create({
   cell: {
     width: 45,
     height: 55,
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: '#E5E5E5',
-    borderRadius: 8,
+    borderRadius: 10,
     justifyContent: 'center',
     backgroundColor: '#FFFFFF',
     marginHorizontal: 5,
@@ -179,7 +178,7 @@ const styles = StyleSheet.create({
   verifyButton: {
     width: width * 0.9,
     height: 50,
-    borderRadius: 8,
+    borderRadius: 16,
     justifyContent: 'center',
     alignItems: 'center',
   },
