@@ -11,9 +11,9 @@ export default function Allset() {
             <ImageFast source={require('../../../../assets/allset.gif')} style={styles.animation} resizeMode={'cover'} />
             <View style={styles.container}>
                 <ImageFast source={require('../../../../assets/auth/Customtick.png')} resizeMode={'contain'} style={styles.icon} />
-                <CustomText label={'You re all set!'} fontSize={24} textAlign={'center'}/>
-                <CustomText label={'Explore your city, share moments, and earn Social Score!'} fontSize={14} textAlign={'center'} marginTop={10}/>
-                <CustomButton title={'Enter lociated'}  backgroundColor={'black'} color={'white'} marginTop={180} borderRadius={16}/>
+                <CustomText label={'You re all set!'} fontSize={24} textAlign={'center'} />
+                <CustomText label={'Explore your city, share moments, and earn Social Score!'} fontSize={14} textAlign={'center'} marginTop={10} />
+                <CustomButton title={'Enter lociated'} backgroundColor={'black'} color={'white'} marginTop={170} borderRadius={16} />
             </View>
         </View>
     )
@@ -23,18 +23,18 @@ const styles = StyleSheet.create({
 
     container: {
         justifyContent: 'center',
-        marginTop:'280',
-        paddingHorizontal:24
+        marginTop: '280',
+        paddingHorizontal: 24
     },
     icon: {
         height: 96,
         with: 96
     },
-        animation: {
+    animation: {
         position: 'absolute',
         width: '100%',
         height: '100%',
         zIndex: 0,
-        
+
     },
 })
