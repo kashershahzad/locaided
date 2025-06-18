@@ -333,14 +333,14 @@ const styles = StyleSheet.create({
     pointsContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginLeft: 8,
+        marginLeft: 3,
     },
     pointsIcon: {
         fontSize: 16,
         marginRight: 4,
     },
     pointsText: {
-        color: '#FFA500',
+        color: '#F6B51E',
         fontSize: 16,
         fontWeight: '600',
     },

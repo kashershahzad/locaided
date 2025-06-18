@@ -325,7 +325,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: '#666666',
         fontWeight: '300',
-        backgroundColor:'black'
+        backgroundColor:'white'
     },
     countryList: {
         paddingHorizontal: 20,

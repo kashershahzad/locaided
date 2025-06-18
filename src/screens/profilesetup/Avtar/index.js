@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import Topbar from '../../../../components/auth/Topbar';
 import { useNavigation } from '@react-navigation/native';
+import ImageFast from '../../../../components/ImageFast';
 
 const Avatar = () => {
     const navigation = useNavigation()
@@ -16,9 +17,7 @@ const Avatar = () => {
         <View style={{ flex: 1, backgroundColor: 'white' }}>
             <Topbar title='Choose an avatar' />
             <View style={style.container}>
-                <View >
-                <Image source={require('../../../../assets/auth/icon3.png')} style={style.img}/>
-                </View>
+                <ImageFast source={require('../../../../assets/auth/icon3.png')} style={style.img}/>
                 <Text style={style.title}>Set profile Image</Text>
                 <Text style={style.subtitle}>Min 400x400px, PNG or JPEG</Text>
                 <TouchableOpacity>
@@ -51,21 +50,22 @@ const style = StyleSheet.create({
     },
     title: {
         marginTop: 12,
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: 'bold',
         marginBottom: 5,
     },
     subtitle: {
-        fontSize: 14,
+        fontSize: 12,
         fontWeight: 'light'
     },
     btn: {
-        marginVertical: 15,
+        marginVertical: 20,
         borderWidth: 1,
         borderColor: '#E1E4EA',
-        padding: 10,
+        padding: 8,
         paddingHorizontal:15,
         borderRadius: 8,
+        fontSize:12
     },
     des: {
         textDecorationLine: 'underline'

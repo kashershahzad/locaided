@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
         textAlign:'center'
     },
     inputContainer: {
-        marginBottom: 24,
+        marginBottom: 10,
     },
     label: {
         fontSize: 16,
@@ -192,8 +192,10 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#e1e5e9',
         paddingHorizontal: 12,
-        paddingVertical: 16,
+        paddingVertical: 14,
         minWidth: 100,
+        borderTopLeftRadius:10,
+        borderBottomLeftRadius:10,
     },
     flagText: {
         fontSize: 18,
@@ -223,17 +225,20 @@ const styles = StyleSheet.create({
     phoneInput: {
         flex: 1,
         borderWidth: 1,
-        borderColor: '#e1e5e9',
+        borderColor: '#E1E4EA',
         paddingHorizontal: 16,
-        paddingVertical: 16,
+        paddingVertical: 15,
         fontSize: 16,
         color: '#000000',
         backgroundColor: '#ffffff',
+        borderTopRightRadius:10,
+        borderBottomRightRadius:10,
+        borderLeftWidth:0
     },
     disclaimer: {
         flexDirection: 'row',
         alignItems: 'flex-start',
-        marginBottom: 40,
+        marginBottom: 10,
         paddingHorizontal: 4,
     },
     infoIcon: {
@@ -258,7 +263,7 @@ const styles = StyleSheet.create({
         lineHeight: 20,
     },
     getStartedButton: {
-        borderRadius: 8,
+        borderRadius: 16,
         paddingVertical: 16,
         alignItems: 'center',
         justifyContent: 'center',
@@ -319,6 +324,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: '#666666',
         fontWeight: '300',
+        backgroundColor:'white'
     },
     countryList: {
         paddingHorizontal: 20,
