@@ -11,10 +11,11 @@ import PersonalInformation from "../../screens/profilesetup/PersonalInformation"
 import Avtar from "../../screens/profilesetup/Avtar";
 import PhoneVerify from "../../screens/profilesetup/PhoneVerify";
 import Otp from "../../screens/profilesetup/Otp";
+import Allset from "../../screens/profilesetup/Allset";
 const AuthStack = () => {
     const Stack = createNativeStackNavigator();
     return (
-        <Stack.Navigator  initialRouteName="Splash"  screenOptions={{
+        <Stack.Navigator screenOptions={{
             headerShown: false,
         }}>
             <Stack.Screen name="Splash" component={Splash} />
@@ -28,7 +29,8 @@ const AuthStack = () => {
              <Stack.Screen name="PersonalInformation" component={ PersonalInformation} />
              <Stack.Screen name="Avtar" component={ Avtar} />
              <Stack.Screen name="PhoneVerify" component={ PhoneVerify} />
-             <Stack.Screen name="Otp" component={ Otp} />
+             <Stack.Screen name="Otp" component={Otp} />
+             <Stack.Screen name="Allset" component={ Allset} />
         </Stack.Navigator>
     )
 }

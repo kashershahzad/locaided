@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import ImageFast from '../../../../components/ImageFast';
 import CustomText from '../../../../components/CustomText';
+import CustomButton from '../../../../components/CustomButton';
 
 const Ready = ({ route }) => {
   const navigation = useNavigation()

@@ -48,11 +48,13 @@ const Otp = () => {
     const verificationCode = code.join('');
     if (verificationCode.length === 6) {
       // Navigate to Ready screen with phone verification completed
-      navigation.navigate('Ready', { 
-        phoneVerified: true,
-        personalInfoCompleted: true,
-        avatarCompleted: true
-      });
+      // navigation.navigate('Ready', { 
+      //   phoneVerified: true,
+      //   personalInfoCompleted: true,
+      //   avatarCompleted: true
+      // });
+
+      navigation.navigate('Allset')
     }
   };
 
