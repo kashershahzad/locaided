@@ -32,7 +32,7 @@ const Ready = ({ route }) => {
 
       <CustomText label={'Your Account is Ready'} fontSize={20} textAlign={'center'} marginBottom={6} />
 
-      <CustomText label='Lets complete your profile to unlock all features and start earning Social Score.' fontSize={13} textAlign={'center'} marginBottom={19} />
+      <CustomText label='Lets complete your profile to unlock all features and start earning Social Score.' fontSize={13} textAlign={'center'} marginBottom={25}  />
 
 
 
@@ -52,7 +52,7 @@ const Ready = ({ route }) => {
                 <CustomText label={'+25 points'} fontSize={10} color={'#FF2557'} />
               </View>
             </View>
-            <CustomText label={'You ve successfully signed up'} fontSize={12} color={'#525866'} />
+            <CustomText label={'You ve successfully signed up'} fontSize={12} color={'#525866'} marginBottom={5} />
           </View>
           <ImageFast source={require('../../../../assets/auth/tick.png')} resizeMode={'contain'} style={styles.tick} />
         </View>
@@ -68,7 +68,7 @@ const Ready = ({ route }) => {
             <ImageFast source={require('../../../../assets/auth/icon2.png')} resizeMode={'contain'} style={styles.infoicon} />
             <View style={styles.cardText}>
               <View style={styles.header1}>
-                <CustomText label={'Personal Information'} fontSize={14} textAlign={'center'} marginRight={6} />
+                <CustomText label={'Personal Information'} fontSize={14} textAlign={'center'} marginRight={6} marginBottom={5} />
                 {
                   personalInfoCompleted && (
                     <View style={styles.pointsBadge}>
@@ -110,7 +110,7 @@ const Ready = ({ route }) => {
             <View style={styles.cardText}>
 
               <View style={styles.header1}>
-                <CustomText label={'Choose an Avatar'} fontSize={14} textAlign={'center'} marginRight={6} />
+                <CustomText label={'Choose an Avatar'} fontSize={14} textAlign={'center'} marginRight={6}  marginBottom={5} />
                 {
                   avatarCompleted && (
                     <View style={styles.pointsBadge}>
@@ -150,7 +150,7 @@ const Ready = ({ route }) => {
             <ImageFast source={require('../../../../assets/auth/icon4.png')} resizeMode={'contain'} style={styles.infoicon} />
             <View style={styles.cardText}>
               <View style={styles.header1}>
-               <CustomText label={'Phone Verification'} fontSize={14} textAlign={'center'} marginRight={6} />
+               <CustomText label={'Phone Verification'} fontSize={14} textAlign={'center'} marginRight={6}  marginBottom={5} />
                 {
                   phoneVerified && (
                     <View style={styles.pointsBadge}>
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f8f9fa',
-    padding: 12,
+    padding: 20,
     paddingTop: 20,
   },
   header: {

@@ -319,7 +319,7 @@ const styles = StyleSheet.create({
     },
     completeButton: {
         backgroundColor: '#1a1a1a',
-        borderRadius: 15,
+        borderRadius: 16,
         paddingVertical: 16,
         flexDirection: 'row',
         alignItems: 'center',
