@@ -3,9 +3,9 @@ import RootNavigation from './src/navigation/StackNavigation';
 import BootSplash from "react-native-bootsplash";
 
 const App = () => {
-  // useEffect(() => {
-  //   BootSplash.hide({ fade: true });
-  // }, []);
+  useEffect(() => {
+    BootSplash.hide({ fade: true });
+  }, []);
   return <RootNavigation />;
 };
 

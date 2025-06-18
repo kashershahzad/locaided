@@ -15,10 +15,12 @@ import {
 } from 'react-native';
 import Topbar from '../../../../components/auth/Topbar';
 import { useNavigation } from '@react-navigation/native';
+import CustomDatePicker from '../../../../components/CustomDatePicker';
 
 const PersonalInformation = () => {
     const navigation = useNavigation();
     const [firstName, setFirstName] = useState('');
+    const [selectedDate, setSelectedDate] = useState(null);
     const [lastName, setLastName] = useState('');
     const [username, setUsername] = useState('joe34');
     const [dateOfBirth, setDateOfBirth] = useState('');
@@ -109,7 +111,7 @@ const PersonalInformation = () => {
 
                     {/* Date of Birth */}
                     <View style={styles.inputContainer}>
-                        <Text style={styles.label}>Date of birth</Text>
+                        {/* <Text style={styles.label}>Date of birth</Text>
                         <View style={styles.inputWrapper}>
                             <View style={styles.iconContainer}>
                                 <Image source={require('../../../../assets/auth/calendar.png')} />
@@ -121,7 +123,14 @@ const PersonalInformation = () => {
                                 placeholder="Select date"
                                 placeholderTextColor="#999"
                             />
-                        </View>
+                        </View> */}
+                        <CustomDatePicker
+                            value={selectedDate}
+                            setValue={setSelectedDate}
+                            withLabel="Select Date"
+                            type="date"
+                            
+                        />
                     </View>
 
                     {/* Gender */}
@@ -161,7 +170,7 @@ const PersonalInformation = () => {
 
                 {/* Complete Button */}
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity 
+                    <TouchableOpacity
                         style={styles.completeButton}
                         onPress={handleCompleteAndEarn}
                     >
@@ -268,7 +277,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         paddingHorizontal: 14,
         height: 45,
-        
+
     },
     dropdownText: {
         fontSize: 16,
@@ -293,8 +302,8 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 4,
         elevation: 3,
-        position:'relative',
-        bottom:300
+        position: 'relative',
+        bottom: 300
     },
     dropdownOption: {
         paddingHorizontal: 16,
@@ -344,9 +353,9 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '600',
     },
-    username:{
-        flexDirection:'row',
-        justifyContent:'space-between'
+    username: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     }
 });
 
