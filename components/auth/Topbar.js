@@ -11,6 +11,7 @@ const Topbar = ({ title }) => {
                 <TouchableOpacity 
                     style={styles.backButton}
                     onPress={() => navigation.goBack()} 
+                     hitSlop={{top: 20, bottom: 20, left: 20, right: 20}} 
                 >
                     <Text style={styles.backArrow}>←</Text>
                 </TouchableOpacity>
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
         borderBottomColor: '#f0f0f0',
     },
     backButton: {
-        marginRight: 15,
+        paddingRight: 15,
     },
     backArrow: {
         fontSize: 24,

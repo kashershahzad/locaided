@@ -145,7 +145,7 @@ const CustomDropdown = ({
           label={withLabel}
           fontSize={12}
           // fontFamily={fonts.medium}
-          marginBottom={6}
+          marginBottom={3}
         />
       )}
       <View
@@ -197,7 +197,7 @@ const CustomDropdown = ({
                 placeholder="Search..."
                 value={searchText}
                 onChangeText={setSearchText}
-                autoFocus={Platform.OS === 'android'} // Only autoFocus on Android
+                autoFocus={Platform.OS === 'android'}
                 clearButtonMode="while-editing"
               />
             )}
@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
     gap: 10,
     paddingHorizontal: 20,
     width: '100%',
-    height: 45,
+    height: 48,
     borderWidth: 1,
     borderColor: '#E1E4EA',
     borderRadius: 8,
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
   },
   searchInput: {
-    height: 45,
+    height: 48,
     padding: 0,
     margin: 0,
     marginHorizontal: 15,

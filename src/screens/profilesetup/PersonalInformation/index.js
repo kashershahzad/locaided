@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
     StatusBar,
     StyleSheet,
@@ -7,8 +7,6 @@ import {
     TextInput,
     TouchableOpacity,
     SafeAreaView,
-    Dimensions,
-    KeyboardAvoidingView,
     Platform,
     Image,
     ScrollView
@@ -17,13 +15,16 @@ import Topbar from '../../../../components/auth/Topbar';
 import { useNavigation } from '@react-navigation/native';
 import CustomDatePicker from '../../../../components/CustomDatePicker';
 import CustomDropdown from '../../../../components/CustomDropDown';
+import ImageFast from '../../../../components/ImageFast';
 
 const PersonalInformation = () => {
+    const lastNameInput = useRef(null);
+    const usernameInput = useRef(null);
     const navigation = useNavigation();
     const [firstName, setFirstName] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);
     const [lastName, setLastName] = useState('');
-    const [username, setUsername] = useState('joe34');
+    const [username, setUsername] = useState('joe23');
     const [dateOfBirth, setDateOfBirth] = useState('');
     const [gender, setGender] = useState('Male');
     const [showGenderDropdown, setShowGenderDropdown] = useState(false);
@@ -68,6 +69,9 @@ const PersonalInformation = () => {
                                     onChangeText={setFirstName}
                                     placeholder="Enter first name"
                                     placeholderTextColor="#999"
+                                    returnKeyType="next"
+                                    onSubmitEditing={() => lastNameInput.current.focus()}
+
                                 />
                             </View>
                         </View>
@@ -85,6 +89,9 @@ const PersonalInformation = () => {
                                     onChangeText={setLastName}
                                     placeholder="Enter last name"
                                     placeholderTextColor="#999"
+                                    ref={lastNameInput}
+                                    returnKeyType='next'
+                                    onSubmitEditing={() => usernameInput.current.focus()}
                                 />
                             </View>
                         </View>
@@ -93,23 +100,28 @@ const PersonalInformation = () => {
                         <View style={styles.inputContainer}>
                             <View style={styles.username}>
                                 <Text style={styles.label}>Username</Text>
-                                <View style={styles.availableContainer}>
+                                {username === '' ? null : <View style={styles.availableContainer}>
                                     <Text style={styles.availableText}>✓ Available</Text>
-                                </View>
+                                </View>}
+
                             </View>
                             <View style={styles.inputWrapper}>
                                 <View style={styles.iconContainer}>
                                     <Text style={styles.icon}>@</Text>
                                 </View>
+
                                 <TextInput
                                     style={styles.textInput}
                                     value={username}
                                     onChangeText={setUsername}
                                     placeholder="Enter username"
                                     placeholderTextColor="#999"
-                                />
+                                    ref={usernameInput} />
                             </View>
-                            <Text style={styles.helperText}> @ Your public handle, like @coolname123</Text>
+                            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 5 }}>
+                                <ImageFast source={require('../../../../assets/auth/i.png')} resizeMode={'contain'} style={{ height: 16, width: 16, alignItems: 'center', gap: 5 }} />
+                                <Text style={styles.helperText}> Your public handle, like @coolname123</Text>
+                            </View>
                         </View>
 
                         {/* Date of Birth */}
@@ -117,19 +129,19 @@ const PersonalInformation = () => {
                             <CustomDatePicker
                                 value={selectedDate}
                                 setValue={setSelectedDate}
-                                withLabel="Select Date"
+                                withLabel="Date of birth"
                                 type="date"
                             />
                         </View>
 
                         {/* Gender */}
                         <View style={styles.inputContainer}>
-                            <CustomDropdown 
-                            data={genderOptions}
-                            value={gender}
-                            setValue={setGender}
-                            placeholder='Select your gender'
-                            withLabel='Gender'
+                            <CustomDropdown
+                                data={genderOptions}
+                                value={gender}
+                                setValue={setGender}
+                                placeholder='Select your gender'
+                                withLabel='Gender'
                             />
                         </View>
                     </View>
@@ -203,7 +215,7 @@ const styles = StyleSheet.create({
         borderColor: '#e0e0e0',
         borderRadius: 12,
         paddingHorizontal: 10,
-        height: 45,
+        height: 48,
     },
     iconContainer: {
         marginRight: 12,
@@ -230,8 +242,6 @@ const styles = StyleSheet.create({
     helperText: {
         fontSize: 11,
         color: '#666',
-        marginTop: 6,
-        marginLeft: 4,
     },
     dropdownWrapper: {
         flexDirection: 'row',
