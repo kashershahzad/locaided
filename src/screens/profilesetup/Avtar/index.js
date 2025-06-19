@@ -1,27 +1,63 @@
-import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import React, { useState } from 'react'
+import { View, Text, TouchableOpacity, StyleSheet, Image, Modal, Pressable } from 'react-native';
 import Topbar from '../../../../components/auth/Topbar';
 import { useNavigation } from '@react-navigation/native';
 import ImageFast from '../../../../components/ImageFast';
+import ImagePicker from 'react-native-image-crop-picker';
 
 const Avatar = () => {
     const navigation = useNavigation()
+    const [modalVisible, setModalVisible] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
+
     const handleCompleteAndEarn = () => {
-        navigation.navigate('Ready', { 
+        navigation.navigate('Ready', {
             fromCompleteAndEarn: true,
-            avatarCompleted: true 
+            avatarCompleted: true
         });
     };
+
+    const openCamera = () => {
+        setModalVisible(false);
+        ImagePicker.openCamera({
+            width: 400,
+            height: 400,
+            cropping: true,
+        }).then(image => {
+            setSelectedImage(image.path);
+        }).catch(error => {
+            console.log(error);
+        });
+    };
+
+    const openGallery = () => {
+        setModalVisible(false);
+        ImagePicker.openPicker({
+            width: 400,
+            height: 400,
+            cropping: true,
+        }).then(image => {
+            setSelectedImage(image.path);
+        }).catch(error => {
+            console.log(error);
+        });
+    };
+
+
 
     return (
         <View style={{ flex: 1, backgroundColor: 'white' }}>
             <Topbar title='Choose an avatar' />
             <View style={style.container}>
-                <ImageFast source={require('../../../../assets/auth/icon3.png')} style={style.img}/>
+                {selectedImage ? (
+                    <ImageFast source={{ uri: selectedImage }} style={style.img} />
+                ) : (
+                    <ImageFast source={require('../../../../assets/auth/icon3.png')} style={style.img} />
+                )}
                 <Text style={style.title}>Set profile Image</Text>
                 <Text style={style.subtitle}>Min 400x400px, PNG or JPEG</Text>
-                <TouchableOpacity>
-                    <Text style={style.btn}>Choose Avatar</Text>
+                <TouchableOpacity onPress={() => setModalVisible(true)}>
+                    <Text style={style.btn}> {selectedImage === null ? 'Choose Avatar' : 'Change'}</Text>
                 </TouchableOpacity>
                 <Text style={style.des}>I will do later</Text>
             </View>
@@ -37,6 +73,41 @@ const Avatar = () => {
                     </View>
                 </TouchableOpacity>
             </View>
+
+            {/* Image Picker Modal */}
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => setModalVisible(false)}
+            >
+                <View style={style.modalContainer}>
+                    <View style={style.modalContent}>
+                        <Text style={style.modalTitle}>Choose Option</Text>
+
+                        <TouchableOpacity
+                            style={style.modalButton}
+                            onPress={openCamera}
+                        >
+                            <Text style={style.modalButtonText}>Take Photo</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                            style={style.modalButton}
+                            onPress={openGallery}
+                        >
+                            <Text style={style.modalButtonText}>Choose from Gallery</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                            style={[style.modalButton, { borderBottomWidth: 0 }]}
+                            onPress={() => setModalVisible(false)}
+                        >
+                            <Text style={[style.modalButtonText, { color: 'red' }]}>Cancel</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </Modal>
         </View>
     )
 }
@@ -46,7 +117,6 @@ const style = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 150,
-        
     },
     title: {
         marginTop: 12,
@@ -63,9 +133,9 @@ const style = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#E1E4EA',
         padding: 8,
-        paddingHorizontal:15,
+        paddingHorizontal: 15,
         borderRadius: 8,
-        fontSize:12
+        fontSize: 12
     },
     des: {
         textDecorationLine: 'underline'
@@ -101,11 +171,38 @@ const style = StyleSheet.create({
         color: '#F6B51E',
         fontWeight: '500',
     },
-    img:{
-        height:120,
-        width:120,
-        borderRadius:120
-    }
+    img: {
+        height: 120,
+        width: 120,
+        borderRadius: 120
+    },
+    // Modal styles
+    modalContainer: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+    },
+    modalContent: {
+        backgroundColor: 'white',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        padding: 20,
+    },
+    modalTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        textAlign: 'center',
+    },
+    modalButton: {
+        paddingVertical: 15,
+        borderBottomWidth: 1,
+        borderBottomColor: '#f0f0f0',
+        alignItems: 'center',
+    },
+    modalButtonText: {
+        fontSize: 16,
+    },
 })
 
 export default Avatar;
