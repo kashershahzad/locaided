@@ -5,10 +5,6 @@ import moment from "moment";
 
 import CustomText from "./CustomText";
 
-// import { Images } from "../assets/images";
-// import { COLORS } from "../utils/COLORS";
-// import fonts from "../assets/fonts";
-
 const CustomDatePicker = ({
   value,
   setValue,
@@ -23,21 +19,27 @@ const CustomDatePicker = ({
     <>
       {withLabel && (
         <CustomText
+        fontSize={12}
           label={withLabel}
-          marginBottom={8}
+          marginBottom={6}
           color={'black'}
         />
       )}
+       
       <TouchableOpacity
         onPress={() => setModal(true)}
         style={[
           styles.mainContainer,
           {
-            marginBottom: error ? 5 : 20,
-            borderColor: error ? 'red' : "transparent",
+            marginBottom: error ? 5 :0,
+            borderColor: error ? 'red' : "#E1E4EA",
           },
         ]}
       >
+       <Image
+          source={require('../assets/auth/calendar.png')}
+          style={styles.leftIcon}
+        />
         <CustomText
           label={
             value
@@ -45,14 +47,9 @@ const CustomDatePicker = ({
               : placeholder
           }
           color={'black'}
+          style={styles.textInput}
         />
-        <Image
-          source={require('../assets/auth/calendar.png')}
-          style={[
-            styles.rightIcon,
-            // { tintColor: value?.length ? COLORS.primaryColor : "#9E9E9E" },
-          ]}
-        />
+        
       </TouchableOpacity>
       {error && (
         <CustomText
@@ -88,20 +85,17 @@ const styles = StyleSheet.create({
   mainContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
-    height: 56,
+    paddingHorizontal: 10,
+    height: 45,
     width: "100%",
     borderRadius: 12,
-    backgroundColor: "#FAFAFA",
+    backgroundColor: "white",
     borderWidth: 1,
   },
-
-  rightIcon: {
+  leftIcon: {
     width: 20,
     height: 20,
-    position: "absolute",
-    right: 15,
+    marginRight: 10,
     resizeMode: "contain",
   },
 });

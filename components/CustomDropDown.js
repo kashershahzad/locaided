@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useSelector} from 'react-redux';
+// import {useSelector} from 'react-redux';
 import {
   TouchableOpacity,
   LayoutAnimation,
@@ -12,10 +12,11 @@ import {
 } from 'react-native';
 
 import CustomText from './CustomText';
-import Icons from './Icons';
+import ImageFast from './ImageFast';
+// import Icons from './Icons';
 
-import {COLORS} from '../utils/COLORS';
-import fonts from '../assets/fonts';
+// import {COLORS} from '../utils/COLORS';
+// import fonts from '../assets/fonts';
 if (Platform.OS === 'android') {
   UIManager.setLayoutAnimationEnabledExperimental &&
     UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -35,7 +36,7 @@ const CustomDropdown = ({
   isSearch = false,
   errorMess,
 }) => {
-  const user_lang = useSelector(state => state.users.user_lang);
+  // const user_lang = useSelector(state => state.users.user_lang);
 
   const [isOpen, setIsOpen] = useState(false);
   const [text, setText] = useState('');
@@ -131,7 +132,7 @@ const CustomDropdown = ({
         <CustomText
           label={itemText || ''}
           fontSize={12}
-          color={COLORS.primaryColor}
+          color={'black'}
         />
       </TouchableOpacity>
     );
@@ -142,8 +143,9 @@ const CustomDropdown = ({
       {withLabel && (
         <CustomText
           label={withLabel}
-          fontFamily={fonts.medium}
-          marginBottom={8}
+          fontSize={12}
+          // fontFamily={fonts.medium}
+          marginBottom={6}
         />
       )}
       <View
@@ -152,9 +154,9 @@ const CustomDropdown = ({
           {
             marginBottom: error ? 5 : 15,
             borderColor: error
-              ? COLORS.red
+              ? 'red'
               : isOpen
-              ? COLORS.white
+              ? '#E1E4EA'
               : 'transparent',
             borderRadius: 12,
           },
@@ -163,27 +165,28 @@ const CustomDropdown = ({
           activeOpacity={0.6}
           style={[
             styles.container,
-            {
-              flexDirection: user_lang == 'ar' ? 'row-reverse' : 'row',
-            },
+            // {
+            //   flexDirection: user_lang == 'ar' ? 'row-reverse' : 'row',
+            // },
           ]}
           onPress={toggleDropdown}
           disabled={disabled}>
           <CustomText
             label={text || value?.title || value || placeholder || ''}
-            color={COLORS.primaryColor}
-            fontFamily={fonts.bold}
+            color={'black'}
+            // fontFamily={fonts.bold}
           />
-          {!showIcon ? (
+          <ImageFast source={require('../assets/auth/arrowdown.png')} resizeMode={'contain'}  style={styles.icon}/>
+          {/* {!showIcon ? (
             <Icons
               family="Entypo"
               name={isOpen ? 'chevron-up' : 'chevron-down'}
-              color={COLORS.primaryColor}
+              color={'black'}
               size={20}
             />
           ) : (
             <View />
-          )}
+          )} */}
         </TouchableOpacity>
 
         {isOpen && (
@@ -216,7 +219,7 @@ const CustomDropdown = ({
               <View style={styles.noDataContainer}>
                 <CustomText
                   label={errorMess || 'No results found'}
-                  color={errorMess ? COLORS.red : COLORS.inputLabel}
+                  color={errorMess ? 'red' : 'black'}
                   fontSize={12}
                   style={{textAlign: 'center'}}
                 />
@@ -228,8 +231,8 @@ const CustomDropdown = ({
       {error && (
         <CustomText
           label={error}
-          color={COLORS.red}
-          fontFamily={fonts.semiBold}
+          color={'red'}
+          // fontFamily={fonts.semiBold}
           fontSize={10}
           marginBottom={15}
         />
@@ -248,21 +251,22 @@ const styles = StyleSheet.create({
   },
   container: {
     alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection:'row',
+    justifyContent: 'space-between',
     gap: 10,
     paddingHorizontal: 20,
     width: '100%',
-    height: 51,
+    height: 45,
     borderWidth: 1,
-    borderColor: COLORS.white,
+    borderColor: '#E1E4EA',
     borderRadius: 8,
   },
   list: {
     paddingHorizontal: 15,
     paddingVertical: 9,
-    fontFamily: fonts.bold,
+    // fontFamily: fonts.bold,
     fontSize: 17,
-    alignItems: 'center',
+    // alignItems: 'center',
   },
   searchInput: {
     height: 45,
@@ -272,12 +276,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: COLORS.inputLabel,
-    fontFamily: fonts.regular,
+    borderColor: '#E1E4EA',
+    // fontFamily: fonts.regular,
     fontSize: 12,
     backgroundColor: '#fff',
   },
   noDataContainer: {
     padding: 15,
   },
+  icon:{
+    height:20,
+    width:20
+  }
 });

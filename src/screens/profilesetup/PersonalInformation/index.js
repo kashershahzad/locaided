@@ -16,6 +16,7 @@ import {
 import Topbar from '../../../../components/auth/Topbar';
 import { useNavigation } from '@react-navigation/native';
 import CustomDatePicker from '../../../../components/CustomDatePicker';
+import CustomDropdown from '../../../../components/CustomDropDown';
 
 const PersonalInformation = () => {
     const navigation = useNavigation();
@@ -35,139 +36,104 @@ const PersonalInformation = () => {
     };
 
     return (
+
         <SafeAreaView style={styles.container}>
             <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
             <Topbar title='Personal Information' />
 
             <View style={styles.mainContent}>
-                {/* Profile Image */}
-                <View style={styles.acc}>
-                    <Image source={require('../../../../assets/auth/profile.png')} style={styles.profileImage} />
-                </View>
+                <ScrollView>
+                    {/* Profile Image */}
+                    <View style={styles.acc}>
+                        <Image source={require('../../../../assets/auth/profile.png')} style={styles.profileImage} />
+                    </View>
 
-                <Text style={styles.title}>Personal Information</Text>
+                    <Text style={styles.title}>Personal Information</Text>
 
-                {/* Subtitle */}
-                <Text style={styles.subtitle}>Let others recognize and connect with you.</Text>
+                    {/* Subtitle */}
+                    <Text style={styles.subtitle}>Let others recognize and connect with you.</Text>
 
-                {/* Form Fields */}
-                <View style={styles.formContainer}>
-                    {/* First Name */}
-                    <View style={styles.inputContainer}>
-                        <Text style={styles.label}>First Name</Text>
-                        <View style={styles.inputWrapper}>
-                            <View style={styles.iconContainer}>
-                                <Image source={require('../../../../assets/auth/ppl.png')} />
+                    {/* Form Fields */}
+                    <View style={styles.formContainer}>
+                        {/* First Name */}
+                        <View style={styles.inputContainer}>
+                            <Text style={styles.label}>First Name</Text>
+                            <View style={styles.inputWrapper}>
+                                <View style={styles.iconContainer}>
+                                    <Image source={require('../../../../assets/auth/ppl.png')} />
+                                </View>
+                                <TextInput
+                                    style={styles.textInput}
+                                    value={firstName}
+                                    onChangeText={setFirstName}
+                                    placeholder="Enter first name"
+                                    placeholderTextColor="#999"
+                                />
                             </View>
-                            <TextInput
-                                style={styles.textInput}
-                                value={firstName}
-                                onChangeText={setFirstName}
-                                placeholder="Enter first name"
-                                placeholderTextColor="#999"
+                        </View>
+
+                        {/* Last Name */}
+                        <View style={styles.inputContainer}>
+                            <Text style={styles.label}>Last Name</Text>
+                            <View style={styles.inputWrapper}>
+                                <View style={styles.iconContainer}>
+                                    <Image source={require('../../../../assets/auth/ppl.png')} />
+                                </View>
+                                <TextInput
+                                    style={styles.textInput}
+                                    value={lastName}
+                                    onChangeText={setLastName}
+                                    placeholder="Enter last name"
+                                    placeholderTextColor="#999"
+                                />
+                            </View>
+                        </View>
+
+                        {/* Username */}
+                        <View style={styles.inputContainer}>
+                            <View style={styles.username}>
+                                <Text style={styles.label}>Username</Text>
+                                <View style={styles.availableContainer}>
+                                    <Text style={styles.availableText}>✓ Available</Text>
+                                </View>
+                            </View>
+                            <View style={styles.inputWrapper}>
+                                <View style={styles.iconContainer}>
+                                    <Text style={styles.icon}>@</Text>
+                                </View>
+                                <TextInput
+                                    style={styles.textInput}
+                                    value={username}
+                                    onChangeText={setUsername}
+                                    placeholder="Enter username"
+                                    placeholderTextColor="#999"
+                                />
+                            </View>
+                            <Text style={styles.helperText}> @ Your public handle, like @coolname123</Text>
+                        </View>
+
+                        {/* Date of Birth */}
+                        <View style={styles.inputContainer}>
+                            <CustomDatePicker
+                                value={selectedDate}
+                                setValue={setSelectedDate}
+                                withLabel="Select Date"
+                                type="date"
+                            />
+                        </View>
+
+                        {/* Gender */}
+                        <View style={styles.inputContainer}>
+                            <CustomDropdown 
+                            data={genderOptions}
+                            value={gender}
+                            setValue={setGender}
+                            placeholder='Select your gender'
+                            withLabel='Gender'
                             />
                         </View>
                     </View>
-
-                    {/* Last Name */}
-                    <View style={styles.inputContainer}>
-                        <Text style={styles.label}>Last Name</Text>
-                        <View style={styles.inputWrapper}>
-                            <View style={styles.iconContainer}>
-                                <Image source={require('../../../../assets/auth/ppl.png')} />
-                            </View>
-                            <TextInput
-                                style={styles.textInput}
-                                value={lastName}
-                                onChangeText={setLastName}
-                                placeholder="Enter last name"
-                                placeholderTextColor="#999"
-                            />
-                        </View>
-                    </View>
-
-                    {/* Username */}
-                    <View style={styles.inputContainer}>
-                        <View style={styles.username}>
-                            <Text style={styles.label}>Username</Text>
-                            <View style={styles.availableContainer}>
-                                <Text style={styles.availableText}>✓ Available</Text>
-                            </View>
-                        </View>
-                        <View style={styles.inputWrapper}>
-                            <View style={styles.iconContainer}>
-                                <Text style={styles.icon}>@</Text>
-                            </View>
-                            <TextInput
-                                style={styles.textInput}
-                                value={username}
-                                onChangeText={setUsername}
-                                placeholder="Enter username"
-                                placeholderTextColor="#999"
-                            />
-                        </View>
-                        <Text style={styles.helperText}> @ Your public handle, like @coolname123</Text>
-                    </View>
-
-                    {/* Date of Birth */}
-                    <View style={styles.inputContainer}>
-                        {/* <Text style={styles.label}>Date of birth</Text>
-                        <View style={styles.inputWrapper}>
-                            <View style={styles.iconContainer}>
-                                <Image source={require('../../../../assets/auth/calendar.png')} />
-                            </View>
-                            <TextInput
-                                style={styles.textInput}
-                                value={dateOfBirth}
-                                onChangeText={setDateOfBirth}
-                                placeholder="Select date"
-                                placeholderTextColor="#999"
-                            />
-                        </View> */}
-                        <CustomDatePicker
-                            value={selectedDate}
-                            setValue={setSelectedDate}
-                            withLabel="Select Date"
-                            type="date"
-                            
-                        />
-                    </View>
-
-                    {/* Gender */}
-                    <View style={styles.inputContainer}>
-                        <Text style={styles.label}>Gender</Text>
-                        <TouchableOpacity
-                            style={styles.dropdownWrapper}
-                            onPress={() => setShowGenderDropdown(!showGenderDropdown)}
-                        >
-                            <Text style={styles.dropdownText}>{gender}</Text>
-                            <Image source={require('../../../../assets/auth/arrowdown.png')} />
-                        </TouchableOpacity>
-
-                        {showGenderDropdown && (
-                            <View style={styles.dropdownOptions}>
-                                {genderOptions.map((option, index) => (
-                                    <TouchableOpacity
-                                        key={index}
-                                        style={styles.dropdownOption}
-                                        onPress={() => {
-                                            setGender(option);
-                                            setShowGenderDropdown(false);
-                                        }}
-                                    >
-                                        <Text style={[
-                                            styles.dropdownOptionText,
-                                            gender === option && styles.selectedOption
-                                        ]}>
-                                            {option}
-                                        </Text>
-                                    </TouchableOpacity>
-                                ))}
-                            </View>
-                        )}
-                    </View>
-                </View>
-
+                </ScrollView>
                 {/* Complete Button */}
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity
