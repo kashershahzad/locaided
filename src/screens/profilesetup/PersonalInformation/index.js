@@ -16,6 +16,7 @@ import { useNavigation } from '@react-navigation/native';
 import CustomDatePicker from '../../../../components/CustomDatePicker';
 import CustomDropdown from '../../../../components/CustomDropDown';
 import ImageFast from '../../../../components/ImageFast';
+import Pointsbtn from '../../../../components/auth/Pointsbtn';
 
 const PersonalInformation = () => {
     const lastNameInput = useRef(null);
@@ -147,7 +148,7 @@ const PersonalInformation = () => {
                     </View>
                 </ScrollView>
                 {/* Complete Button */}
-                <View style={styles.buttonContainer}>
+                {/* <View style={styles.buttonContainer}>
                     <TouchableOpacity
                         style={styles.completeButton}
                         onPress={handleCompleteAndEarn}
@@ -158,7 +159,8 @@ const PersonalInformation = () => {
                             <Text style={styles.pointsText}>+50 Points</Text>
                         </View>
                     </TouchableOpacity>
-                </View>
+                </View> */}
+                <Pointsbtn action={handleCompleteAndEarn} />
             </View>
         </SafeAreaView>
     );

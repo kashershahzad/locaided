@@ -4,6 +4,7 @@ import Topbar from '../../../../components/auth/Topbar';
 import { useNavigation } from '@react-navigation/native';
 import ImageFast from '../../../../components/ImageFast';
 import ImagePicker from 'react-native-image-crop-picker';
+import Pointsbtn from '../../../../components/auth/Pointsbtn';
 
 const Avatar = () => {
     const navigation = useNavigation()
@@ -12,7 +13,6 @@ const Avatar = () => {
 
     const handleCompleteAndEarn = () => {
         navigation.navigate('Ready', {
-            fromCompleteAndEarn: true,
             avatarCompleted: true
         });
     };
@@ -59,9 +59,11 @@ const Avatar = () => {
                 <TouchableOpacity onPress={() => setModalVisible(true)}>
                     <Text style={style.btn}> {selectedImage === null ? 'Choose Avatar' : 'Change'}</Text>
                 </TouchableOpacity>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Ready')}}>
                 <Text style={style.des}>I will do later</Text>
+                </TouchableOpacity>
             </View>
-            <View style={style.buttonContainer}>
+            {/* <View style={style.buttonContainer}>
                 <TouchableOpacity
                     style={style.completeButton}
                     onPress={handleCompleteAndEarn}
@@ -72,7 +74,8 @@ const Avatar = () => {
                         <Text style={style.pointsText}>+50 Points</Text>
                     </View>
                 </TouchableOpacity>
-            </View>
+            </View> */}
+            <Pointsbtn action={handleCompleteAndEarn} />
 
             {/* Image Picker Modal */}
             <Modal
@@ -138,7 +141,8 @@ const style = StyleSheet.create({
         fontSize: 12
     },
     des: {
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
+        marginBottom:130
     },
     buttonContainer: {
         paddingHorizontal: 20,
