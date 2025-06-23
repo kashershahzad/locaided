@@ -20,5 +20,5 @@ export const Images = {
     homeicon3:require('./homeicon3.png'),
     homeicon4:require('./homeicon4.png'),
     homeicon1:require('./homeicon1.png'),
-    homebutton: require('./homebutton')
+    homebutton: require('./Homebutton.png')
 }

@@ -5,6 +5,7 @@ import ScreenWrapper from '../../../../components/ScreenWrapper'
 import Stories from './Molecules/Stories'
 import Post from './Molecules/Post'
 import HomeFooter from './Molecules/HomeFooter'
+import Postbutton from './Molecules/Postbutton' // Import the Postbutton component
 
 const Home = () => {
     return (
@@ -12,17 +13,18 @@ const Home = () => {
             headerUnScrollable={() => (<HomeHeader />)}
             footerUnScrollable={() => (<HomeFooter />)}
         >
-            <ScrollView>
-                <Stories />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-            </ScrollView>
+            <View>
+                <ScrollView>
+                    <Stories />
+                    <Post />
+                    <Post />
+                    <Post />
+                    <Post />
+                    <Post />
+                </ScrollView>
+                <Postbutton />
+            </View>
         </ScreenWrapper>
-
-
     )
 }
 

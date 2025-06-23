@@ -4,8 +4,6 @@ import ImageFast from '../../../../../components/ImageFast'
 import { Images } from '../../../../../assets'
 import CustomText from '../../../../../components/CustomText'
 import { COLORS } from '../../../../utiles/COLORS'
-import FastImage from 'react-native-fast-image'
-
 export default function Post() {
     return (
         <>
