@@ -13,7 +13,7 @@ export default function Allset() {
                 <ImageFast source={require('../../../../assets/auth/Customtick.png')} resizeMode={'contain'} style={styles.icon} />
                 <CustomText label={'You re all set!'} fontSize={24} textAlign={'center'} />
                 <CustomText label={'Explore your city, share moments, and earn Social Score!'} fontSize={14} textAlign={'center'} marginTop={10} />
-                <CustomButton title={'Enter lociated'} backgroundColor={'black'} color={'white'} marginTop={170} borderRadius={16} />
+                <CustomButton title={'Enter Locaided'} backgroundColor={'black'} color={'white'} marginTop={170} borderRadius={16} />
             </View>
         </View>
     )
@@ -35,6 +35,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         zIndex: 0,
-
+        opacity: 0.6,
     },
 })

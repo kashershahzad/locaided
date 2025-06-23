@@ -22,7 +22,6 @@ const Avatar = () => {
         ImagePicker.openCamera({
             width: 400,
             height: 400,
-            cropping: true,
         }).then(image => {
             setSelectedImage(image.path);
         }).catch(error => {
@@ -35,7 +34,6 @@ const Avatar = () => {
         ImagePicker.openPicker({
             width: 400,
             height: 400,
-            cropping: true,
         }).then(image => {
             setSelectedImage(image.path);
         }).catch(error => {

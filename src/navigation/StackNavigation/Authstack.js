@@ -15,7 +15,7 @@ import Allset from "../../screens/profilesetup/Allset";
 const AuthStack = () => {
     const Stack = createNativeStackNavigator();
     return (
-        <Stack.Navigator initialRouteName="Ready" screenOptions={{
+        <Stack.Navigator screenOptions={{
             headerShown: false,
         }}>
             <Stack.Screen name="Splash" component={Splash} />
