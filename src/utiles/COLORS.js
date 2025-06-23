@@ -23,5 +23,6 @@ export const COLORS = {
   inputLabel: '#8A8A8A',
   lightGray: '#EFEFEF',
   iconCOLOR: '#041b08',
-  gray:'#BFBFBF'
+  gray:'#BFBFBF',
+  red:'#FF2557'
 };

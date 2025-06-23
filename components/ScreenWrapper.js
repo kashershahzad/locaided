@@ -42,7 +42,7 @@ const ScreenWrapper = ({
   refreshControl,
   paddingBottom,
   nestedScrollEnabled,
-  paddingHorizontal = 16,
+  paddingHorizontal ,
   isAuth,
   paddingLeft,
   paddingRight,
