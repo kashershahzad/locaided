@@ -46,7 +46,7 @@ export default Stories
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 10,
+        paddingLeft: 10, 
         paddingTop:10
     },
     scrollContainer: {

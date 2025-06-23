@@ -9,7 +9,6 @@ export const COLORS = {
   green: '#008000',
   disabled: 'rgba(255,255,255,0.7)',
   blue: '#0000EE',
-  gray: '#727272',
   blue1: '#172B4D',
   black: '#000000',
   authText: '#929292',
