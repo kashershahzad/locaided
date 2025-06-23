@@ -4,11 +4,13 @@ import HomeHeader from './Molecules/HomeHeader'
 import ScreenWrapper from '../../../../components/ScreenWrapper'
 import Stories from './Molecules/Stories'
 import Post from './Molecules/Post'
+import HomeFooter from './Molecules/HomeFooter'
 
 const Home = () => {
     return (
         <ScreenWrapper
             headerUnScrollable={() => (<HomeHeader />)}
+            footerUnScrollable={() => (<HomeFooter />)}
         >
             <ScrollView>
                 <Stories />

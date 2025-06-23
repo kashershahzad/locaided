@@ -14,5 +14,11 @@ export const Images = {
     share2:require('./share2.png'),
     like:require('./like.png'),
     dislike:require('./dislike.png'),
-    repost:require('./repost.png')
+    repost:require('./repost.png'),
+    homeicon:require('./homeicon.png'),
+    homeicon2:require('./homeicon2.png'),
+    homeicon3:require('./homeicon3.png'),
+    homeicon4:require('./homeicon4.png'),
+    homeicon1:require('./homeicon1.png'),
+    homebutton: require('./homebutton')
 }
