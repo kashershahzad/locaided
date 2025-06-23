@@ -10,7 +10,10 @@ const Stories = () => {
         { id: 2, name: 'Activity', image: Images.activity },
         { id: 3, name: 'Alert', image: Images.alert },
         { id: 4, name: 'News', image: Images.news },
-        { id: 5, name: 'More', image: Images.placeholder },
+        { id: 5, name: 'Activity', image: Images.activity },
+        { id: 6 , name: 'Alert', image: Images.alert },
+        { id: 7, name: 'News', image: Images.news },
+       
     ]
 
     const renderStoryItem = (item) => (
@@ -52,7 +55,7 @@ const styles = StyleSheet.create({
     },
     storyItem: {
         alignItems: 'center',
-        width: 62,
+        width: 65,
     },
     imgcontainer: {
         backgroundColor: 'white',
@@ -63,8 +66,8 @@ const styles = StyleSheet.create({
         borderColor: COLORS.red
     },
     icon: {
-        height: 62,
-        width: 62,
+        height: 65,
+        width: 65,
         borderRadius: 100,
     },
     storyName: {
