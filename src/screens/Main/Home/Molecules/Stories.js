@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     },
     storyName: {
         fontSize: 12,
-        color: '#666',
+        color: COLORS.gray,
         textAlign: 'center',
         fontWeight: '500',
     }
