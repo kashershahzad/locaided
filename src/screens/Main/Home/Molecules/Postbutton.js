@@ -1,16 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React,{useState} from 'react'
+import React from 'react'
 import ImageFast from '../../../../../components/ImageFast'
 import { Images } from '../../../../../assets'
 
 export default function Postbutton() {
-    const [model, setmodel] = useState(false)
     return (
         <View style={styles.container}>
             <ImageFast source={Images.homebutton} style={styles.button}  />
         </View>
-
-
     )
 }
 
