@@ -25,7 +25,7 @@ const CustomModal = ({
   isTop,
   isBlur = false,
   blurType = 'dark',
-  blurAmount = 15,
+  blurAmount = 3,
 }) => {
   useEffect(() => {
     let backHandler;

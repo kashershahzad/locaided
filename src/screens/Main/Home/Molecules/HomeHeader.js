@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
   },
   container: {
     paddingTop: 20,
-    paddingBottom:10,
-    paddingHorizontal:10,
+    paddingBottom:3,
+    paddingHorizontal:20,
     flexDirection:'row',
     justifyContent:'space-between'
   },

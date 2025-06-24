@@ -1,5 +1,5 @@
 export const Images = {
-    logo: require('./Logo.png'),
+    logo: require('./logoicon.png'),
     message: require('./message.png'),
     fireicon: require('./fire.png'),
     placeholder: require('./placeholder.png'),
@@ -8,7 +8,7 @@ export const Images = {
     alert: require('./alert.png'),
     sophia: require('./sophia.png'),
     profile: require('./profile.png'),
-    verify: require('./verify.png'),
+    verify: require('./verify2.png'),
     postimg:require('./postimg.png'),
     share:require('./share.png'),
     share2:require('./share2.png'),
