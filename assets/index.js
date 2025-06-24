@@ -20,5 +20,11 @@ export const Images = {
     homeicon3:require('./homeicon3.png'),
     homeicon4:require('./homeicon4.png'),
     homeicon1:require('./homeicon1.png'),
-    homebutton: require('./Homebutton.png')
+    homebutton: require('./Homebutton.png'),
+    close:require('./auth/close.png'),
+    delete:require('./delete.png'),
+    link:require('./link.png'),
+    share3:require('./share3.png'),
+    screenshot:require('./screenshot.png'),
+    route:require('./route.png')
 }

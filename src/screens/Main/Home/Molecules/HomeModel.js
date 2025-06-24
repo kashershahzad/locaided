@@ -5,44 +5,38 @@ import CustomModal from '../../../../../components/CustomModal'
 import CustomText from '../../../../../components/CustomText'
 import CustomButton from '../../../../../components/CustomButton'
 import ImageFast from '../../../../../components/ImageFast'
+import { Images } from '../../../../../assets'
 
 export default function HomeModel({ modal, onClose }) {
     return (
         <CustomModal
             isBlur
+            isChange
             isVisible={modal}
             onDisable={onClose}>
             <View style={styles.modalContainer}>
-                <ImageFast
-                    // source={Images.confirmBid}
-                    style={{ width: 112, height: 90 }}
-                    resizeMode="contain"
-                />
-                <CustomText
-                    label="Confirm Bid"
-                    // fontFamily={fonts.semiBold}
-                    fontSize={36}
-                />
-                <CustomText
-                    label={'dhcskl'}
-                    textAlign="center"
-                    lineHeight={21}
-                    marginBottom={40}
-                />
-                <CustomButton
-                    title="Yes, Place My Bid"
-                    marginBottom={20}
-                    // loading={BidLoading}
-                    // onPress={MakeBide}
-                />
-                <CustomButton
-                    title="Cancel"
-                    backgroundColor="transparent"
-                    borderWidth={1}
-                    borderColor={COLORS.primaryColor}
-                    color={COLORS.primaryColor}
-                    onPress={onClose}
-                />
+                <View style={styles.mincontainer}>
+                    <CustomText
+                        label="Post Options"
+                        fontSize={16}
+                    />
+                    <ImageFast source={Images.close} resizeMode={'contain'} style={styles.closeicon} onPress={onClose} />
+                </View>
+                <View style={styles.horizontalLine} />
+                <View style={styles.btnContainer}>
+                    <CustomButton marginTop={15} icon={Images.link} title={'Copy link'} borderWidth={1} borderColor={'#E1E4EA'}  borderRadius={16} />
+
+                     <CustomButton marginTop={15} icon={Images.share3} title={'Share'} borderWidth={1} borderColor={'#E1E4EA'} borderRadius={16}  />
+
+
+                      <CustomButton marginTop={15} icon={Images.screenshot} title={'Screenshot'} borderWidth={1} borderColor={'#E1E4EA'}  borderRadius={16} />
+
+
+                       <CustomButton marginTop={15} icon={Images.route} title={'Route'} borderWidth={1} borderColor={'#E1E4EA'}  borderRadius={16} />
+
+
+                        <CustomButton marginTop={15} icon={Images.delete} title={'Delete'} borderWidth={1} borderColor={'#FB3748'} color={'#FB3748'}  borderRadius={16} />
+                </View>
             </View>
         </CustomModal>
     )
@@ -50,13 +44,37 @@ export default function HomeModel({ modal, onClose }) {
 
 const styles = StyleSheet.create({
     modalContainer: {
-        width: '90%',
-        paddingHorizontal: 20,
-        paddingVertical: 30,
+        width: '100%',
+        // paddingHorizontal: 20,
+        paddingVertical: 10,
         backgroundColor: COLORS.white,
-        borderRadius: 16,
-        alignSelf: 'center',
-        justifyContent: 'center',
-        alignItems: 'center',
+        // alignSelf: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        borderTopRightRadius: 12,
+        borderTopLeftRadius: 12
     },
+    mincontainer: {
+        flexDirection: 'row',
+        // alignItems:'center',
+        // justifyContent:'space-between',
+        // marginLeft:110,
+        justifyContent: 'flex-end',
+        gap: 90,
+        paddingVertical: 10,
+        paddingHorizontal: 20
+    },
+    closeicon: {
+        height: 24,
+        width: 24,
+    },
+    horizontalLine: {
+        borderBottomColor: '#E1E4EA',
+        borderBottomWidth: 1,
+        marginTop: 10,
+    },
+    btnContainer: {
+        marginHorizontal: 20,
+        
+    }
 })

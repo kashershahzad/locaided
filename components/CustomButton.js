@@ -102,7 +102,7 @@ const CustomButton = ({
               width: icnWidth || 20,
               height: icnHeight || 20,
               resizeMode: 'contain',
-              marginRight: 5,
+              marginRight: 8,
             }}
           />
         )}
@@ -111,7 +111,7 @@ const CustomButton = ({
           <CustomText
             textStyle={customText}
             label={title}
-            color={color ? color : 'white'}
+            color={color ? color : 'black'}
             // fontFamily={fontFamily || fonts.medium}
             fontSize={fontSize || 15}
             textTransform={'capitalize'}
