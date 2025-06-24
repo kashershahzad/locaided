@@ -1,6 +1,6 @@
 import {StyleSheet, TouchableOpacity, BackHandler} from 'react-native';
-// import {BlurView} from '@react-native-community/blur';
-// import ReactNativeModal from 'react-native-modal';
+import {BlurView} from '@react-native-community/blur';
+import ReactNativeModal from 'react-native-modal';
 import React, {useEffect} from 'react';
 
 const CustomModal = ({

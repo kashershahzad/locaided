@@ -3,10 +3,10 @@ import React from 'react'
 import ImageFast from '../../../../../components/ImageFast'
 import { Images } from '../../../../../assets'
 
-export default function Postbutton() {
+export default function Postbutton({modal}) {
     return (
         <View style={styles.container}>
-            <ImageFast source={Images.homebutton} style={styles.button}  />
+            <ImageFast source={Images.homebutton} style={styles.button} onPress={modal} />
         </View>
     )
 }

@@ -1,13 +1,15 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import HomeHeader from './Molecules/HomeHeader'
 import ScreenWrapper from '../../../../components/ScreenWrapper'
 import Stories from './Molecules/Stories'
 import Post from './Molecules/Post'
 import HomeFooter from './Molecules/HomeFooter'
-import Postbutton from './Molecules/Postbutton' // Import the Postbutton component
+import Postbutton from './Molecules/Postbutton'
+import HomeModel from './Molecules/HomeModel'
 
 const Home = () => {
+    const [modal, setmodal] = useState(false)
     return (
         <ScreenWrapper
             headerUnScrollable={() => (<HomeHeader />)}
@@ -22,7 +24,8 @@ const Home = () => {
                     <Post />
                     <Post />
                 </ScrollView>
-                <Postbutton />
+                <Postbutton modal={() => setmodal(true)} />
+                {modal && <HomeModel modal={() => { setmodal(true) }} onClose={() => setmodal(false)} />}
             </View>
         </ScreenWrapper>
     )

@@ -20,6 +20,7 @@ export default HomeHeader
 
 const styles = StyleSheet.create({
   icon: {
+    marginTop:10,
     height: 20,
     width: 102
   },
@@ -29,6 +30,7 @@ const styles = StyleSheet.create({
   },
   container: {
     paddingTop: 20,
+    paddingBottom:10,
     paddingHorizontal:10,
     flexDirection:'row',
     justifyContent:'space-between'
