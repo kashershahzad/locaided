@@ -23,7 +23,7 @@ const ToggleButtons = ({ title, option1, option2, option3, defaultOption = null 
 
     return (
         <View style={styles.container}>
-            <CustomText label={title} marginBottom={8} fontSize={12} marginTop={5} />
+            <CustomText label={title} marginBottom={8} fontSize={12} marginTop={10} />
             <View style={styles.toggleContainer}>
                 <TouchableOpacity
                     style={[
@@ -96,9 +96,7 @@ const ToggleButtons = ({ title, option1, option2, option3, defaultOption = null 
 
 const styles = StyleSheet.create({
     container: {
-        padding: 20,
-        paddingTop: 0,
-        paddingBottom:10,
+        paddingHorizontal: 20,
     },
     title: {
         fontSize: 18,
