@@ -4,7 +4,7 @@ import ImageFast from '../../../../../components/ImageFast'
 import { Images } from '../../../../../assets'
 import CustomText from '../../../../../components/CustomText'
 import { COLORS } from '../../../../utiles/COLORS'
-export default function Post() {
+export default function Post({model}) {
     return (
         <>
         <View style={styles.container}>
@@ -52,8 +52,8 @@ export default function Post() {
 
 
                  <View style={styles.icon2}>
-                    <ImageFast source={Images.share2} resizeMode={'contain'} style={styles.icons} />
-                    <CustomText label={'30'} fontSize={10} marginTop={4} color={COLORS.gray} />
+                    <ImageFast source={Images.share2} resizeMode={'contain'} style={styles.icons} onPress={model} />
+                    <CustomText label={'30'} fontSize={10} marginTop={4} color={COLORS.gray}/>
                 </View>
             </View>
            

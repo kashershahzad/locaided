@@ -1,4 +1,4 @@
-// import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useIsFocused, useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {

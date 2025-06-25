@@ -7,9 +7,11 @@ import Post from './Molecules/Post'
 import HomeFooter from './Molecules/HomeFooter'
 import Postbutton from './Molecules/Postbutton'
 import HomeModel from './Molecules/HomeModel'
+import PostRateModel from './Molecules/PostRateModel'
 
 const Home = () => {
     const [modal, setmodal] = useState(false)
+    const [ratemodel, setratemodal] = useState(false)
     return (
         <ScreenWrapper
             headerUnScrollable={() => (<HomeHeader />)}
@@ -18,14 +20,29 @@ const Home = () => {
             <View>
                 <ScrollView>
                     <Stories />
-                    <Post />
+                    <Post model={() => setratemodal(true)} />
                     <Post />
                     <Post />
                     <Post />
                     <Post />
                 </ScrollView>
                 <Postbutton modal={() => setmodal(true)} />
-                {modal && <HomeModel modal={() => { setmodal(true) }} onClose={() => setmodal(false)} />}
+
+                {
+
+                    modal &&
+                    <HomeModel
+                    modal={() => { setmodal(true) }}
+                    onClose={() => setmodal(false)} />
+
+                }
+
+                {
+                    ratemodel &&
+                    <PostRateModel
+                    modal={() => { setratemodal(true) }}
+                    onClose={() => setratemodal(false)} />
+                }
             </View>
         </ScreenWrapper>
     )
