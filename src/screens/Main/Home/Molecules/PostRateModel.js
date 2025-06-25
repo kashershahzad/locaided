@@ -27,9 +27,11 @@ const PostRateModel = ({ modal, onClose }) => {
                     <View style={styles.horizontalLine} />
 
 
-                    <ToggleButtons title='Accuracy' option1='Misleading' option2='Factual' defaultOption='Misleading'/>
+                    <ToggleButtons title='Accuracy' option1='Misleading' option2='Factual'/>
 
-                    <ToggleButtons title='Source Credibility' option1='Fabricated' option2='Out of context' defaultOption='Fabricated'/>
+                    <ToggleButtons title='Source Credibility' option1='Fabricated' option2='Out of context'/>
+
+                    <ToggleButtons title='Select Content Risk Level' option1='Illegal' option2='Harmful' option3='Safe'/>
                 </View>
             </CustomModal>
         </View>
