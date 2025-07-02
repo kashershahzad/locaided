@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
     // Checkbox background when unchecked
   },
   checked: {
-    backgroundColor: '#FFEBEC',
+    backgroundColor: 'red',
+    borderRadius:4,
      // Background color when checked
   },
 });
