@@ -296,7 +296,9 @@ export const modalStyles = StyleSheet.create({
         alignSelf: 'center',
     },
     closeButtonText2:{
-        marginLeft: 170
+        marginLeft: 170,
+        height:12,
+        width:12,
     },
     createAccountLink2:{
         fontSize: 16,

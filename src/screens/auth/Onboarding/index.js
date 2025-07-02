@@ -91,7 +91,7 @@ const OnBoarding = () => {
                     label={
                         onboardingData[currentIndex].heading
                     }
-                    fontFamily={fonts.extraBold}
+                    fontFamily={fonts.semiBold}
                     fontSize={22}
                     marginBottom={10}
                     textAlign="center"
@@ -101,12 +101,14 @@ const OnBoarding = () => {
                     label={
                         onboardingData[currentIndex].subheading
                     }
-                    fontSize={12}
+                    fontSize={14}
                     marginBottom={5}
                     textAlign="center"
                     lineHeight={16}
                     marginLeft={20}
                     marginRight={20}
+                    color={'#525866'}
+                    fontFamily={fonts.regular}
                 />
                 <View style={styles.progressContainer}>
                     {onboardingData.map((_, index) => (
