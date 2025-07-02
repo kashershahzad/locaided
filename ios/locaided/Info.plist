@@ -26,14 +26,13 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -48,5 +47,23 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Britti-Sans-Bold-Italic.otf</string>
+		<string>Britti-Sans-Bold.otf</string>
+		<string>Britti-Sans-Extra-Bold-Italic.otf</string>
+		<string>Britti-Sans-Extra-Bold.otf</string>
+		<string>Britti-Sans-Extralight-Italic.otf</string>
+		<string>Britti-Sans-Extralight.otf</string>
+		<string>Britti-Sans-Light-Italic.otf</string>
+		<string>Britti-Sans-Light.otf</string>
+		<string>Britti-Sans-Medium-Italic.otf</string>
+		<string>Britti-Sans-Medium.otf</string>
+		<string>Britti-Sans-Regular-Italic.otf</string>
+		<string>Britti-Sans-Regular.otf</string>
+		<string>Britti-Sans-Semibold-Italic.otf</string>
+		<string>Britti-Sans-Semibold.otf</string>
+		<string>Britti-Sans-Variable.ttf</string>
+	</array>
 </dict>
 </plist>

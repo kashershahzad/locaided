@@ -3,7 +3,7 @@ import {Text, TouchableOpacity} from 'react-native';
 
 // import {COLORS} from '../utils/COLORS';
 // import fonts from '../assets/fonts';
-
+import fonts from '../assets/fonts';
 const CustomText = ({
   textStyle,
   fontSize,
@@ -63,7 +63,7 @@ const CustomText = ({
             marginBottom: marginBottom || 0,
             marginLeft: marginLeft || 0,
             marginRight: marginRight || 0,
-            // fontFamily: fontFamily || fonts.regular,
+            fontFamily: fontFamily || fonts.regular,
             fontStyle: fontStyle,
             lineHeight: lineHeight,
             textAlign: textAlign,

@@ -1,0 +1,69 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Britti-Sans-Bold-Italic.otf",
+      "sha1": "acfdda8b4e041bad6a1ed0c719743944d341d9f9"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Bold.otf",
+      "sha1": "bcd327b42a619b23d16fe72be707f19fd7a257a6"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Extra-Bold-Italic.otf",
+      "sha1": "9016861230dc3e8a78073376baa1e09fc9954eaa"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Extra-Bold.otf",
+      "sha1": "4ec3c5752625831e45845e8dc83504424f3857c7"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Extralight-Italic.otf",
+      "sha1": "36b60947d0e9bde822e1ed66280ac5d3a6bf3ca2"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Extralight.otf",
+      "sha1": "16264a657e11db4aa6f991685e1f0823e9f354c6"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Light-Italic.otf",
+      "sha1": "b2f8671fbb2677b57a4b8a3b1a1d0778026d3dfc"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Light.otf",
+      "sha1": "f1d7aa6e37f03b25ba4baa05c2e5cbb9f1dbacc1"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Medium-Italic.otf",
+      "sha1": "822d940e70d30bd11f751bcccd43c6fb5163fd1c"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Medium.otf",
+      "sha1": "78b0e3871d35145821abb1946cfc92ae1c148c0d"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Regular-Italic.otf",
+      "sha1": "69d8069c565af0338564c435aaedef7977385288"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Regular.otf",
+      "sha1": "7316f4dbc11d0302b22691613be2b076c1c9810a"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Semibold-Italic.otf",
+      "sha1": "427bfb19b98a7f24a662e9399c9eabd002e18da4"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Semibold.otf",
+      "sha1": "f5d09aa88af6c78d0140657aad337878ecec5aa6"
+    },
+    {
+      "path": "assets/fonts/Britti-Sans-Variable.ttf",
+      "sha1": "ad50a4a90d4dc9adeb5c2ec04438d27eeb679417"
+    },
+    {
+      "path": "assets/fonts/index.js",
+      "sha1": "e2ea66d616cdd1a2af412124fe48b4da6b19903d"
+    }
+  ]
+}

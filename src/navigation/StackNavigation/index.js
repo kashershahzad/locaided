@@ -9,7 +9,7 @@ const RootNavigation = () => {
     const Stack = createNativeStackNavigator();
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Mainstack" screenOptions={{
+            <Stack.Navigator initialRouteName="AuthStack" screenOptions={{
                 headerShown: false,
 
             }}>

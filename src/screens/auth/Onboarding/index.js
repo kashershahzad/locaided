@@ -8,6 +8,7 @@ import CustomText from '../../../../components/CustomText';
 import ImageFast from '../../../../components/ImageFast';
 import Login from '../../../../components/models/Login';
 import Createacc from '../../../../components/models/Createacc';
+import fonts from '../../../../assets/fonts';
 
 const { width, height } = Dimensions.get('window');
 
@@ -90,6 +91,7 @@ const OnBoarding = () => {
                     label={
                         onboardingData[currentIndex].heading
                     }
+                    fontFamily={fonts.extraBold}
                     fontSize={22}
                     marginBottom={10}
                     textAlign="center"
