@@ -50,7 +50,7 @@ const PostRateModel = ({ modal, onClose }) => {
             >
                 <View style={styles.modalContainer}>
                     {submit ? (
-                        <SuccessfullPostRating/>
+                        <SuccessfullPostRating close={onClose}/>
                     ) : (
                         <>
                             <View style={styles.mincontainer}>

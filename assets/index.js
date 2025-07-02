@@ -28,5 +28,6 @@ export const Images = {
     screenshot:require('./screenshot.png'),
     route:require('./route.png'),
     back:require('./back.png'),
-    postrate:require('./postrate.png')
+    postrate:require('./postrate.png'),
+    coins:require('./coins.png')
 }
