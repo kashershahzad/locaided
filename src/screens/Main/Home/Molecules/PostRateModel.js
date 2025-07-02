@@ -8,6 +8,7 @@ import { Images } from '../../../../../assets';
 import ToggleButtons from './ToggleButtons';
 import CustomCheckbox from '../../../../../components/CustomCheckBox';
 import CustomButton from '../../../../../components/CustomButton';
+import SuccessfullPostRating from './SuccessfullPostRating';
 
 const PostRateModel = ({ modal, onClose }) => {
     const [offensiveLanguage, setOffensiveLanguage] = useState(false);
@@ -17,8 +18,6 @@ const PostRateModel = ({ modal, onClose }) => {
     const [spamContent, setSpamContent] = useState(false);
     const [isFactual, setIsFactual] = useState(false);
     const [isIllegal, setIsIllegal] = useState(false);
-    
-    // States for illegal content checkboxes
     const [hateSpeech, setHateSpeech] = useState(false);
     const [explicitThreats, setExplicitThreats] = useState(false);
     const [childExploitation, setChildExploitation] = useState(false);
@@ -26,6 +25,7 @@ const PostRateModel = ({ modal, onClose }) => {
     const [fraudScams, setFraudScams] = useState(false);
     const [privacyViolations, setPrivacyViolations] = useState(false);
     const [copyrightInfringement, setCopyrightInfringement] = useState(false);
+    const [submit, setSubmit] = useState(false);
 
     const handleFactualChange = (factual) => {
         setIsFactual(factual);
@@ -33,6 +33,10 @@ const PostRateModel = ({ modal, onClose }) => {
 
     const handleIllegalChange = (illegal) => {
         setIsIllegal(illegal);
+    };
+
+    const onSubmit = () => {
+        setSubmit(true);
     };
 
     return (
@@ -45,162 +49,172 @@ const PostRateModel = ({ modal, onClose }) => {
                 isChange
             >
                 <View style={styles.modalContainer}>
-                    <View style={styles.mincontainer}>
-                        <ImageFast source={Images.back} style={styles.backicon} />
-                        <CustomText label="Rate this post" fontSize={16} />
-                        <ImageFast onPress={onClose} source={Images.close} style={styles.closeicon} />
-                    </View>
-                    <View style={styles.horizontalLine} />
-
-                    <ToggleButtons
-                        title='Accuracy'
-                        option1='Misleading'
-                        option2='Factual'
-                        onFactual={handleFactualChange}
-                    />
-
-                    {isFactual ? (
-                        <ToggleButtons
-                            title='Source Credibility'
-                            option1='Verified Source'
-                            option2='Unverified Source'
-                        />
+                    {submit ? (
+                        <SuccessfullPostRating/>
                     ) : (
-                        <ToggleButtons
-                            title='Source Credibility'
-                            option1='Fabricated'
-                            option2='Out of context'
-                        />
-                    )}
-
-                    <ToggleButtons
-                        title='Select Content Risk Level'
-                        option1='Illegal'
-                        option2='Harmful'
-                        option3='Safe'
-                        defaultOption='Harmful'
-                        onIllegal={handleIllegalChange}
-                    />
-                    {
-                        isIllegal ? <View style={styles.warn}>
-                            <Text style={{ fontSize: 10 }}>
-                                Labeling content as 'Illegal' will significantly reduce the visibility time of this post. Ensure your rating is accurate. Misuse or deviations from the community consensus can lead to penalties on your account.
-                            </Text>
-                        </View> :
-                            <View style={styles.warn}>
-                                <Text style={{ fontSize: 10 }}>
-                                    Selecting 'Harmful' will reduce the visibility time of this post. Please use this feature responsibly. Misuse or consistently opposing majority ratings can negatively impact your account.
-                                </Text>
+                        <>
+                            <View style={styles.mincontainer}>
+                                <ImageFast source={Images.back} style={styles.backicon} />
+                                <CustomText label="Rate this post" fontSize={16} />
+                                <ImageFast onPress={onClose} source={Images.close} style={styles.closeicon} />
                             </View>
-                    }
+                            <View style={styles.horizontalLine} />
 
+                            <ToggleButtons
+                                title='Accuracy'
+                                option1='Misleading'
+                                option2='Factual'
+                                onFactual={handleFactualChange}
+                            />
 
-                    <CustomText
-                        label={'Choose the Most Relevant Issue'}
-                        fontSize={12}
-                        marginTop={10}
-                        marginBottom={10}
-                        marginLeft={20}
-                    />
+                            {isFactual ? (
+                                <ToggleButtons
+                                    title='Source Credibility'
+                                    option1='Verified Source'
+                                    option2='Unverified Source'
+                                />
+                            ) : (
+                                <ToggleButtons
+                                    title='Source Credibility'
+                                    option1='Fabricated'
+                                    option2='Out of context'
+                                />
+                            )}
 
-                    {isIllegal ? <>
-                        <View style={styles.checkbox}>
-                            <CustomCheckbox
-                                value={hateSpeech}
-                                onValueChange={setHateSpeech}
+                            <ToggleButtons
+                                title='Select Content Risk Level'
+                                option1='Illegal'
+                                option2='Harmful'
+                                option3='Safe'
+                                defaultOption='Harmful'
+                                onIllegal={handleIllegalChange}
                             />
-                            <CustomText label={'Hate Speech'} />
-                        </View>
-                        <View style={styles.checkbox}>
-                            <CustomCheckbox
-                                value={explicitThreats}
-                                onValueChange={setExplicitThreats}
+                            {isIllegal ? (
+                                <View style={styles.warn}>
+                                    <Text style={{ fontSize: 10 }}>
+                                        Labeling content as 'Illegal' will significantly reduce the visibility time of this post. Ensure your rating is accurate. Misuse or deviations from the community consensus can lead to penalties on your account.
+                                    </Text>
+                                </View>
+                            ) : (
+                                <View style={styles.warn}>
+                                    <Text style={{ fontSize: 10 }}>
+                                        Selecting 'Harmful' will reduce the visibility time of this post. Please use this feature responsibly. Misuse or consistently opposing majority ratings can negatively impact your account.
+                                    </Text>
+                                </View>
+                            )}
+                            <CustomText
+                                label={'Choose the Most Relevant Issue'}
+                                fontSize={12}
+                                marginTop={10}
+                                marginBottom={10}
+                                marginLeft={20}
                             />
-                            <CustomText label={'Explicit Threats'} />
-                        </View>
-                        <View style={styles.checkbox}>
-                            <CustomCheckbox
-                                value={childExploitation}
-                                onValueChange={setChildExploitation}
-                            />
-                            <CustomText label={'Child Exploitation'} />
-                        </View>
-                        <View style={styles.checkbox}>
-                            <CustomCheckbox
-                                value={terrorismExtremism}
-                                onValueChange={setTerrorismExtremism}
-                            />
-                            <CustomText label={'Terrorism and Extremism'} />
-                        </View>
-                        <View style={styles.checkbox}>
-                            <CustomCheckbox
-                                value={fraudScams}
-                                onValueChange={setFraudScams}
-                            />
-                            <CustomText label={'Fraud and Scams'} />
-                        </View>
-                        <View style={styles.checkbox}>
-                            <CustomCheckbox
-                                value={privacyViolations}
-                                onValueChange={setPrivacyViolations}
-                            />
-                            <CustomText label={'Privacy Violations'} />
-                        </View>
-                        <View style={styles.checkbox}>
-                            <CustomCheckbox
-                                value={copyrightInfringement}
-                                onValueChange={setCopyrightInfringement}
-                            />
-                            <CustomText label={'Copyright Infringement or Explicit Content'} />
-                        </View>
-                    </> : <>
-                        <View style={styles.checkbox}>
-                            <CustomCheckbox
-                                value={offensiveLanguage}
-                                onValueChange={setOffensiveLanguage}
-                            />
-                            <CustomText label={'Offensive Language'} />
-                        </View>
-                        <View style={styles.checkbox}>
-                            <CustomCheckbox
-                                value={abuseHarassment}
-                                onValueChange={setAbuseHarassment}
-                            />
-                            <CustomText label={'Abuse & Harassment'} />
-                        </View>
-                        <View style={styles.checkbox}>
-                            <CustomCheckbox
-                                value={intrusiveAdvertising}
-                                onValueChange={setIntrusiveAdvertising}
-                            />
-                            <CustomText label={'Intrusive Advertising'} />
-                        </View>
-                        <View style={styles.checkbox}>
-                            <CustomCheckbox
-                                value={sensitiveMedia}
-                                onValueChange={setSensitiveMedia}
-                            />
-                            <CustomText label={'Sensitive or Disturbing Media'} />
-                        </View>
-                        <View style={styles.checkbox}>
-                            <CustomCheckbox
-                                value={spamContent}
-                                onValueChange={setSpamContent}
-                            />
-                            <CustomText label={'Potential Spam or Suspicious Content'} />
-                        </View>
-                    </>}
 
-                    <View style={styles.horizontalLine} />
+                            {isIllegal ? (
+                                <>
+                                    <View style={styles.checkbox}>
+                                        <CustomCheckbox
+                                            value={hateSpeech}
+                                            onValueChange={setHateSpeech}
+                                        />
+                                        <CustomText label={'Hate Speech'} />
+                                    </View>
+                                    <View style={styles.checkbox}>
+                                        <CustomCheckbox
+                                            value={explicitThreats}
+                                            onValueChange={setExplicitThreats}
+                                        />
+                                        <CustomText label={'Explicit Threats'} />
+                                    </View>
+                                    <View style={styles.checkbox}>
+                                        <CustomCheckbox
+                                            value={childExploitation}
+                                            onValueChange={setChildExploitation}
+                                        />
+                                        <CustomText label={'Child Exploitation'} />
+                                    </View>
+                                    <View style={styles.checkbox}>
+                                        <CustomCheckbox
+                                            value={terrorismExtremism}
+                                            onValueChange={setTerrorismExtremism}
+                                        />
+                                        <CustomText label={'Terrorism and Extremism'} />
+                                    </View>
+                                    <View style={styles.checkbox}>
+                                        <CustomCheckbox
+                                            value={fraudScams}
+                                            onValueChange={setFraudScams}
+                                        />
+                                        <CustomText label={'Fraud and Scams'} />
+                                    </View>
+                                    <View style={styles.checkbox}>
+                                        <CustomCheckbox
+                                            value={privacyViolations}
+                                            onValueChange={setPrivacyViolations}
+                                        />
+                                        <CustomText label={'Privacy Violations'} />
+                                    </View>
+                                    <View style={styles.checkbox}>
+                                        <CustomCheckbox
+                                            value={copyrightInfringement}
+                                            onValueChange={setCopyrightInfringement}
+                                        />
+                                        <CustomText label={'Copyright Infringement or Explicit Content'} />
+                                    </View>
+                                </>
+                            ) : (
+                                <>
+                                    <View style={styles.checkbox}>
+                                        <CustomCheckbox
+                                            value={offensiveLanguage}
+                                            onValueChange={setOffensiveLanguage}
+                                        />
+                                        <CustomText label={'Offensive Language'} />
+                                    </View>
+                                    <View style={styles.checkbox}>
+                                        <CustomCheckbox
+                                            value={abuseHarassment}
+                                            onValueChange={setAbuseHarassment}
+                                        />
+                                        <CustomText label={'Abuse & Harassment'} />
+                                    </View>
+                                    <View style={styles.checkbox}>
+                                        <CustomCheckbox
+                                            value={intrusiveAdvertising}
+                                            onValueChange={setIntrusiveAdvertising}
+                                        />
+                                        <CustomText label={'Intrusive Advertising'} />
+                                    </View>
+                                    <View style={styles.checkbox}>
+                                        <CustomCheckbox
+                                            value={sensitiveMedia}
+                                            onValueChange={setSensitiveMedia}
+                                        />
+                                        <CustomText label={'Sensitive or Disturbing Media'} />
+                                    </View>
+                                    <View style={styles.checkbox}>
+                                        <CustomCheckbox
+                                            value={spamContent}
+                                            onValueChange={setSpamContent}
+                                        />
+                                        <CustomText label={'Potential Spam or Suspicious Content'} />
+                                    </View>
+                                </>
+                            )}
 
-                    <View style={{ marginHorizontal: 20, marginTop: 10 }}>
-                        <CustomButton
-                            title={'Submit'}
-                            backgroundColor={'black'}
-                            color={'white'}
-                            borderRadius={16}
-                        />
-                    </View>
+                            <View style={styles.horizontalLine} />
+
+                            <View style={{ marginHorizontal: 20, marginTop: 10 }}>
+                                <CustomButton
+                                    title={'Submit'}
+                                    backgroundColor={'black'}
+                                    color={'white'}
+                                    borderRadius={16}
+                                    onPress={onSubmit}
+                                />
+                            </View>
+                        </>
+                    )}
                 </View>
             </CustomModal>
         </View>

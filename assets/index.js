@@ -27,5 +27,6 @@ export const Images = {
     share3:require('./share3.png'),
     screenshot:require('./screenshot.png'),
     route:require('./route.png'),
-    back:require('./back.png')
+    back:require('./back.png'),
+    postrate:require('./postrate.png')
 }
