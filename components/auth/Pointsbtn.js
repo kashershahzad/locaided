@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity,Image } from 'react-native'
 import React from 'react'
+import fonts from '../../assets/fonts'
 
 const Pointsbtn = ({action}) => {
     return (
@@ -40,7 +41,7 @@ const style = StyleSheet.create({
     buttonText: {
         color: '#ffffff',
         fontSize: 16,
-        fontWeight: '600',
+        fontFamily:fonts.semiBold,
     },
     pointsContainer: {
         flexDirection: 'row',
@@ -50,6 +51,6 @@ const style = StyleSheet.create({
     pointsText: {
         fontSize: 15,
         color: '#F6B51E',
-        fontWeight: '500',
+        fontFamily:fonts.semiBold,
     },
 })

@@ -17,6 +17,7 @@ import CustomDatePicker from '../../../../components/CustomDatePicker';
 import CustomDropdown from '../../../../components/CustomDropDown';
 import ImageFast from '../../../../components/ImageFast';
 import Pointsbtn from '../../../../components/auth/Pointsbtn';
+import fonts from '../../../../assets/fonts';
 
 const PersonalInformation = () => {
     const lastNameInput = useRef(null);
@@ -185,7 +186,7 @@ const styles = StyleSheet.create({
     },
     title: {
         textAlign: 'center',
-        fontWeight: 'bold',
+        fontFamily:fonts.semiBold,
         fontSize: 20,
         marginBottom: 5,
     },
@@ -196,6 +197,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         paddingHorizontal: 20,
         lineHeight: 18,
+        fontFamily:fonts.regular,
     },
     formContainer: {
         paddingHorizontal: 20,
@@ -209,6 +211,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         color: '#333',
         marginBottom: 6,
+        fontFamily:fonts.regular,
     },
     inputWrapper: {
         flexDirection: 'row',
@@ -234,7 +237,8 @@ const styles = StyleSheet.create({
     },
     availableContainer: {
         marginLeft: 8,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        fontFamily:fonts.regular,
     },
     availableText: {
         fontSize: 14,
@@ -244,6 +248,7 @@ const styles = StyleSheet.create({
     helperText: {
         fontSize: 11,
         color: '#666',
+        fontFamily:fonts.regular,
     },
     dropdownWrapper: {
         flexDirection: 'row',
@@ -261,6 +266,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#333',
         flex: 1,
+        fontFamily:fonts.regular,
     },
     dropdownArrow: {
         fontSize: 12,
@@ -315,7 +321,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#ffffff',
         fontSize: 16,
-        fontWeight: '600',
+        fontFamily:fonts.semiBold,
     },
     pointsContainer: {
         flexDirection: 'row',

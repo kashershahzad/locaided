@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import Topbar from '../../../../components/auth/Topbar';
 import { useNavigation } from '@react-navigation/native';
+import fonts from '../../../../assets/fonts';
 
 const { width, height } = Dimensions.get('window');
 
@@ -160,7 +161,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 20,
-        fontWeight: 'bold',
+        fontFamily:fonts.semiBold,
         color: '#000000',
         marginBottom: 8,
         textAlign:'center'
@@ -170,14 +171,15 @@ const styles = StyleSheet.create({
         color: '#666666',
         lineHeight: 22,
         marginBottom: 40,
-        textAlign:'center'
+        textAlign:'center',
+        fontFamily:fonts.regular,
     },
     inputContainer: {
         marginBottom: 10,
     },
     label: {
         fontSize: 16,
-        fontWeight: '600',
+        fontFamily:fonts.regular,
         color: '#000000',
         marginBottom: 12,
     },
@@ -261,6 +263,7 @@ const styles = StyleSheet.create({
         color: '#666666',
         flex: 1,
         lineHeight: 20,
+        fontFamily:fonts.regular,
     },
     getStartedButton: {
         borderRadius: 16,
@@ -280,6 +283,7 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 16,
         fontWeight: '600',
+        fontFamily:fonts.semiBold,
     },
     buttonTextActive: {
         color: '#ffffff',

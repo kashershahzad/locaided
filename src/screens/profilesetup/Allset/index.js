@@ -4,6 +4,7 @@ import React from 'react'
 import ImageFast from '../../../../components/ImageFast'
 import CustomText from '../../../../components/CustomText'
 import CustomButton from '../../../../components/CustomButton'
+import fonts from '../../../../assets/fonts'
 
 export default function Allset() {
     return (
@@ -11,9 +12,9 @@ export default function Allset() {
             <ImageFast source={require('../../../../assets/allset.gif')} style={styles.animation} resizeMode={'cover'} />
             <View style={styles.container}>
                 <ImageFast source={require('../../../../assets/auth/Customtick.png')} resizeMode={'contain'} style={styles.icon} />
-                <CustomText label={'You re all set!'} fontSize={24} textAlign={'center'} />
-                <CustomText label={'Explore your city, share moments, and earn Social Score!'} fontSize={14} textAlign={'center'} marginTop={10} />
-                <CustomButton title={'Enter Locaided'} backgroundColor={'black'} color={'white'} marginTop={170} borderRadius={16} />
+                <CustomText label={'You re all set!'} fontSize={24} textAlign={'center'} fontFamily={fonts.semiBold}/>
+                <CustomText label={'Explore your city, share moments, and earn Social Score!'} fontSize={14} textAlign={'center'} marginTop={10} fontFamily={fonts.regular} color={'#525866'} />
+                <CustomButton title={'Enter Locaided'} backgroundColor={'black'} color={'white'} marginTop={170} borderRadius={16} fontFamily={fonts.semiBold} />
             </View>
         </View>
     )
@@ -34,7 +35,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: '100%',
         height: '100%',
-        zIndex: 0,
         opacity: 0.6,
     },
 })

@@ -4,6 +4,7 @@ import Topbar from '../../../../components/auth/Topbar';
 import { useNavigation } from '@react-navigation/native';
 import ImageFast from '../../../../components/ImageFast';
 import ImagePicker from 'react-native-image-crop-picker';
+import fonts from '../../../../assets/fonts';
 import Pointsbtn from '../../../../components/auth/Pointsbtn';
 
 const Avatar = () => {
@@ -122,12 +123,12 @@ const style = StyleSheet.create({
     title: {
         marginTop: 12,
         fontSize: 14,
-        fontWeight: 'bold',
+        fontFamily:fonts.semiBold,
         marginBottom: 5,
     },
     subtitle: {
         fontSize: 12,
-        fontWeight: 'light'
+        fontFamily:fonts.light,
     },
     btn: {
         marginVertical: 20,
@@ -161,7 +162,7 @@ const style = StyleSheet.create({
     buttonText: {
         color: '#ffffff',
         fontSize: 16,
-        fontWeight: '600',
+        fontFamily:fonts.semiBold,
     },
     pointsContainer: {
         flexDirection: 'row',
@@ -171,7 +172,7 @@ const style = StyleSheet.create({
     pointsText: {
         fontSize: 15,
         color: '#F6B51E',
-        fontWeight: '500',
+        fontFamily:fonts.regular,
     },
     img: {
         height: 120,
@@ -192,7 +193,6 @@ const style = StyleSheet.create({
     },
     modalTitle: {
         fontSize: 18,
-        fontWeight: 'bold',
         marginBottom: 20,
         textAlign: 'center',
     },
