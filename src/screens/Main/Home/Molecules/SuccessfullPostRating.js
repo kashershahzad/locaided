@@ -4,6 +4,7 @@ import ImageFast from '../../../../../components/ImageFast'
 import CustomText from '../../../../../components/CustomText'
 import CustomButton from '../../../../../components/CustomButton'
 import { Images } from '../../../../../assets'
+import fonts from '../../../../../assets/fonts'
 
 const SuccessfullPostRating = ({close}) => {
     return (
@@ -11,21 +12,21 @@ const SuccessfullPostRating = ({close}) => {
             <View style={styles.container}>
                 <View style={styles.mincontainer}>
 
-                    <CustomText label="Rate this post" fontSize={16} textAlign={'center'} />
+                    <CustomText label="Rate this post" fontSize={16} textAlign={'center'} fontFamily={fonts.regular}/>
 
                 </View>
                 <View style={styles.horizontalLine} />
 
                 <ImageFast source={Images.postrate} style={styles.post} resizeMode={'contain'} />
 
-                <CustomText label={'Rating successfully submitted.'} textAlign={'center'} fontSize={18} marginTop={7} />
+                <CustomText label={'Rating successfully submitted.'} textAlign={'center'} fontSize={18} marginTop={7} fontFamily={fonts.semiBold}/>
 
-                <CustomText label={'Thank you for fact-checking. Accurate contributions help others trust what they see.'} textAlign={'center'} fontSize={12} marginTop={10} />
+                <CustomText label={'Thank you for fact-checking. Accurate contributions help others trust what they see.'} textAlign={'center'} fontSize={13} marginTop={10} fontFamily={fonts.light} color={'#0E121B'}/>
 
                 <View style={styles.coin}>
                     <ImageFast source={Images.coins} style={styles.coinimg} resizeMode={'contain'} />
-                    <CustomText label={'You earned'} fontSize={14} />
-                    <CustomText label={'+25 social score points'} color={'#FF2557'} fontSize={14} />
+                    <CustomText label={'You earned'} fontSize={14} fontFamily={fonts.regular} />
+                    <CustomText label={'+25 social score points'} color={'#FF2557'} fontSize={14} fontFamily={fonts.regular} />
                 </View>
 
                 <View style={styles.horizontalLine} />
@@ -39,6 +40,7 @@ const SuccessfullPostRating = ({close}) => {
                     color={'white'}
                     borderRadius={16}
                     onPress={close}
+                    fontFamily={fonts.semiBold}
                 />
             </View>
         </>

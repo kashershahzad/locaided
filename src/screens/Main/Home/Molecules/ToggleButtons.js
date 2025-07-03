@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import CustomText from '../../../../../components/CustomText';
+import fonts from '../../../../../assets/fonts';
 
 const ToggleButtons = ({ 
   title, 
@@ -40,7 +41,7 @@ const ToggleButtons = ({
 
   return (
     <View style={styles.container}>
-      <CustomText label={title} marginBottom={8} fontSize={12} marginTop={10} />
+      <CustomText label={title} marginBottom={8} fontSize={12} marginTop={10} fontFamily={fonts.regular} />
       <View style={styles.toggleContainer}>
         <TouchableOpacity
           style={[
@@ -145,7 +146,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 14,
-    fontWeight: '500',
+    fontFamily:fonts.regular,
   },
   activeText: {
     color: '#0E121B',

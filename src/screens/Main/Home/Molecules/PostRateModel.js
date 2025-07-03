@@ -9,6 +9,7 @@ import ToggleButtons from './ToggleButtons';
 import CustomCheckbox from '../../../../../components/CustomCheckBox';
 import CustomButton from '../../../../../components/CustomButton';
 import SuccessfullPostRating from './SuccessfullPostRating';
+import fonts from '../../../../../assets/fonts';
 
 const PostRateModel = ({ modal, onClose }) => {
     const [offensiveLanguage, setOffensiveLanguage] = useState(false);
@@ -50,12 +51,12 @@ const PostRateModel = ({ modal, onClose }) => {
             >
                 <View style={styles.modalContainer}>
                     {submit ? (
-                        <SuccessfullPostRating close={onClose}/>
+                        <SuccessfullPostRating close={onClose} />
                     ) : (
                         <>
                             <View style={styles.mincontainer}>
                                 <ImageFast source={Images.back} style={styles.backicon} />
-                                <CustomText label="Rate this post" fontSize={16} />
+                                <CustomText label="Rate this post" fontSize={16} fontFamily={fonts.regular} />
                                 <ImageFast onPress={onClose} source={Images.close} style={styles.closeicon} />
                             </View>
                             <View style={styles.horizontalLine} />
@@ -91,23 +92,29 @@ const PostRateModel = ({ modal, onClose }) => {
                             />
                             {isIllegal ? (
                                 <View style={styles.warn}>
-                                    <Text style={{ fontSize: 10 }}>
-                                        Labeling content as 'Illegal' will significantly reduce the visibility time of this post. Ensure your rating is accurate. Misuse or deviations from the community consensus can lead to penalties on your account.
+                                    <Text style={{ fontSize: 11, fontFamily: fonts.regular }}>
+                                        Labeling content as{' '}
+                                        <Text style={{ fontFamily: fonts.bold }}>'Illegal'</Text>{' '}
+                                        will significantly reduce the visibility time of this post. Ensure your rating is accurate. Misuse or deviations from the community consensus can lead to penalties on your account.
                                     </Text>
                                 </View>
                             ) : (
                                 <View style={styles.warn}>
-                                    <Text style={{ fontSize: 10 }}>
-                                        Selecting 'Harmful' will reduce the visibility time of this post. Please use this feature responsibly. Misuse or consistently opposing majority ratings can negatively impact your account.
+                                    <Text style={{ fontSize: 11, fontFamily: fonts.regular }}>
+                                        Selecting{' '}
+                                        <Text style={{ fontFamily: fonts.bold }}>'Harmful'</Text>{' '}
+                                        will reduce the visibility time of this post. Please use this feature responsibly. Misuse or consistently opposing majority ratings can negatively impact your account.
                                     </Text>
                                 </View>
                             )}
+
                             <CustomText
                                 label={'Choose the Most Relevant Issue'}
                                 fontSize={12}
                                 marginTop={10}
                                 marginBottom={10}
                                 marginLeft={20}
+                                fontFamily={fonts.regular}
                             />
 
                             {isIllegal ? (
@@ -117,49 +124,49 @@ const PostRateModel = ({ modal, onClose }) => {
                                             value={hateSpeech}
                                             onValueChange={setHateSpeech}
                                         />
-                                        <CustomText label={'Hate Speech'} />
+                                        <CustomText label={'Hate Speech'} fontFamily={fonts.light} />
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={explicitThreats}
                                             onValueChange={setExplicitThreats}
                                         />
-                                        <CustomText label={'Explicit Threats'} />
+                                        <CustomText label={'Explicit Threats'} fontFamily={fonts.light} />
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={childExploitation}
                                             onValueChange={setChildExploitation}
                                         />
-                                        <CustomText label={'Child Exploitation'} />
+                                        <CustomText label={'Child Exploitation'} fontFamily={fonts.light}/>
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={terrorismExtremism}
                                             onValueChange={setTerrorismExtremism}
                                         />
-                                        <CustomText label={'Terrorism and Extremism'} />
+                                        <CustomText label={'Terrorism and Extremism'} fontFamily={fonts.light}/>
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={fraudScams}
                                             onValueChange={setFraudScams}
                                         />
-                                        <CustomText label={'Fraud and Scams'} />
+                                        <CustomText label={'Fraud and Scams'} fontFamily={fonts.light} />
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={privacyViolations}
                                             onValueChange={setPrivacyViolations}
                                         />
-                                        <CustomText label={'Privacy Violations'} />
+                                        <CustomText label={'Privacy Violations'} fontFamily={fonts.light}/>
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={copyrightInfringement}
                                             onValueChange={setCopyrightInfringement}
                                         />
-                                        <CustomText label={'Copyright Infringement or Explicit Content'} />
+                                        <CustomText label={'Copyright Infringement or Explicit Content'} fontFamily={fonts.light}/>
                                     </View>
                                 </>
                             ) : (
@@ -169,35 +176,35 @@ const PostRateModel = ({ modal, onClose }) => {
                                             value={offensiveLanguage}
                                             onValueChange={setOffensiveLanguage}
                                         />
-                                        <CustomText label={'Offensive Language'} />
+                                        <CustomText label={'Offensive Language'} fontFamily={fonts.light} />
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={abuseHarassment}
                                             onValueChange={setAbuseHarassment}
                                         />
-                                        <CustomText label={'Abuse & Harassment'} />
+                                        <CustomText label={'Abuse & Harassment'} fontFamily={fonts.light}/>
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={intrusiveAdvertising}
                                             onValueChange={setIntrusiveAdvertising}
                                         />
-                                        <CustomText label={'Intrusive Advertising'} />
+                                        <CustomText label={'Intrusive Advertising'} fontFamily={fonts.light}/>
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={sensitiveMedia}
                                             onValueChange={setSensitiveMedia}
                                         />
-                                        <CustomText label={'Sensitive or Disturbing Media'} />
+                                        <CustomText label={'Sensitive or Disturbing Media'} fontFamily={fonts.light}/>
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={spamContent}
                                             onValueChange={setSpamContent}
                                         />
-                                        <CustomText label={'Potential Spam or Suspicious Content'} />
+                                        <CustomText label={'Potential Spam or Suspicious Content'} fontFamily={fonts.light}/>
                                     </View>
                                 </>
                             )}
