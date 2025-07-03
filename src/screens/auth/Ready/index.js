@@ -6,6 +6,7 @@ import ImageFast from '../../../../components/ImageFast';
 import CustomText from '../../../../components/CustomText';;
 import CompletedCard from '../../../../components/AccountReady/CompletedCard';
 import NotCompletedCard from '../../../../components/AccountReady/NotCompletedCard';
+import fonts from '../../../../assets/fonts';
 
 const Ready = ({ route }) => {
   const navigation = useNavigation();
@@ -91,9 +92,9 @@ const Ready = ({ route }) => {
     <View style={styles.container}>
       <ImageFast source={require('../../../../assets/auth/Ready.png')} resizeMode={'contain'} style={styles.icon} />
 
-      <CustomText label={'Your Account is Ready'} fontSize={20} textAlign={'center'} marginBottom={6} />
+      <CustomText label={'Your Account is Ready'} fontSize={20} textAlign={'center'} marginBottom={6} fontFamily={fonts.semiBold} />
 
-      <CustomText label='Lets complete your profile to unlock all features and start earning Social Score.' fontSize={13} textAlign={'center'} marginBottom={25} />
+      <CustomText label='Lets complete your profile to unlock all features and start earning Social Score.' fontSize={15} textAlign={'center'} marginBottom={25}  fontFamily={fonts.regular} color={'#525866'}/>
 
       {/* Remove All Data Button */}
       {/* <TouchableOpacity 

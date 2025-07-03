@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ImageFast from '../ImageFast'
 import CustomText from '../CustomText'
+import fonts from '../../assets/fonts'
 
 const CompletedCard = ({title, icon, des}) => {
     return (
@@ -10,13 +11,13 @@ const CompletedCard = ({title, icon, des}) => {
                 <ImageFast source={icon} resizeMode={'contain'} style={styles.infoicon} />
                 <View style={styles.cardText}>
                     <View style={styles.cardHeader}>
-                        <CustomText label={title} fontSize={14} textAlign={'center'} marginRight={6} />
+                        <CustomText label={title} fontSize={14} textAlign={'center'} marginRight={6} fontFamily={fonts.semiBold} />
                         <View style={styles.pointsBadge}>
                             <ImageFast source={require('../../assets/auth/points.png')} style={styles.pointsimg} />
                             <CustomText label={'+25 points'} fontSize={10} color={'#FF2557'} />
                         </View>
                     </View>
-                    <CustomText label={des} fontSize={12} color={'#525866'} />
+                    <CustomText label={des} fontSize={12} color={'#525866'} fontFamily={fonts.regular}/>
                 </View>
                 <ImageFast source={require('../../assets/auth/tick.png')} resizeMode={'contain'} style={styles.tick} />
             </View>

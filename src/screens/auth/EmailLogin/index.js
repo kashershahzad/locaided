@@ -15,6 +15,7 @@ import {
 
 import Topbar from '../../../../components/auth/Topbar';
 import { useNavigation } from '@react-navigation/native';
+import fonts from '../../../../assets/fonts';
 
 const Emaillogin = () => {
     const navigation = useNavigation()
@@ -180,7 +181,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 20,
-        fontWeight: 'bold',
+        fontFamily:fonts.semiBold,
         color: '#333',
         marginBottom: 6,
         textAlign: 'center'
@@ -190,7 +191,8 @@ const styles = StyleSheet.create({
         color: '#666',
         marginBottom: 20,
         lineHeight: 18,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily:fonts.regular,
     },
     inputSection: {
         marginBottom: 16,
@@ -200,6 +202,7 @@ const styles = StyleSheet.create({
         color: '#333',
         marginBottom: 6,
         fontWeight: '500',
+        fontFamily:fonts.regular,
     },
     passwordHeader: {
         flexDirection: 'row',
@@ -209,8 +212,9 @@ const styles = StyleSheet.create({
     },
     forgotPassword: {
         fontSize: 13,
-        color: 'black',
+        color: '#525866',
         textDecorationLine: 'underline',
+        fontFamily:fonts.regular,
     },
     inputContainer: {
         flexDirection: 'row',
@@ -253,7 +257,7 @@ const styles = StyleSheet.create({
     loginButtonText: {
         color: '#fff',
         fontSize: 15,
-        fontWeight: '600',
+        fontFamily:fonts.semiBold,
     },
     divider: {
         flexDirection: 'row',
@@ -269,6 +273,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 12,
         fontSize: 12,
         color: '#666',
+        fontFamily:fonts.regular,
     },
     socialButton: {
         flexDirection: 'row',
@@ -297,6 +302,7 @@ const styles = StyleSheet.create({
     socialButtonText: {
         fontSize: 14,
         color: '#333',
+        fontFamily:fonts.semiBold,
         fontWeight: '500',
     },
     footer: {
@@ -312,6 +318,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#333',
         fontWeight: '600',
+        fontFamily:fonts.semiBold,
     },
     dottedLine: {
         

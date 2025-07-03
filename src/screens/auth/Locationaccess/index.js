@@ -11,6 +11,7 @@ import {
     Animated
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import fonts from '../../../../assets/fonts';
 
 const Locationaccess = () => {
     const navigation = useNavigation()
@@ -95,7 +96,7 @@ const style = StyleSheet.create({
     heading: {
         color: 'black',
         fontSize: 24,
-        fontWeight: 'bold',
+        fontFamily:fonts.semiBold,
         textAlign: 'center',
         marginBottom: 10,
     },
@@ -104,6 +105,8 @@ const style = StyleSheet.create({
         fontSize: 13,
         textAlign: 'center',
         lineHeight: 22,
+        fontFamily:fonts.regular,
+        marginBottom:10,
     },
     frame: {
         marginVertical: 20,
@@ -112,12 +115,11 @@ const style = StyleSheet.create({
         backgroundColor: "black",
         color: '#FFFFFF',
         borderRadius: 10,
-        fontWeight: 'bold',
+        fontFamily:fonts.semiBold,
         textAlign: "center",
         fontSize: 14,
         width: 300,
         paddingVertical: 20,
-       
     },
     btns: {
         gap: 10,

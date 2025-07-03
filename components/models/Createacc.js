@@ -1,4 +1,3 @@
-// components/CreateAccountModal.js
 import React from 'react';
 import {
     View,
@@ -9,7 +8,7 @@ import {
     StyleSheet
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import fonts from '../../assets/fonts';
 const Createacc= ({ visible, closeModal, openLoginModal }) => {
     const navigation = useNavigation();
 
@@ -123,9 +122,10 @@ export const modalStyles = StyleSheet.create({
     },
     headerTitle: {
         textAlign: "center",
-        fontSize: 18,
-        fontWeight: '600',
+        fontSize: 15,
         color: 'black',
+        fontFamily:fonts.regular,
+        marginLeft:20,
     },
     closeButton: {
         width: 24,
@@ -148,7 +148,6 @@ export const modalStyles = StyleSheet.create({
     },
     brandName: {
         fontSize: 28,
-        fontWeight: 'bold',
         color: 'black',
         marginBottom: 5,
     },
@@ -165,15 +164,18 @@ export const modalStyles = StyleSheet.create({
     },
     welcomeTitle: {
         fontSize: 20,
-        fontWeight: 'bold',
         color: 'black',
         marginBottom: 8,
+        marginTop:8,
+        fontFamily:fonts.semiBold
     },
     welcomeSubtitle: {
         fontSize: 14,
         color: '#666',
         textAlign: 'center',
         lineHeight: 20,
+        fontFamily:fonts.regular,
+        paddingHorizontal:20,
     },
     optionsContainer: {
         paddingHorizontal: 20,
@@ -228,7 +230,6 @@ export const modalStyles = StyleSheet.create({
     },
     googleIcon: {
         fontSize: 16,
-        fontWeight: 'bold',
         color: '#4285F4',
         marginRight: 10,
     },
@@ -242,13 +243,13 @@ export const modalStyles = StyleSheet.create({
     },
     buttonText: {
         fontSize: 16,
-        fontWeight: '600',
+        fontFamily:fonts.semiBold,
         color: 'black',
     },
     emailButtonText: {
         fontSize: 16,
-        fontWeight: '600',
         color: 'white',
+        fontFamily:fonts.semiBold,
     },
     createAccountContainer: {
         alignItems: 'center',
@@ -261,13 +262,13 @@ export const modalStyles = StyleSheet.create({
         letterSpacing: 0.5,
         marginBottom: 5,
         position:"relative",
+        fontFamily:fonts.regular,
         bottom:41,
         backgroundColor:'white',
         paddingHorizontal:8,
     },
     createAccountLink: {
         fontSize: 16,
-        fontWeight: 'bold',
         color: 'black',
         position:"relative",
         bottom:30,
@@ -287,6 +288,7 @@ export const modalStyles = StyleSheet.create({
         marginTop: 10,
         position:'relative',
         bottom :45,
+        fontFamily:fonts.regular,
     },
     bottomIndicator: {
         width: 40,
@@ -302,7 +304,6 @@ export const modalStyles = StyleSheet.create({
     },
     createAccountLink2:{
         fontSize: 16,
-        fontWeight: 'bold',
         color: 'black',
         position:"relative",
         bottom:30,
@@ -311,6 +312,7 @@ export const modalStyles = StyleSheet.create({
         paddingHorizontal:125,
         paddingVertical:10,
         borderRadius:10,
-        borderColor:'#E1E4EA'
+        borderColor:'#E1E4EA',
+        fontFamily:fonts.semiBold,
     }
 });

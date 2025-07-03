@@ -3,6 +3,7 @@ import React from 'react'
 import CustomText from '../CustomText'
 import ImageFast from '../ImageFast'
 import { useNavigation } from '@react-navigation/native'
+import fonts from '../../assets/fonts'
 
 const NotCompletedCard = ({title, des, icon, action}) => {
     const navigation = useNavigation()
@@ -13,9 +14,9 @@ const NotCompletedCard = ({title, des, icon, action}) => {
             <ImageFast source={icon} resizeMode={'contain'} style={styles.infoicon} />
             <View style={styles.cardText}>
               <View style={styles.header1}>
-                <CustomText label={title} fontSize={14} textAlign={'center'} marginRight={6} marginBottom={5} />
+                <CustomText label={title} fontSize={14} textAlign={'center'} marginRight={6} marginBottom={5} fontFamily={fonts.semiBold} />
               </View>
-              <CustomText label={des} fontSize={12} color={'#525866'} />
+              <CustomText label={des} fontSize={12} color={'#525866'} fontFamily={fonts.regular}/>
             </View>
           </View>
           
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     continueButtonText: {
         fontSize: 12,
         color: '#666',
-        fontWeight: '500',
+        fontFamily:fonts.regular,
     },
     pointsBadgeButton: {
         paddingHorizontal: 6,
@@ -81,5 +82,6 @@ const styles = StyleSheet.create({
         fontSize: 10,
         color: '#FF2557',
         fontWeight: '500',
+        fontFamily:fonts.regular,
     }
 })

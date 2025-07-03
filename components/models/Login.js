@@ -9,6 +9,7 @@ import {
     StyleSheet
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import fonts from '../../assets/fonts';
 
 const Login = ({ visible,  closeModal }) => {
     const navigation = useNavigation();
@@ -120,8 +121,9 @@ export const modalStyles = StyleSheet.create({
     headerTitle: {
         textAlign: "center",
         fontSize: 18,
-        fontWeight: '600',
+        fontFamily:fonts.regular,
         color: 'black',
+        marginLeft:20,
     },
     closeButton: {
         width: 24,
@@ -130,7 +132,9 @@ export const modalStyles = StyleSheet.create({
         alignItems: 'center',
     },
     closeButtonText: {
-        marginLeft: 230
+        marginLeft: 230,
+        height:12,
+        width:12
     },
     dottedLine: {
         height: 1,
@@ -161,7 +165,7 @@ export const modalStyles = StyleSheet.create({
     },
     welcomeTitle: {
         fontSize: 20,
-        fontWeight: 'bold',
+        fontFamily:fonts.semiBold,
         color: 'black',
         marginBottom: 8,
     },
@@ -170,6 +174,7 @@ export const modalStyles = StyleSheet.create({
         color: '#666',
         textAlign: 'center',
         lineHeight: 20,
+        fontFamily:fonts.regular,
     },
     optionsContainer: {
         paddingHorizontal: 20,
@@ -240,11 +245,13 @@ export const modalStyles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '600',
         color: 'black',
+        fontFamily:fonts.semiBold,
     },
     emailButtonText: {
         fontSize: 16,
         fontWeight: '600',
         color: 'white',
+        fontFamily:fonts.semiBold,
     },
     createAccountContainer: {
         alignItems: 'center',
@@ -258,12 +265,13 @@ export const modalStyles = StyleSheet.create({
         marginBottom: 5,
         position:"relative",
         bottom:41,
+        fontFamily:fonts.regular,
         backgroundColor:'white',
         paddingHorizontal:8,
     },
     createAccountLink: {
         fontSize: 16,
-        fontWeight: 'bold',
+        fontFamily:fonts.semiBold,
         color: 'black',
         position:"relative",
         bottom:30,
@@ -276,13 +284,14 @@ export const modalStyles = StyleSheet.create({
     },
     termsText: {
         fontSize: 12,
-         color: 'black',
+        color: 'black',
         textAlign: 'center',
         paddingHorizontal: 10,
         lineHeight: 16,
         marginTop: 10,
         position:'relative',
         bottom :45,
+        fontFamily:fonts.regular,
     },
     bottomIndicator: {
         width: 40,

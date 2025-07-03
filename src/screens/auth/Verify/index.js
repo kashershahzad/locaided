@@ -16,6 +16,7 @@ import {
 } from 'react-native-confirmation-code-field';
 import Topbar from '../../../../components/auth/Topbar';
 import { useNavigation } from '@react-navigation/native';
+import fonts from '../../../../assets/fonts';
 
 const { width } = Dimensions.get('window');
 
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 22,
-    fontWeight: 'bold',
+    fontFamily:fonts.semiBold,
     color: '#000000',
     textAlign: 'center',
   },
@@ -130,6 +131,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 40,
     lineHeight: 22,
+    fontFamily:fonts.regular,
   },
   codeFieldRoot: {
     marginBottom: 40,
@@ -166,12 +168,14 @@ const styles = StyleSheet.create({
     color: '#666666',
     marginBottom: 8,
     textAlign: 'center',
+    fontFamily:fonts.regular,
   },
   resendLink: {
     fontSize: 14,
     color: 'black',
     fontWeight: '500',
     textDecorationLine: 'underline',
+    fontFamily:fonts.regular,
   },
   verifyButton: {
     width: width * 0.9,
@@ -188,7 +192,7 @@ const styles = StyleSheet.create({
   },
   verifyButtonText: {
     fontSize: 16,
-    fontWeight: '600',
+    fontFamily:fonts.semiBold,
   },
   verifyButtonTextActive: {
     color: '#FFFFFF',

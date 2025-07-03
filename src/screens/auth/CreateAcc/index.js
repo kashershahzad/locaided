@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import Topbar from '../../../../components/auth/Topbar';
 import { useNavigation } from '@react-navigation/native';
+import fonts from '../../../../assets/fonts';
 
 const { width, height } = Dimensions.get('window');
 
@@ -180,7 +181,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 22,
-        fontWeight: '700',
+        fontFamily:fonts.semiBold,
         color: '#111827',
         textAlign: 'center',
         marginBottom: 8,
@@ -191,6 +192,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginBottom: 18,
         lineHeight: 10,
+        fontFamily:fonts.regular,
     },
     inputContainer: {
         marginBottom: 10,
@@ -200,6 +202,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         color: '#374151',
         marginBottom: 8,
+        fontFamily:fonts.regular,
     },
     inputWrapper: {
         flexDirection: 'row',
@@ -230,6 +233,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         lineHeight: 20,
         marginBottom: 24,
+        fontFamily:fonts.regular,
     },
     linkText: {
         color: '#3B82F6',
@@ -247,6 +251,7 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         fontSize: 16,
         fontWeight: '600',
+        fontFamily:fonts.semiBold,
     },
     iconp:{
         alignItems:'center',

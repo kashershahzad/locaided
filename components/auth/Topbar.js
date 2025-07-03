@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Import useNavigation
+import { useNavigation } from '@react-navigation/native';
+import fonts from '../../assets/fonts';
 
 const Topbar = ({ title }) => {
     const navigation = useNavigation();
@@ -42,6 +43,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: '600',
         color: '#333',
+        fontFamily:fonts.regular,
     },
 });
 
