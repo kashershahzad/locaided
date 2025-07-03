@@ -3,6 +3,7 @@ import React from 'react'
 import { Images } from '../../../../../assets'
 import ImageFast from '../../../../../components/ImageFast'
 import { COLORS } from '../../../../utiles/COLORS'
+import fonts from '../../../../../assets/fonts'
 
 const Stories = () => {
     const storiesData = [
@@ -74,6 +75,6 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: COLORS.gray,
         textAlign: 'center',
-        fontWeight: '500',
+        fontFamily:fonts.semiBold,
     }
 })

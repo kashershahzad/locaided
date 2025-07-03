@@ -4,14 +4,15 @@ import ImageFast from '../../../../../components/ImageFast'
 import { Images } from '../../../../../assets'
 import CustomText from '../../../../../components/CustomText'
 import { COLORS } from '../../../../utiles/COLORS'
+import fonts from '../../../../../assets/fonts'
 export default function Post({model}) {
     return (
         <>
         <View style={styles.container}>
             <View style={styles.mincontainer}>
                 <ImageFast source={Images.profile} resizeMode={'contain'} style={styles.profileimg} />
-                <CustomText label={'Max Schmidt'} fontSize={14} marginLeft={5} />
-                <CustomText label={'@MaxSchmidt'} fontSize={10} marginLeft={7} marginTop={4} />
+                <CustomText label={'Max Schmidt'} fontSize={14} marginLeft={5} fontFamily={fonts.semiBold} />
+                <CustomText label={'@MaxSchmidt'} fontSize={10} marginLeft={7} marginTop={4} fontFamily={fonts.light} />
                 <ImageFast source={Images.verify} resizeMode={'contain'} style={styles.verifyimg} />
                 <View style={styles.tagContainer}>
                     <Text style={styles.tag}>
@@ -20,13 +21,13 @@ export default function Post({model}) {
                 </View>
             </View>
 
-            <CustomText label={'Stuck on the M6 again 😓 crazy traffic jam! If you’re heading this way, maybe grab a coffee first ☕'} marginLeft={45} marginTop={-13} fontSize={11} />
+            <CustomText label={'Stuck on the M6 again 😓 crazy traffic jam! If you’re heading this way, maybe grab a coffee first ☕'} marginLeft={45} marginTop={-13} fontSize={11} fontFamily={fonts.light} />
 
             <Image source={require('../../../../../assets/postimg.png')} style={styles.postimg} />
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 40, paddingRight: 20, marginTop: 8 }}>
-                <CustomText label={'3456 London, United Kingdom'} fontSize={10} color={COLORS.gray} />
-                <CustomText label={'3mins ago'} fontSize={10} color={COLORS.gray} />
+                <CustomText label={'3456 London, United Kingdom'} fontSize={10} color={COLORS.gray} fontFamily={fonts.regular}/>
+                <CustomText label={'3mins ago'} fontSize={10} color={COLORS.gray} fontFamily={fonts.regular}/>
             </View>
 
             <View style={styles.postresponce}>

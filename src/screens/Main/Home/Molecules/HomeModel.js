@@ -6,6 +6,7 @@ import CustomText from '../../../../../components/CustomText'
 import CustomButton from '../../../../../components/CustomButton'
 import ImageFast from '../../../../../components/ImageFast'
 import { Images } from '../../../../../assets'
+import fonts from '../../../../../assets/fonts'
 
 export default function HomeModel({ modal, onClose }) {
     return (
@@ -20,24 +21,25 @@ export default function HomeModel({ modal, onClose }) {
                     <CustomText
                         label="Post Options"
                         fontSize={16}
+                        fontFamily={fonts.light}
                     />
                     <ImageFast source={Images.close} resizeMode={'contain'} style={styles.closeicon} onPress={onClose} />
                 </View>
                 <View style={styles.horizontalLine} />
                 <View style={styles.btnContainer}>
-                    <CustomButton marginTop={15} icon={Images.link} title={'Copy link'} borderWidth={1} borderColor={'#E1E4EA'} borderRadius={16} />
+                    <CustomButton marginTop={15} fontFamily={fonts.regular} icon={Images.link} title={'Copy link'} borderWidth={1} borderColor={'#E1E4EA'} borderRadius={16} />
 
 
-                    <CustomButton marginTop={15} icon={Images.share3} title={'Share'} borderWidth={1} borderColor={'#E1E4EA'} borderRadius={16} />
+                    <CustomButton marginTop={15} icon={Images.share3} title={'Share'} borderWidth={1} borderColor={'#E1E4EA'} borderRadius={16} fontFamily={fonts.regular} />
 
 
-                    <CustomButton marginTop={15} icon={Images.screenshot} title={'Screenshot'} borderWidth={1} borderColor={'#E1E4EA'} borderRadius={16} />
+                    <CustomButton marginTop={15} icon={Images.screenshot} title={'Screenshot'} borderWidth={1} borderColor={'#E1E4EA'} borderRadius={16} fontFamily={fonts.regular} />
 
 
-                    <CustomButton marginTop={15} icon={Images.route} title={'Route'} borderWidth={1} borderColor={'#E1E4EA'} borderRadius={16} />
+                    <CustomButton marginTop={15} icon={Images.route} title={'Route'} borderWidth={1} borderColor={'#E1E4EA'} borderRadius={16} fontFamily={fonts.regular}/>
 
 
-                    <CustomButton marginTop={15} icon={Images.delete} title={'Delete'} borderWidth={1} borderColor={'#FB3748'} color={'#FB3748'} borderRadius={16} />
+                    <CustomButton marginTop={15} icon={Images.delete} title={'Delete'} borderWidth={1} borderColor={'#FB3748'} color={'#FB3748'} borderRadius={16} fontFamily={fonts.regular}/>
                 </View>
             </View>
         </CustomModal>
