@@ -12,7 +12,7 @@ export default function Post({model}) {
             <View style={styles.mincontainer}>
                 <ImageFast source={Images.profile} resizeMode={'contain'} style={styles.profileimg} />
                 <CustomText label={'Max Schmidt'} fontSize={14} marginLeft={5} fontFamily={fonts.semiBold} />
-                <CustomText label={'@MaxSchmidt'} fontSize={10} marginLeft={7} marginTop={4} fontFamily={fonts.light} />
+                <CustomText label={'@MaxSchmidt'} fontSize={10} marginLeft={7} marginTop={4} fontFamily={fonts.light} color={'#525866'} />
                 <ImageFast source={Images.verify} resizeMode={'contain'} style={styles.verifyimg} />
                 <View style={styles.tagContainer}>
                     <Text style={styles.tag}>
@@ -21,7 +21,7 @@ export default function Post({model}) {
                 </View>
             </View>
 
-            <CustomText label={'Stuck on the M6 again 😓 crazy traffic jam! If you’re heading this way, maybe grab a coffee first ☕'} marginLeft={45} marginTop={-13} fontSize={11} fontFamily={fonts.light} />
+            <CustomText label={'Stuck on the M6 again 😓 crazy traffic jam! If you’re heading this way, maybe grab a coffee first ☕'} marginLeft={45} marginTop={-13} fontSize={13} fontFamily={fonts.light} color={'#0E121B'} />
 
             <Image source={require('../../../../../assets/postimg.png')} style={styles.postimg} />
 

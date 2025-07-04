@@ -29,5 +29,8 @@ export const Images = {
     route:require('./route.png'),
     back:require('./back.png'),
     postrate:require('./postrate.png'),
-    coins:require('./coins.png')
+    coins:require('./coins.png'),
+    loop : require('./loop.png'),
+    search: require('./search.png'),
+    location:require('./location.png')
 }

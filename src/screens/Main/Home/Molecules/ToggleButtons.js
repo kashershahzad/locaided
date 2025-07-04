@@ -146,13 +146,13 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 14,
-    fontFamily:fonts.regular,
+    fontFamily:fonts.semiBold,
   },
   activeText: {
     color: '#0E121B',
   },
   inactiveText: {
-    color: '#666666',
+    color: '#525866',
   },
 });
 

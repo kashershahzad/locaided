@@ -2034,6 +2034,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ptomasroos/react-native-multi-slider@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "@ptomasroos/react-native-multi-slider@npm:2.2.2"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10c0/eb286b16aec36b92048b9e51f0c2198d6fc6c0011c531405e17a64d0fcd75062384622bc9f58d80ff5524b1d5ea4196b7a84054158b58ff968c6eb193b7e9f05
+  languageName: node
+  linkType: hard
+
 "@react-native-async-storage/async-storage@npm:^2.2.0":
   version: 2.2.0
   resolution: "@react-native-async-storage/async-storage@npm:2.2.0"
@@ -2230,6 +2240,13 @@ __metadata:
   bin:
     rnc-cli: build/bin.js
   checksum: 10c0/2dcf0e353add648377fdc9a3426aac90472a7a9f8de67209b77e69e74d584d2e1cb6865f3cb9f29396e184e0c6696e02caf8211f338cb505467aef77bfa29ff1
+  languageName: node
+  linkType: hard
+
+"@react-native-community/slider@npm:^4.5.7":
+  version: 4.5.7
+  resolution: "@react-native-community/slider@npm:4.5.7"
+  checksum: 10c0/9154c88972eb97ecb53190ff215148b41ec195619991e51061f543dc67c8b2463d1d195dd9c166755b8db1cc4d5a1ae8a152c3ecd5d3285cc4a14c35fddb3716
   languageName: node
   linkType: hard
 
@@ -6907,11 +6924,13 @@ __metadata:
     "@babel/core": "npm:^7.25.2"
     "@babel/preset-env": "npm:^7.25.3"
     "@babel/runtime": "npm:^7.25.0"
+    "@ptomasroos/react-native-multi-slider": "npm:^2.2.2"
     "@react-native-async-storage/async-storage": "npm:^2.2.0"
     "@react-native-community/blur": "npm:^4.4.1"
     "@react-native-community/cli": "npm:18.0.0"
     "@react-native-community/cli-platform-android": "npm:18.0.0"
     "@react-native-community/cli-platform-ios": "npm:18.0.0"
+    "@react-native-community/slider": "npm:^4.5.7"
     "@react-native/babel-preset": "npm:0.79.3"
     "@react-native/eslint-config": "npm:0.79.3"
     "@react-native/metro-config": "npm:0.79.3"
