@@ -9,7 +9,7 @@ const TrendingOptions = ({ location, distance, post, tag }) => {
     return (
         <View style={styles.container}>
             <ImageFast source={Images.trending} resizeMode={'contain'} style={styles.icon} />
-            <View>
+            <View style={styles.textContainer}>
                 <View style={styles.mincontainer}>
                     <CustomText label={location} fontFamily={fonts.semiBold} fontSize={16} />
                     <CustomText label={distance} fontFamily={fonts.extraLight} fontSize={14} />
@@ -26,24 +26,26 @@ const TrendingOptions = ({ location, distance, post, tag }) => {
 export default TrendingOptions
 
 const styles = StyleSheet.create({
-
     container: {
         flexDirection: 'row',
         gap: 10,
+        alignItems: 'center' // Add this to align items vertically centered
     },
-
+    textContainer: {
+        flex: 1, // This makes the text container take all available space
+    },
     icon: {
         height: 48,
         width: 48
     },
     mincontainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        gap: 150
+        justifyContent: 'space-between', 
+        flex: 1, 
     },
     mincontainer2: {
         marginTop: 10,
         flexDirection: 'row',
-        gap:10
+        gap: 10
     }
 })

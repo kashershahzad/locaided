@@ -1,16 +1,12 @@
+import React, {useState, useRef} from 'react';
 import {StyleSheet, TextInput, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import React, {useState} from 'react';
-
 import CustomText from './CustomText';
 import Icons from './Icons';
-// import {COLORS} from '../utils/COLORS';
-import { COLORS } from '../src/utiles/COLORS';
-// import i18n from '../language/i18n';
+import {COLORS} from '../src/utiles/COLORS';
 import fonts from '../assets/fonts';
-import { Image } from 'react-native-reanimated/lib/typescript/Animated';
 import ImageFast from './ImageFast';
-import { Images } from '../assets';
+import {Images} from '../assets';
 
 const SearchInput = ({
   placeholder,
@@ -21,18 +17,19 @@ const SearchInput = ({
   isFocus,
   isBlur,
   autoFocus,
-  ref,
   marginTop,
   isBack,
   onPress,
-  editable,
+  editable = true,
   isDropdown,
   select,
   setSelect,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [isOpen, setOpen] = useState(false);
+  const inputRef = useRef();
   const navigation = useNavigation();
+
   const handleFocus = () => {
     setIsFocused(true);
     isFocus?.();
@@ -43,19 +40,27 @@ const SearchInput = ({
     isBlur?.();
   };
 
+  const handleContainerPress = () => {
+    if (onPress) {
+      onPress();
+    } else {
+      inputRef.current?.focus();
+    }
+  };
+
   return (
     <TouchableOpacity
-      activeOpacity={0.6}
-      onPress={onPress}
+      activeOpacity={1}
+      onPress={handleContainerPress}
       style={[
         styles.mainContainer,
         {
           marginBottom,
           marginTop,
-          borderColor: isFocused ? COLORS.primaryColor : '#F2F2F2',
+          // borderColor: isFocused ? COLORS.primaryColor : '#F2F2F2',
         },
       ]}>
-      {isBack ? (
+      {isBack && (
         <Icons
           family="Ionicons"
           name="arrow-back-outline"
@@ -66,15 +71,13 @@ const SearchInput = ({
             if (navigation.canGoBack()) navigation.goBack();
           }}
         />
-      ) : null}
-      <TouchableOpacity
-        style={styles.searchIcon}
-        onPress={onPress}>
-        <ImageFast source={Images.search} style={styles.search}/>
-      </TouchableOpacity>
+      )}
+
+      <ImageFast source={Images.search} style={styles.search} />
+
       {editable ? (
         <TextInput
-          ref={ref}
+          ref={inputRef}
           placeholder={placeholder}
           style={styles.input}
           onFocus={handleFocus}
@@ -97,7 +100,7 @@ const SearchInput = ({
         </View>
       )}
 
-      {isDropdown ? (
+      {isDropdown && (
         <>
           <TouchableOpacity
             style={styles.row}
@@ -117,7 +120,7 @@ const SearchInput = ({
               color={COLORS.black}
             />
           </TouchableOpacity>
-          {isOpen ? (
+          {isOpen && (
             <TouchableOpacity activeOpacity={1} style={styles.list}>
               {['schedule', 'now'].map((item, i) => (
                 <CustomText
@@ -134,22 +137,20 @@ const SearchInput = ({
                 />
               ))}
             </TouchableOpacity>
-          ) : null}
+          )}
         </>
-      ) : null}
+      )}
     </TouchableOpacity>
   );
 };
-
-export default SearchInput;
 
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: '#F5F7FA',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 5,
-    borderWidth: 1,
+    paddingHorizontal: 15,
+    // borderWidth: 1,
     height: 40,
     width: '100%',
     borderRadius: 10,
@@ -159,35 +160,30 @@ const styles = StyleSheet.create({
     height: '100%',
     padding: 0,
     margin: 0,
+    marginLeft: 10,
     fontFamily: fonts.medium,
     fontSize: 13,
-    borderRadius:10
-    // color: COLORS.black,
+    color: COLORS.black,
   },
-  searchIcon: {
-    width: 32,
-    height: 32,
-    borderRadius: 8,
-    // backgroundColor: COLORS.primaryColor,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 3,
+  search: {
+    height: 16,
+    width: 16,
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginLeft: 10,
   },
   list: {
-    // backgroundColor: COLORS.white,
+    backgroundColor: COLORS.white,
     elevation: 2,
     padding: 10,
     borderRadius: 5,
     position: 'absolute',
     right: 10,
-    bottom: -20,
+    bottom: -60,
+    zIndex: 10,
   },
-  search:{
-    height:16,
-    width:16,
-  }
 });
+
+export default SearchInput;

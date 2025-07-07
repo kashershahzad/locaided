@@ -8,7 +8,7 @@ const TrendingLocations = ({value}) => {
             {
                 value.map((item, i) => (
                     <View index={i} style={styles.containertrending}>
-                        <TrendingOptions location={item.location} distance={item.location} post={item.post} tag={item.tag} />
+                        <TrendingOptions location={item.location} distance={item.distance} post={item.post} tag={item.tag} />
                     </View>
                 ))
             }

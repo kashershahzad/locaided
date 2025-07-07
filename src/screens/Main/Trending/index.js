@@ -54,7 +54,7 @@ const Trending = () => {
         >
             <View style={styles.container}>
                 <SearchInput value={Search} onChangeText={setSearch} placeholder={'Search any city or neighborhood...'} />
-                <Optionbar title={'Customize Radius'} btn={'Manchester City Center'} location={'25km'} icon={Images.location} />
+                <Optionbar title={'Customize Radius'} btn={'Manchester City Center'} location={`${sliderValue} Km`} icon={Images.location} />
                 <CustomInputSlider
                     value={sliderValue}
                     min={0}

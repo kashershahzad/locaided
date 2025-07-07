@@ -35,6 +35,7 @@ const CustomButton = ({
   icon,
   icnWidth,
   icnHeight,
+  paddingVertical=5,
   paddingHorizontal = 0, // Add paddingHorizontal prop
 }) => {
   const [animation] = useState(new Animated.Value(1));
@@ -73,9 +74,10 @@ const CustomButton = ({
             marginRight,
             borderWidth,
             borderColor,
-            paddingHorizontal, // Add horizontal padding
+            paddingHorizontal,
+            paddingVertical: paddingVertical,   // Add horizontal padding
             height: height || undefined, // Make height optional
-            minHeight: 37, // Set a minimum height if needed
+            // minHeight: 37, // Set a minimum height if needed
           },
           customStyle,
         ]}
