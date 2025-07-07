@@ -9,6 +9,8 @@ import CustomInputSlider from '../../../../components/CustomInputSlider'
 import CustomHorizontalLine from '../../../../components/CustomHorizontalLine'
 import Stories from '../Home/Molecules/Stories'
 import TrendingOptions from './Molecules/TrendingOptions'
+import TrendingLocations from './Molecules/TrendingLocations'
+import Post from '../Home/Molecules/Post'
 
 const Trending = () => {
     const [Search, setSearch] = useState('')
@@ -47,7 +49,7 @@ const Trending = () => {
     ];
     return (
         <ScreenWrapper
-        scrollEnabled
+            scrollEnabled
             headerUnScrollable={() => (<Header title={'What s Hot Right Now'} righticon={Images.loop} />)}
         >
             <View style={styles.container}>
@@ -61,7 +63,9 @@ const Trending = () => {
                     onChange={(val) => setsliderValue(val)}
                 />
             </View>
+
             <CustomHorizontalLine />
+            
             <View style={styles.container}>
                 <Optionbar title={'Trending Categories'} btn={"View All"} />
             </View>
@@ -72,15 +76,16 @@ const Trending = () => {
             <View style={styles.container}>
                 <Optionbar title={'Trending Locations'} btn={"View All"} />
             </View>
+            <TrendingLocations value={Trendinglocation}/>
+ 
+            <View style={styles.container}>
+                <Optionbar title={'Trending Post'} btn={"View All"} />
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+            </View>
 
-            {
-                Trendinglocation.map((item, i) => (
-                    <View index={i} style={styles.containertrending}>
-
-                        <TrendingOptions location={item.location} distance={item.location} post={item.post} tag={item.tag} />
-                    </View>
-                ))
-            }
         </ScreenWrapper>
     )
 }
@@ -94,9 +99,5 @@ const styles = StyleSheet.create({
     line: {
         marginTop: 15
     },
-    containertrending: {
-        marginTop: 25,
-        marginHorizontal: 15,
-        gap: 30
-    }
+
 })

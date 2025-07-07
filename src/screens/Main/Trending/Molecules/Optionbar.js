@@ -13,7 +13,7 @@ const Optionbar = ({ title, location, icon, btn, onpress }) => {
             </View>
             <TouchableOpacity style={{flexDirection:'row', gap:3}} onpress={onpress}>
                 <ImageFast source={icon} style={styles.icon} resizeMode={'contain'} />
-                <CustomText label={btn} color={'#FF2557'} fontSize={12} fontFamily={fonts.regular} />
+                <CustomText label={btn} color={'#FF2557'} fontSize={13} fontFamily={fonts.regular} />
             </TouchableOpacity>
         </View>
     )
