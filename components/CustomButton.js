@@ -5,7 +5,10 @@ import {
   Image,
 } from 'react-native';
 import React, {useState} from 'react';
+
 import CustomText from './CustomText';
+// import {COLORS} from '../utils/COLORS';
+// import fonts from '../assets/fonts';
 
 const CustomButton = ({
   onPress,
@@ -18,12 +21,13 @@ const CustomButton = ({
   marginTop,
   backgroundColor,
   color,
-  height, // Make height optional
+  width = '100%',
+  height = 52,
   borderRadius = 8,
   justifyContent = 'center',
   alignItems = 'center',
   flexDirection = 'row',
-  alignSelf = 'flex-start', // Change to flex-start for better content sizing
+  alignSelf = 'center',
   fontSize,
   indicatorColor,
   marginRight,
@@ -35,8 +39,6 @@ const CustomButton = ({
   icon,
   icnWidth,
   icnHeight,
-  paddingVertical=5,
-  paddingHorizontal = 0, // Add paddingHorizontal prop
 }) => {
   const [animation] = useState(new Animated.Value(1));
 
@@ -58,26 +60,29 @@ const CustomButton = ({
 
   return (
     <Animated.View
-      style={[mainStyle, {transform: [{scale: animation}], alignSelf}]}>
+      style={[mainStyle, {transform: [{scale: animation}], width, alignSelf}]}>
       <TouchableOpacity
         disabled={loading || disabled}
         activeOpacity={0.6}
         style={[
           {
-            backgroundColor: backgroundColor,
+            // backgroundColor: disabled
+            //   ? COLORS.authText
+            //   : backgroundColor
+            //   ? backgroundColor
+            //   : COLORS.primaryColor,
+            backgroundColor:backgroundColor,
             marginTop,
             marginBottom,
+            width: '100%',
+            height,
             borderRadius,
             flexDirection,
             alignItems,
             justifyContent,
             marginRight,
             borderWidth,
-            borderColor,
-            paddingHorizontal,
-            paddingVertical: paddingVertical,   // Add horizontal padding
-            height: height || undefined, // Make height optional
-            // minHeight: 37, // Set a minimum height if needed
+            borderColor
           },
           customStyle,
         ]}
@@ -87,6 +92,7 @@ const CustomButton = ({
         {loading && (
           <ActivityIndicator
             size={loadingSize || 25}
+            // color={indicatorColor ? COLORS.primaryColor : COLORS.white}
           />
         )}
         {icon && (
@@ -106,6 +112,7 @@ const CustomButton = ({
             textStyle={customText}
             label={title}
             color={color ? color : 'black'}
+            // fontFamily={fontFamily || fonts.medium}
             fontSize={fontSize || 15}
             textTransform={'capitalize'}
             lineHeight={22}

@@ -1,10 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import ImageFast from '../../../../../components/ImageFast'
 import { Images } from '../../../../../assets'
 import CustomText from '../../../../../components/CustomText'
 import fonts from '../../../../../assets/fonts'
-import CustomButton from '../../../../../components/CustomButton'
 
 const NotificationContainer = ({data}) => {
   return (
@@ -26,7 +25,22 @@ const NotificationContainer = ({data}) => {
             color={'#0E121B'} 
             fontSize={12}
           />
-          <CustomButton title={data.button} color={'#FF2557'} borderWidth={1} borderColor={'#FF2557'} paddingHorizontal={6} marginTop={10} paddingVertical={4}/>
+          <TouchableOpacity 
+            style={[
+              styles.button, 
+              {
+                borderColor: '#FF2557',
+                borderWidth: 1,
+                paddingVertical:4,
+                paddingHorizontal:8,
+                alignSelf: 'flex-start',
+                marginTop: 7,
+                borderRadius: 8
+              }
+            ]}
+          >
+            <Text style={{color: '#FF2557', fontFamily:fonts.regular, fontSize:14}}>{data.button}</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -67,4 +81,8 @@ const styles = StyleSheet.create({
     bottom:-2,
     left: 36,
   },
+  button: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 })

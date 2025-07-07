@@ -1,6 +1,5 @@
-import { StyleSheet, View, ScrollView } from 'react-native'
+import { StyleSheet, View, ScrollView, TouchableOpacity, Text } from 'react-native'
 import React, { useState } from 'react'
-import CustomButton from '../../../../../components/CustomButton'
 import fonts from '../../../../../assets/fonts'
 
 const button = [
@@ -33,20 +32,28 @@ const Notificationbar = () => {
             <View style={styles.container}>
                 {
                     button.map(((item, i) => (
-                        <CustomButton
+                        <TouchableOpacity
                             key={i}
-                            title={item.title}
-                            borderWidth={1}
-                            borderRadius={15}
-                            paddingVertical={5}
-                            paddingHorizontal={10}
-                            fontSize={14}
-                            borderColor={'#E1E4EA'}
-                            backgroundColor={activeButton === item.title ? '#FF2557' : 'transparent'}
-                            fontFamily={fonts.semiBold}
-                            color={activeButton === item.title ? 'white' : 'black'}
+                            style={[
+                                styles.button,
+                                {
+                                    backgroundColor: activeButton === item.title ? '#FF2557' : 'transparent',
+                                    borderColor: '#E1E4EA'
+                                }
+                            ]}
                             onPress={() => handleButtonPress(item.title)}
-                        />)))
+                        >
+                            <Text style={[
+                                styles.buttonText,
+                                {
+                                    color: activeButton === item.title ? 'white' : '#525866',
+                                    fontFamily: fonts.semiBold
+                                }
+                            ]}>
+                                {item.title}
+                            </Text>
+                        </TouchableOpacity>
+                    )))
                 }
             </View>
         </ScrollView>
@@ -61,5 +68,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         gap: 7,
         marginHorizontal: 10,
+    },
+    button: {
+        borderWidth: 1,
+        borderRadius: 15,
+        paddingVertical: 5,
+        paddingHorizontal: 10,
+    },
+    buttonText: {
+        fontSize: 14,
     }
 })
