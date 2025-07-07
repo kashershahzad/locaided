@@ -34,5 +34,16 @@ export const Images = {
     search: require('./search.png'),
     location:require('./location.png'),
     trending:require('./trending.png'),
-    filter:require('./filter.png')
+    filter:require('./filter.png'),
+    emptynotification:require('./emptynotification.png'),
+    person1:require('./person1.png'),
+    person2:require('./person2.png'),
+    person3:require('./person3.png'),
+    coinsadded:require('./coinadded.png'),
+    coinsaddedicon:require('./coinaddedicon.png'),
+    coinadded:require('./coinadded.png'),
+    likes:require('./likes.png'),
+    comments:require('./comments.png'),
+    mentions:require('./mentions.png'),
+
 }

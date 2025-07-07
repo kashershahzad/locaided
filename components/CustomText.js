@@ -37,6 +37,7 @@ const CustomText = ({
   removeTranslation,
   disabled,
   letterSpacing,
+  borderwidth,
 }) => {
   // const {t, i18n} = useTranslation();
 
@@ -71,6 +72,7 @@ const CustomText = ({
             fontWeight: fontWeight,
             bottom: bottom,
             borderBottomWidth: borderBottomWidth,
+            borderwidth:borderwidth,
             borderColor: borderColor,
             width: width,
             marginVertical: marginVertical,
