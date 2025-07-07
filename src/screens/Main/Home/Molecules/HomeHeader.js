@@ -11,7 +11,7 @@ const HomeHeader = () => {
     <View style={styles.container}>
       <ImageFast source={Images.logo} resizeMode={'contain'} style={styles.icon} />
       <View style={styles.mincontainer}>
-        <ImageFast source={Images.message} resizeMode={'contain'} style={styles.icon2}/>
+        <ImageFast source={Images.message} resizeMode={'contain'} style={styles.icon2}  onPress={()=>navigation.navigate('Notification')}/>
         <ImageFast source={Images.fireicon} resizeMode={'contain'} style={styles.icon2} onPress={()=>navigation.navigate('Trending')}/>
       </View>
     </View>

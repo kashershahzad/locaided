@@ -34,4 +34,5 @@ export const Images = {
     search: require('./search.png'),
     location:require('./location.png'),
     trending:require('./trending.png'),
+    filter:require('./filter.png')
 }
