@@ -6,27 +6,27 @@ import CustomText from '../../../../../components/CustomText'
 import fonts from '../../../../../assets/fonts'
 import CustomButton from '../../../../../components/CustomButton'
 
-const NotificationContainer = () => {
+const NotificationContainer = ({data}) => {
   return (
     <View style={styles.container}>
       <View style={{ flexDirection: 'row' }}>
         <View style={styles.imageContainer}>
-          <ImageFast source={Images.person1} resizeMode={'contain'} style={styles.img} />
-          <ImageFast source={Images.comments} resizeMode={'contain'} style={styles.icon} />
+          <ImageFast source={data.img} resizeMode={'contain'} style={styles.img} />
+          <ImageFast source={data.catagorieicon} resizeMode={'contain'} style={styles.icon} />
         </View>
         
         <View style={styles.textContainer}>
           <View style={styles.mincontainer}>
-            <CustomText label={'Patrick commented on your post'} fontFamily={fonts.regular} fontSize={12} />
-            <CustomText label={'Just Now'} fontFamily={fonts.light} color={'#0E121B'} fontSize={12} />
+            <CustomText label={data.title} fontFamily={fonts.regular} fontSize={12} />
+            <CustomText label={data.time} fontFamily={fonts.light} color={'#0E121B'} fontSize={12} />
           </View>
           <CustomText 
-            label={'“Looks perfect, send it for review tomorrow.”'} 
+            label={data.description} 
             fontFamily={fonts.light} 
             color={'#0E121B'} 
             fontSize={12}
           />
-          <CustomButton title={'View Comment'} color={'#FF2557'} borderWidth={1} borderColor={'#FF2557'} paddingHorizontal={6} marginTop={10} paddingVertical={4}/>
+          <CustomButton title={data.button} color={'#FF2557'} borderWidth={1} borderColor={'#FF2557'} paddingHorizontal={6} marginTop={10} paddingVertical={4}/>
         </View>
       </View>
     </View>

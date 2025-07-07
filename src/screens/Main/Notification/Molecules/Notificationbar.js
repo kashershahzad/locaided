@@ -29,7 +29,7 @@ const Notificationbar = () => {
     }
 
     return (
-        <ScrollView horizontal>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View style={styles.container}>
                 {
                     button.map(((item, i) => (
@@ -40,6 +40,7 @@ const Notificationbar = () => {
                             borderRadius={15}
                             paddingVertical={5}
                             paddingHorizontal={10}
+                            fontSize={14}
                             borderColor={'#E1E4EA'}
                             backgroundColor={activeButton === item.title ? '#FF2557' : 'transparent'}
                             fontFamily={fonts.semiBold}
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 10,
+        gap: 7,
         marginHorizontal: 10,
     }
 })
