@@ -13,11 +13,20 @@ const Notification = () => {
             {/* <Emptynotification /> */}
             
             <Notificationbar />
-            <NotificationContainer/>
+            <View style={styles.notification}>
+                <NotificationContainer/>
+                <NotificationContainer/>
+                <NotificationContainer/>
+                <NotificationContainer/>
+            </View>
         </View>
     )
 }
 
 export default Notification
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    notification:{
+        marginTop:8,
+    }
+})

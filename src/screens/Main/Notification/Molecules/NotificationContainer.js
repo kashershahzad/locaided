@@ -37,11 +37,13 @@ export default NotificationContainer
 
 const styles = StyleSheet.create({
   container: {
-    margin: 20,
+    margin: 10,
     padding: 10,
     borderWidth: 2,
     borderRadius: 16,
     borderColor: '#E1E4EA',
+    marginBottom:0,
+    marginTop:10,
   },
   imageContainer: {
     marginRight: 10,

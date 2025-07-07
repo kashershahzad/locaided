@@ -38,6 +38,7 @@ const Notificationbar = () => {
                             title={item.title}
                             borderWidth={1}
                             borderRadius={15}
+                            paddingVertical={5}
                             paddingHorizontal={10}
                             borderColor={'#E1E4EA'}
                             backgroundColor={activeButton === item.title ? '#FF2557' : 'transparent'}

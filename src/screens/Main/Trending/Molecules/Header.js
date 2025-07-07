@@ -28,11 +28,13 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        marginHorizontal:10,
         
     },
     mincontainer: {
 
-        marginVertical: 20
+        marginVertical: 20,
+        marginBottom:15,
     },
     icon: {
         height: 24,
