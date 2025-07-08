@@ -13,7 +13,7 @@ const Notificationdata = [
         catagorie: 'Comments',
         catagorieicon: Images.comments,
         time: 'Just now',
-        description: "“Looks perfect, send it for review tomorrow.”",
+        description: "“Looks perfect, send it for review tomorro...",
         button: 'View Comment'
     },
     {
@@ -40,7 +40,7 @@ const Notificationdata = [
         catagorie: 'Coins',
         catagorieicon: Images.eys,
         time: 'Just now',
-        description: "From your recent post 'Local Coffee Spot...'",
+        description: "From your recent post 'Local Coffee Spot...",
         button: 'See balance'
     },
     {

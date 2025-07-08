@@ -23,7 +23,7 @@ const NotificationContainer = ({data}) => {
             label={data.description} 
             fontFamily={fonts.light} 
             color={'#0E121B'} 
-            fontSize={12}
+            fontSize={13}
           />
           <TouchableOpacity 
             style={[
