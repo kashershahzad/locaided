@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     },
     icon: {
         height: 15,
-        width: 15,
+        width: 16,
     },
     icon2: {
         height: 24,
