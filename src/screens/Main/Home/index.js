@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <ScreenWrapper
             headerUnScrollable={() => (<HomeHeader />)}
-            // footerUnScrollable={() => (<HomeFooter />)}
+        // footerUnScrollable={() => (<HomeFooter />)}
         >
             <View>
                 <ScrollView>
@@ -32,16 +32,16 @@ const Home = () => {
 
                     modal &&
                     <HomeModel
-                    modal={() => { setmodal(true) }}
-                    onClose={() => setmodal(false)} />
+                        modal={() => { setmodal(true) }}
+                        onClose={() => setmodal(false)} />
 
                 }
 
                 {
                     ratemodel &&
                     <PostRateModel
-                    modal={() => { setratemodal(true) }}
-                    onClose={() => setratemodal(false)} />
+                        modal={() => { setratemodal(true) }}
+                        onClose={() => setratemodal(false)} />
                 }
             </View>
         </ScreenWrapper>

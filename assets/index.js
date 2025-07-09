@@ -28,11 +28,14 @@ export const Images = {
     screenshot: require('./screenshot.png'),
     route: require('./route.png'),
     back: require('./back.png'),
+    back2: require('./back2.png'),
     postrate: require('./postrate.png'),
     coins: require('./coins.png'),
     loop: require('./loop.png'),
     search: require('./search.png'),
     location: require('./location.png'),
+    locationicon: require('./locationicon.png'),
+    tagicon: require('./tagicon.png'),
     trending: require('./trending.png'),
     filter: require('./filter.png'),
     emptynotification: require('./emptynotification.png'),
@@ -44,5 +47,12 @@ export const Images = {
     likes: require('./likes.png'),
     comments: require('./comments.png'),
     mentions: require('./mentions.png'),
-    eys: require('./eys.png')
+    eys: require('./eys.png'),
+
+    eys2: require('./eys2.png'),
+    newpost: require('./newpost.png'),
+    newpost2: require('./newpost2.png'),
+    camera: require('./camera.png'),
+    gif: require('./gif.png'),
+    gallery: require('./gallery.png'),
 }

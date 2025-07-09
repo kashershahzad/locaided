@@ -37,6 +37,7 @@ const MainTabNavigator = () => {
                 tabBarStyle: styles.tabBar,
                 // tabBarLabelStyle: styles.label,
                 headerShown: false,
+                tabBarHideOnKeyboard:true
             })}
         >
 

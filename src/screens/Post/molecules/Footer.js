@@ -1,0 +1,45 @@
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import ImageFast from '../../../../components/ImageFast'
+import { Images } from '../../../../assets'
+import CustomHorizontalLine from '../../../../components/CustomHorizontalLine'
+
+const Footer = () => {
+    return (
+        <>
+            <View style={styles.container}>
+                <ImageFast source={Images.locationicon} style={styles.icon} resizeMode={'contain'} />
+                <ImageFast source={Images.tagicon} style={styles.icon} resizeMode={'contain'} />
+            </View>
+            <CustomHorizontalLine height={1} />
+            <View style={styles.container}>
+                <ImageFast source={Images.newpost} style={styles.icon2} resizeMode={'contain'} />
+                <ImageFast source={Images.camera} style={styles.icon2} resizeMode={'contain'} />
+                <ImageFast source={Images.gallery} style={styles.icon2} resizeMode={'contain'} />
+                <ImageFast source={Images.gif} style={styles.icon2} resizeMode={'contain'} />
+                <ImageFast source={Images.eys2} style={styles.icon2} resizeMode={'contain'} />
+                <ImageFast source={Images.newpost2} style={styles.icon2} resizeMode={'contain'} />
+            </View>
+        </>
+    )
+}
+
+export default Footer
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        gap: 9,
+        marginLeft: 15,
+        marginVertical: 7,
+    },
+    icon: {
+        height: 15,
+        width: 15,
+    },
+    icon2: {
+        height: 24,
+        width: 24,
+    },
+    
+})

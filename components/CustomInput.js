@@ -5,10 +5,11 @@ import CustomText from './CustomText';
 import ImageFast from './ImageFast';
 import Icons from './Icons';
 
-import {Images} from '../assets/images';
-import {COLORS} from '../utils/COLORS';
-import i18n from '../language/i18n';
+// import {Images} from '../assets/images';
+// import {COLORS} from '../utils/COLORS';
+// import i18n from '../language/i18n';
 import fonts from '../assets/fonts';
+import { COLORS } from '../src/utiles/COLORS';
 
 const CustomInput = ({
   placeholder,
@@ -26,6 +27,7 @@ const CustomInput = ({
   autoCapitalize,
   error,
   isFocus,
+  cursercolor,
   isBlur,
   width,
   onEndEditing,
@@ -36,7 +38,7 @@ const CustomInput = ({
   withLabel,
   isError,
   labelColor,
-  borderColor = '#E8ECF4',
+  borderColor ,
   borderWidth,
   search,
   backgroundColor,
@@ -60,7 +62,7 @@ const CustomInput = ({
         <CustomText
           label={withLabel}
           marginBottom={8}
-          color={labelColor || COLORS.black}
+          color={labelColor || 'black'}
         />
       )}
       <View
@@ -75,7 +77,7 @@ const CustomInput = ({
                 : isFocused
                 ? COLORS.primaryColor
                 : borderColor,
-            borderWidth: borderWidth || 1,
+            borderWidth: borderWidth || 0,
             height: height ? height : multiline ? 180 : 56,
             width: '100%',
             borderRadius: borderRadius || 8,
@@ -88,7 +90,8 @@ const CustomInput = ({
         ) : null}
         <TextInput
           ref={ref}
-          placeholder={i18n.t(placeholder)}
+          placeholder={placeholder}
+          cursorColor={cursercolor}
           style={[
             styles.input,
             {
@@ -153,7 +156,7 @@ const styles = StyleSheet.create({
     height: '100%',
     padding: 0,
     margin: 0,
-    fontFamily: fonts.medium,
+    fontFamily: fonts.regular,
     fontSize: 14,
     color: COLORS.black,
   },
