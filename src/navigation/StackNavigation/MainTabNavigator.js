@@ -9,55 +9,134 @@ import ImageFast from "../../../components/ImageFast";
 const Tab = createBottomTabNavigator();
 
 const MainTabNavigator = () => {
-  return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: () => {
-          const icons = {
-            Home: Images.homeicon,
-            Location: Images.homeicon1,
-            Post: Images.homeicon3,
-            Videos: Images.homeicon4,
-            Profile: Images.homeicon2,
-          };
-          return (
-            <ImageFast
-              source={icons[route.name]} 
-              style={[styles.icon]} 
-              resizeMode="contain"
+    return (
+        <Tab.Navigator
+            screenOptions={() => ({
+
+                // screenOptions={({ route }) => ({
+                //     tabBarIcon: () => {
+                //         const icons = {
+                //             Home: Images.homeicon,
+                //             Location: Images.homeicon1,
+                //             Post: Images.homeicon3,
+                //             Videos: Images.homeicon4,
+                //             Profile: Images.homeicon2,
+                //         };
+                //         return (
+                //             <ImageFast
+                //                 source={icons[route.name]}
+                //                 style={[styles.icon]}
+                //                 resizeMode="contain"
+                //             />
+                //         );
+                //     },
+                // tabBarActiveTintColor: '#1A73E8',
+                // tabBarInactiveTintColor: '#5F6368',
+                tabBarShowLabel: false,
+                tabBarStyle: styles.tabBar,
+                // tabBarLabelStyle: styles.label,
+                headerShown: false,
+            })}
+        >
+
+            <Tab.Screen options={{
+                tabBarIcon: ({ focused }) => (
+                    <Image
+                        source={Images.homeicon}
+                        style={[
+                            styles.icon,
+                            { tintColor: focused ? COLORS.white : '#636D82' },
+                        ]}
+                    />
+                ),
+            }}
+                name="Home"
+                component={Home}
             />
-          );
-        },
-        // tabBarActiveTintColor: '#1A73E8',
-        // tabBarInactiveTintColor: '#5F6368',
-        tabBarShowLabel: false,
-        tabBarStyle: styles.tabBar,
-        // tabBarLabelStyle: styles.label,
-        headerShown: false,
-      })}
-    >
-      <Tab.Screen name="Home" component={Home}/>
-      <Tab.Screen name="Location" component={Post}/>
-      <Tab.Screen name="Post" component={Post}/>
-      <Tab.Screen name="Videos" component={Post}/>
-      <Tab.Screen name="Profile" component={Post}/>
-    </Tab.Navigator>
-  );
+
+            <Tab.Screen options={{
+                tabBarIcon: ({ focused }) => (
+                    <Image
+                        source={Images.homeicon1}
+                        style={[
+                            styles.icon,
+                            { tintColor: focused ? COLORS.white : '#636D82' },
+                        ]}
+                    />
+                ),
+            }}
+                name="Location"
+                component={Post}
+            />
+
+
+            <Tab.Screen options={{
+                tabBarIcon: ({ focused }) => (
+                    <Image
+                        source={Images.homeicon3}
+                        style={[
+                            styles.icon,
+                            { tintColor: focused ? COLORS.white : '#636D82' },
+                        ]}
+                    />
+                ),
+            }}
+                name="Post"
+                component={Post}
+            />
+
+
+            <Tab.Screen options={{
+                tabBarIcon: ({ focused }) => (
+                    <Image
+                        source={Images.homeicon4}
+                        style={[
+                            styles.icon,
+                            { tintColor: focused ? COLORS.white : '#636D82' },
+                        ]}
+                    />
+                ),
+            }}
+                name="Videos"
+                component={Post}
+            />
+
+            <Tab.Screen options={{
+                tabBarIcon: ({ focused }) => (
+                    <Image
+                        source={Images.homeicon2}
+                        style={[
+                            styles.icon,
+                            { tintColor: focused ? COLORS.white : '#636D82' },
+                        ]}
+                    />
+                ),
+            }}
+                name="Profile"
+                component={Post}
+            />
+
+            {/* <Tab.Screen name="Location" component={Post} />
+            <Tab.Screen name="Post" component={Post} />
+            <Tab.Screen name="Videos" component={Post} />
+            <Tab.Screen name="Profile" component={Post} /> */}
+        </Tab.Navigator>
+    );
 };
 
 const styles = StyleSheet.create({
-  tabBar: {
-    paddingVertical: 10,
-    paddingHorizontal: 28,
-  },
-//   label: {
-//     fontSize: 12,
-//     marginBottom: 5,
-//   },
-  icon: {
-    width: 24,
-    height: 24,
-  },
+    tabBar: {
+        paddingVertical: 10,
+        paddingHorizontal: 28,
+    },
+    //   label: {
+    //     fontSize: 12,
+    //     marginBottom: 5,
+    //   },
+    icon: {
+        width: 24,
+        height: 24,
+    },
 });
 
 export default MainTabNavigator;
