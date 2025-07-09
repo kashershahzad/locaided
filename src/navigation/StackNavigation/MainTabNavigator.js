@@ -111,15 +111,11 @@ const MainTabNavigator = () => {
                         ]}
                     />
                 ),
-            }}
+            }
+        }
                 name="Profile"
                 component={Post}
             />
-
-            {/* <Tab.Screen name="Location" component={Post} />
-            <Tab.Screen name="Post" component={Post} />
-            <Tab.Screen name="Videos" component={Post} />
-            <Tab.Screen name="Profile" component={Post} /> */}
         </Tab.Navigator>
     );
 };
