@@ -14,7 +14,6 @@ const RootNavigation = () => {
 
             }}>
                 <Stack.Screen name="AuthStack" component={AuthStack} />
-                
                 <Stack.Screen name="Mainstack" component={Mainstack} />
                  
             </Stack.Navigator>

@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <ScreenWrapper
             headerUnScrollable={() => (<HomeHeader />)}
-            footerUnScrollable={() => (<HomeFooter />)}
+            // footerUnScrollable={() => (<HomeFooter />)}
         >
             <View>
                 <ScrollView>
