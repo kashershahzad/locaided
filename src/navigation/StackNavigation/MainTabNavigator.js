@@ -5,6 +5,7 @@ import { Images } from "../../../assets";
 import Home from "../../screens/Main/Home";
 import Post from "../../screens/Post";
 import ImageFast from "../../../components/ImageFast";
+import { COLORS } from "../../utiles/COLORS";
 
 const Tab = createBottomTabNavigator();
 
@@ -45,7 +46,7 @@ const MainTabNavigator = () => {
                         source={Images.homeicon}
                         style={[
                             styles.icon,
-                            { tintColor: focused ? COLORS.white : '#636D82' },
+                           
                         ]}
                     />
                 ),
@@ -60,7 +61,7 @@ const MainTabNavigator = () => {
                         source={Images.homeicon1}
                         style={[
                             styles.icon,
-                            { tintColor: focused ? COLORS.white : '#636D82' },
+                           
                         ]}
                     />
                 ),
@@ -76,7 +77,7 @@ const MainTabNavigator = () => {
                         source={Images.homeicon3}
                         style={[
                             styles.icon,
-                            { tintColor: focused ? COLORS.white : '#636D82' },
+                           
                         ]}
                     />
                 ),
@@ -92,7 +93,7 @@ const MainTabNavigator = () => {
                         source={Images.homeicon4}
                         style={[
                             styles.icon,
-                            { tintColor: focused ? COLORS.white : '#636D82' },
+                           
                         ]}
                     />
                 ),
@@ -107,7 +108,7 @@ const MainTabNavigator = () => {
                         source={Images.homeicon2}
                         style={[
                             styles.icon,
-                            { tintColor: focused ? COLORS.white : '#636D82' },
+                           
                         ]}
                     />
                 ),
