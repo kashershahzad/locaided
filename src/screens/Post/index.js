@@ -11,7 +11,8 @@ const Post = () => {
     <ScreenWrapper
     scrollEnabled
      headerUnScrollable={() => (<Header />)}
-      footerUnScrollable={() => (<Footer />)}>
+      footerUnScrollable={() => (<Footer />)}
+      >
       <CustomInput placeholder={' Share whats happening around you...'} backgroundColor={'transparent'} placeholderTextColor={'#99A0AE'} cursercolor={'#FF2557'} />
     </ScreenWrapper>
   )
