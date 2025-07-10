@@ -6,6 +6,7 @@ import CustomHorizontalLine from '../../../../components/CustomHorizontalLine'
 import { useNavigation } from '@react-navigation/native'
 import CustomText from '../../../../components/CustomText'
 import { COLORS } from '../../../utiles/COLORS'
+import fonts from '../../../../assets/fonts'
 
 const Footer = ({ tag }) => {
     const navigation = useNavigation()
@@ -26,22 +27,22 @@ const Footer = ({ tag }) => {
                 }
 
 
-                {tag ?
+                {Tag ?
                     <ImageFast source={Images.tag2} style={styles.icon} resizeMode={'contain'} onPress={() => navigation.navigate('Tag')} />
                     :
                     <ImageFast source={Images.tagicon} style={styles.icon} resizeMode={'contain'} onPress={() => navigation.navigate('Tag')} />}
 
                 {location === true ?
                     <View style={styles.location}>
-                        <CustomText label={'Park Road 24, 63225 Langen...'} color={COLORS.primaryColor} />
+                        <CustomText label={'Park Road 24, 63225 Langen...'} color={COLORS.primaryColor} fontFamily={fonts.regular}/>
                         <ImageFast source={Images.redclose} resizeMode={'contain'} style={styles.icon3} onPress={() => { setlocation(false) }} />
                     </View>
                     : null}
 
                 {Tag ?
-                    <View style={styles.location}>
-                        <CustomText label={Tag} color={COLORS.primaryColor} />
-                        <ImageFast source={Images.redclose} resizeMode={'contain'} style={styles.icon3}
+                    <View style={styles.tagtext}>
+                        <CustomText label={Tag} color={'#7D52F4'} fontFamily={fonts.regular}/>
+                        <ImageFast source={Images.purpleclose} resizeMode={'contain'} style={styles.icon3}
                             onPress={() => settag(null)}
                         />
                     </View> : null
@@ -70,8 +71,8 @@ const styles = StyleSheet.create({
         marginVertical: 7,
     },
     icon: {
-        height: 15,
-        width: 16,
+        height: 20,
+        width: 20,
     },
     icon2: {
         height: 24,
@@ -89,6 +90,16 @@ const styles = StyleSheet.create({
         paddingRight: 4,
         flexDirection: 'row',
         borderRadius: 15,
-    }
+    },
+
+    tagtext: {
+        backgroundColor: '#EFEBFF',
+        paddingVertical: 2,
+        paddingLeft: 8,
+        paddingRight: 4,
+        flexDirection: 'row',
+        borderRadius: 15,
+    },
+
 
 })
