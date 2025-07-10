@@ -55,4 +55,23 @@ export const Images = {
     camera: require('./camera.png'),
     gif: require('./gif.png'),
     gallery: require('./gallery.png'),
+    filter2: require('./filter2.png'),
+    close2: require('./close2.png'),
+
+
+    // Tags
+    activitytag: require('./tagimages/activity.png'),
+    alerttag: require('./tagimages/alert.png'),
+    careertag: require('./tagimages/career.png'),
+    eductiontag: require('./tagimages/eduction.png'),
+    eventstag: require('./tagimages/events.png'),
+    hotspottag: require('./tagimages/hotspot.png'),
+    lifestyletag: require('./tagimages/lifestyle.png'),
+    milestonestag: require('./tagimages/milestones.png'),
+    missingtag: require('./tagimages/missing.png'),
+    newstag: require('./tagimages/news.png'),
+    offertag: require('./tagimages/offer.png'),
+    searchtag: require('./tagimages/search.png'),
+    sostag: require('./tagimages/sos.png'),
+    traffictag: require('./tagimages/traffic.png'),
 }

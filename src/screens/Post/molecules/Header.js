@@ -6,17 +6,19 @@ import CustomText from '../../../../components/CustomText'
 import fonts from '../../../../assets/fonts'
 import CustomButton from '../../../../components/CustomButton'
 import CustomHorizontalLine from '../../../../components/CustomHorizontalLine'
+import { useNavigation } from '@react-navigation/native'
 
 
-const Header = ({navigation}) => {
+const Header = () => {
+    const navigation = useNavigation()
     return (
         <>
             <View style={styles.mincontainer}>
                 <View style={styles.container}>
-                    <ImageFast source={Images.back2} style={styles.icon} resizeMode={'contain'} />
+                    <ImageFast source={Images.back2} style={styles.icon} resizeMode={'contain'} onPress={()=>navigation.goBack()}/>
                     <CustomText label={'New Post'} fontSize={16} fontFamily={fonts.regular} />
                 </View>
-                <TouchableOpacity style={styles.btn} onPress={()=>navigation.goback()}>
+                <TouchableOpacity style={styles.btn}>
                     <CustomText color={'white'} label={"Post"} fontFamily={fonts.regular} />
                 </TouchableOpacity>
             </View>

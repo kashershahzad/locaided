@@ -3,13 +3,15 @@ import React from 'react'
 import ImageFast from '../../../../components/ImageFast'
 import { Images } from '../../../../assets'
 import CustomHorizontalLine from '../../../../components/CustomHorizontalLine'
+import { useNavigation } from '@react-navigation/native'
 
 const Footer = () => {
+    const navigation = useNavigation()
     return (
         <>
             <View style={styles.container}>
                 <ImageFast source={Images.locationicon} style={styles.icon} resizeMode={'contain'} />
-                <ImageFast source={Images.tagicon} style={styles.icon} resizeMode={'contain'} />
+                <ImageFast source={Images.tagicon} style={styles.icon} resizeMode={'contain'} onPress={()=>navigation.navigate('Tag')} />
             </View>
             <CustomHorizontalLine height={1} />
             <View style={styles.container}>
