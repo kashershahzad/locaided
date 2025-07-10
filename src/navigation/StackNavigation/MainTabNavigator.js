@@ -78,7 +78,6 @@ const MainTabNavigator = () => {
                         source={Images.homeicon3}
                         style={[
                             styles.icon,
-                           
                         ]}
                     />
                 ),

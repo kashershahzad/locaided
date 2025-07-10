@@ -4,14 +4,18 @@ import ImageFast from '../../../../components/ImageFast'
 import { Images } from '../../../../assets'
 import CustomHorizontalLine from '../../../../components/CustomHorizontalLine'
 import { useNavigation } from '@react-navigation/native'
+import CustomText from '../../../../components/CustomText'
 
-const Footer = () => {
+const Footer = ({ tag }) => {
     const navigation = useNavigation()
     return (
         <>
             <View style={styles.container}>
                 <ImageFast source={Images.locationicon} style={styles.icon} resizeMode={'contain'} />
-                <ImageFast source={Images.tagicon} style={styles.icon} resizeMode={'contain'} onPress={()=>navigation.navigate('Tag')} />
+
+                {tag  ? <ImageFast source={Images.tag2} style={styles.icon} resizeMode={'contain'} onPress={() => navigation.navigate('Tag')} /> : <ImageFast source={Images.tagicon} style={styles.icon} resizeMode={'contain'} onPress={() => navigation.navigate('Tag')} />}
+
+                <CustomText label={tag} />
             </View>
             <CustomHorizontalLine height={1} />
             <View style={styles.container}>
@@ -43,5 +47,5 @@ const styles = StyleSheet.create({
         height: 24,
         width: 24,
     },
-    
+
 })

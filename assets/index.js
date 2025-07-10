@@ -57,6 +57,7 @@ export const Images = {
     gallery: require('./gallery.png'),
     filter2: require('./filter2.png'),
     close2: require('./close2.png'),
+    tag2:require('./tag2.png'),
 
 
     // Tags

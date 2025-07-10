@@ -4,6 +4,7 @@ import Trending from '../../screens/Main/Trending';
 import Notification from '../../screens/Main/Notification';
 import MainTabNavigator from './MainTabNavigator';
 import Tag from '../../screens/Post/Tag';
+import Post from '../../screens/Post';
 
 export default function Mainstack() {
     const Stack = createNativeStackNavigator();
@@ -12,6 +13,7 @@ export default function Mainstack() {
             headerShown: false,
         }}>
             <Stack.Screen name='MainTabs' component={MainTabNavigator} />
+            <Stack.Screen name='Post' component={Post} />
             <Stack.Screen name='Trending' component={Trending} />
             <Stack.Screen name='Notification' component={Notification} />
             <Stack.Screen name='Tag' component={Tag} />

@@ -6,13 +6,14 @@ import Header from './molecules/Header'
 import CustomInput from '../../../components/CustomInput'
 import Footer from './molecules/Footer'
 
-const Post = () => {
+const Post = ({route}) => {
+  const tagname = route.params?.tag
   return (
     <ScreenWrapper
-    scrollEnabled
-     headerUnScrollable={() => (<Header />)}
-      footerUnScrollable={() => (<Footer />)}
-      >
+      scrollEnabled
+      headerUnScrollable={() => (<Header />)}
+      footerUnScrollable={() => (<Footer tag={tagname} />)}
+    >
       <CustomInput placeholder={' Share whats happening around you...'} backgroundColor={'transparent'} placeholderTextColor={'#99A0AE'} cursercolor={'#FF2557'} />
     </ScreenWrapper>
   )
