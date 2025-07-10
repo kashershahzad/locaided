@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Header from '../../Main/Trending/Molecules/Header'
 import { Images } from '../../../../assets'
 import CustomText from '../../../../components/CustomText'
@@ -94,7 +94,12 @@ const Tag = () => {
                 <ImageFast source={Images.close2} style={styles.closeicon} resizeMode={'contain'} />
             </View>
             {TagsData.map((item, i) => (
-                <TouchableOpacity key={i}  style={styles.container} onPress={() => {navigation.navigate('Post',{tag:item.title})}}>
+                <TouchableOpacity key={i} style={styles.container} onPress={() => {
+                    navigation.navigate('MainTabs', {
+                        screen: 'Post',
+                        params: { tag: item.title }
+                    });
+                }}>
                     <ImageFast source={item.icon} style={styles.icon} resizeMode={'contain'} />
                     <View style={styles.mincontainer}>
                         <CustomText label={item.title} fontSize={14} fontFamily={fonts.semiBold} marginTop={3} />
@@ -134,7 +139,7 @@ const styles = StyleSheet.create({
         gap: 15,
         borderWidth: 1,
         paddingHorizontal: 10,
-        borderColor:'#E1E4EA',
+        borderColor: '#E1E4EA',
         paddingVertical: 8,
         borderRadius: 16,
         marginTop: 9,

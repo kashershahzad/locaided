@@ -58,6 +58,8 @@ export const Images = {
     filter2: require('./filter2.png'),
     close2: require('./close2.png'),
     tag2:require('./tag2.png'),
+    activelocation:require('./activelocation.png'),
+    redclose:require('./redclose.png'),
 
 
     // Tags
