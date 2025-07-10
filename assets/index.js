@@ -61,6 +61,7 @@ export const Images = {
     activelocation: require('./activelocation.png'),
     redclose: require('./redclose.png'),
     purpleclose: require('./purpleclose.png'),
+    postclose: require('./postclose.png'),
 
     // Tags
     activitytag: require('./tagimages/activity.png'),

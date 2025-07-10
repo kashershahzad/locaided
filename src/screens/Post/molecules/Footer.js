@@ -7,14 +7,39 @@ import { useNavigation } from '@react-navigation/native'
 import CustomText from '../../../../components/CustomText'
 import { COLORS } from '../../../utiles/COLORS'
 import fonts from '../../../../assets/fonts'
+import ImagePicker from 'react-native-image-crop-picker';
 
-const Footer = ({ tag }) => {
+const Footer = ({ tag, setSelectedImage, selectedImage }) => {
     const navigation = useNavigation()
     const [location, setlocation] = useState(false)
     const [Tag, settag] = useState(tag)
     const handlelocation = () => {
         setlocation(true)
     }
+
+    const openCamera = () => {
+        ImagePicker.openCamera({
+            width: 400,
+            height: 400,
+            cropping:true
+        }).then(image => {
+            setSelectedImage(image.path);
+        }).catch(error => {
+            console.log(error);
+        });
+    };
+
+    const openGallery = () => {
+        ImagePicker.openPicker({
+            width: 400,
+            height: 400,
+            cropping:true
+        }).then(image => {
+            setSelectedImage(image.path);
+        }).catch(error => {
+            console.log(error);
+        });
+    };
     return (
         <>
             <View style={styles.container}>
@@ -34,14 +59,14 @@ const Footer = ({ tag }) => {
 
                 {location === true ?
                     <View style={styles.location}>
-                        <CustomText label={'Park Road 24, 63225 Langen...'} color={COLORS.primaryColor} fontFamily={fonts.regular}/>
+                        <CustomText label={'Park Road 24, 63225 Langen...'} color={COLORS.primaryColor} fontFamily={fonts.regular} />
                         <ImageFast source={Images.redclose} resizeMode={'contain'} style={styles.icon3} onPress={() => { setlocation(false) }} />
                     </View>
                     : null}
 
                 {Tag ?
                     <View style={styles.tagtext}>
-                        <CustomText label={Tag} color={'#7D52F4'} fontFamily={fonts.regular}/>
+                        <CustomText label={Tag} color={'#7D52F4'} fontFamily={fonts.regular} />
                         <ImageFast source={Images.purpleclose} resizeMode={'contain'} style={styles.icon3}
                             onPress={() => settag(null)}
                         />
@@ -51,8 +76,8 @@ const Footer = ({ tag }) => {
             <CustomHorizontalLine height={1} />
             <View style={styles.container}>
                 <ImageFast source={Images.newpost} style={styles.icon2} resizeMode={'contain'} />
-                <ImageFast source={Images.camera} style={styles.icon2} resizeMode={'contain'} />
-                <ImageFast source={Images.gallery} style={styles.icon2} resizeMode={'contain'} />
+                <ImageFast source={Images.camera} style={styles.icon2} resizeMode={'contain'} onPress={openCamera}/>
+                <ImageFast source={Images.gallery} style={styles.icon2} resizeMode={'contain'} onPress={openGallery}/>
                 <ImageFast source={Images.gif} style={styles.icon2} resizeMode={'contain'} />
                 <ImageFast source={Images.eys2} style={styles.icon2} resizeMode={'contain'} />
                 <ImageFast source={Images.newpost2} style={styles.icon2} resizeMode={'contain'} />
