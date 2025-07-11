@@ -42,6 +42,7 @@ const CustomInput = ({
   borderWidth,
   search,
   backgroundColor,
+  fontsize
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [hidePass, setHidePass] = useState(true);
@@ -98,6 +99,7 @@ const CustomInput = ({
               width: secureTextEntry ? '91%' : '99%',
               paddingVertical: multiline ? 18 : 0,
               paddingLeft: search ? 5 : 0,
+              fontSize:fontsize,
             },
           ]}
           secureTextEntry={secureTextEntry ? (hidePass ? true : false) : false}

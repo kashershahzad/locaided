@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
+import { Dimensions } from 'react-native';
 import ImageFast from '../../../../components/ImageFast'
 import { Images } from '../../../../assets'
 import CustomHorizontalLine from '../../../../components/CustomHorizontalLine'
@@ -18,10 +19,20 @@ const Footer = ({ tag, setSelectedImage, selectedImage }) => {
     }
 
     const openCamera = () => {
+        const screenWidth = Dimensions.get('window').width;
+        const containerWidth = screenWidth - 20;
+        const containerHeight = 300;
         ImagePicker.openCamera({
-            width: 400,
-            height: 400,
-            cropping:true
+            width: containerWidth,
+            height: containerHeight,
+            cropping: true,
+            cropperCircleOverlay: false,
+            compressImageMaxWidth: containerWidth,
+            compressImageMaxHeight: containerHeight,
+            compressImageQuality: 0.8,
+            cropperToolbarTitle: 'Crop Image',
+            freeStyleCropEnabled: true,
+            includeBase64: false,
         }).then(image => {
             setSelectedImage(image.path);
         }).catch(error => {
@@ -30,10 +41,21 @@ const Footer = ({ tag, setSelectedImage, selectedImage }) => {
     };
 
     const openGallery = () => {
+        const screenWidth = Dimensions.get('window').width;
+        const containerWidth = screenWidth - 20;
+        const containerHeight = 300;
+
         ImagePicker.openPicker({
-            width: 400,
-            height: 400,
-            cropping:true
+            width: containerWidth,
+            height: containerHeight,
+            cropping: true,
+            cropperCircleOverlay: false,
+            compressImageMaxWidth: containerWidth,
+            compressImageMaxHeight: containerHeight,
+            compressImageQuality: 0.8,
+            cropperToolbarTitle: 'Crop Image',
+            freeStyleCropEnabled: true,
+            includeBase64: false,
         }).then(image => {
             setSelectedImage(image.path);
         }).catch(error => {
@@ -76,8 +98,8 @@ const Footer = ({ tag, setSelectedImage, selectedImage }) => {
             <CustomHorizontalLine height={1} />
             <View style={styles.container}>
                 <ImageFast source={Images.newpost} style={styles.icon2} resizeMode={'contain'} />
-                <ImageFast source={Images.camera} style={styles.icon2} resizeMode={'contain'} onPress={openCamera}/>
-                <ImageFast source={Images.gallery} style={styles.icon2} resizeMode={'contain'} onPress={openGallery}/>
+                <ImageFast source={Images.camera} style={styles.icon2} resizeMode={'contain'} onPress={openCamera} />
+                <ImageFast source={Images.gallery} style={styles.icon2} resizeMode={'contain'} onPress={openGallery} />
                 <ImageFast source={Images.gif} style={styles.icon2} resizeMode={'contain'} />
                 <ImageFast source={Images.eys2} style={styles.icon2} resizeMode={'contain'} />
                 <ImageFast source={Images.newpost2} style={styles.icon2} resizeMode={'contain'} />
