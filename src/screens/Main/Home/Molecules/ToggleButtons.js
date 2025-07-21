@@ -41,7 +41,7 @@ const ToggleButtons = ({
 
   return (
     <View style={styles.container}>
-      <CustomText label={title} marginBottom={8} fontSize={12} marginTop={10} fontFamily={fonts.regular} />
+      <CustomText label={title} fontSize={12} fontFamily={fonts.regular} />
       <View style={styles.toggleContainer}>
         <TouchableOpacity
           style={[

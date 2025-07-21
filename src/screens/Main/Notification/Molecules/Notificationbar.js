@@ -2,6 +2,10 @@ import { StyleSheet, View, ScrollView, TouchableOpacity, Text } from 'react-nati
 import React, { useState } from 'react'
 import fonts from '../../../../../assets/fonts'
 
+
+const Notificationbar = () => {
+
+    
 const button = [
     {
         title: 'All',
@@ -20,7 +24,6 @@ const button = [
     },
 ]
 
-const Notificationbar = () => {
     const [activeButton, setActiveButton] = useState('All')
     
     const handleButtonPress = (title) => {

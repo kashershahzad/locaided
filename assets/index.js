@@ -62,6 +62,7 @@ export const Images = {
     redclose: require('./redclose.png'),
     purpleclose: require('./purpleclose.png'),
     postclose: require('./postclose.png'),
+    messages: require('./messages.png'),
 
     // Tags
     activitytag: require('./tagimages/activity.png'),
@@ -78,4 +79,6 @@ export const Images = {
     searchtag: require('./tagimages/search.png'),
     sostag: require('./tagimages/sos.png'),
     traffictag: require('./tagimages/traffic.png'),
+
+
 }

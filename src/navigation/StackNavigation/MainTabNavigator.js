@@ -6,6 +6,7 @@ import Home from "../../screens/Main/Home";
 import Post from "../../screens/Post";
 import ImageFast from "../../../components/ImageFast";
 import { COLORS } from "../../utiles/COLORS";
+import Message from "../../screens/Main/Message";
 
 const Tab = createBottomTabNavigator();
 
@@ -35,7 +36,6 @@ const MainTabNavigator = () => {
                 // tabBarInactiveTintColor: '#5F6368',
                 tabBarShowLabel: false,
                 tabBarStyle: styles.tabBar,
-                // tabBarLabelStyle: styles.label,
                 headerShown: false,
                 tabBarHideOnKeyboard:true
             })}
@@ -68,7 +68,7 @@ const MainTabNavigator = () => {
                 ),
             }}
                 name="Location"
-                component={Post}
+                component={Message}
             />
 
 
