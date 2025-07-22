@@ -89,4 +89,8 @@ export const Images = {
     redstatus: require('./chat/red.png'),
     graystatus: require('./chat/gray.png'),
     greenstatus: require('./chat/green.png'),
+    chatlocation: require('./chat/chatlocation.png'),
+    privatechat: require('./chat/privatechat.png'),
+    arrowright: require('./chat/arrowright.png'),
+
 }

@@ -5,11 +5,11 @@ import { Images } from '../../../../../assets'
 import CustomText from '../../../../../components/CustomText'
 import fonts from '../../../../../assets/fonts'
 
-const MessageHeader = () => {
+const MessageHeader = ({model}) => {
   return (
     <View style={styles.container}>
       <CustomText label={'Messages'} fontSize={20} fontFamily={fonts.semiBold}/>
-      <ImageFast source={Images.messages} resizeMode={'contain'} style={styles.icon}/>
+      <ImageFast source={Images.messages} resizeMode={'contain'} style={styles.icon} onPress={()=>model(true)}/>
     </View>
   )
 }
