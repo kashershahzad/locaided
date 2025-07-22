@@ -89,5 +89,4 @@ export const Images = {
     redstatus: require('./chat/red.png'),
     graystatus: require('./chat/gray.png'),
     greenstatus: require('./chat/green.png'),
-
 }
