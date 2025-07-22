@@ -6,6 +6,7 @@ import ToggleButtons from '../Home/Molecules/ToggleButtons'
 import Notificationbar from '../Notification/Molecules/Notificationbar'
 import MessageContainer from './Molecules/MessageContainer'
 import { Images } from '../../../../assets'
+import CustomModal from '../../../../components/CustomModal'
 
 
 const button = [
@@ -73,6 +74,10 @@ const Message = () => {
                     <Notificationbar bottons={button} />
                 </View>
                 <MessageContainer chatinfo={ChatInfo}/>
+                {/* <CustomModal isBlur isVisible={true}>
+                    <View><Text>hi lorem
+                        sakbdhjb dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdddddddddddddddddddddddddddddddddddkkkkkkkkkkkkkknnnnnnnnnnnnnn</Text></View>
+                </CustomModal> */}
             </View>
         </ScreenWrapper>
     )
