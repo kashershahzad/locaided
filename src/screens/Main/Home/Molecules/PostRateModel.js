@@ -60,36 +60,41 @@ const PostRateModel = ({ modal, onClose }) => {
                                 <ImageFast onPress={onClose} source={Images.close} style={styles.closeicon} />
                             </View>
                             <View style={styles.horizontalLine} />
-
-                            <ToggleButtons
-                                title='Accuracy'
-                                option1='Misleading'
-                                option2='Factual'
-                                onFactual={handleFactualChange}
-                            />
-
+                            <View style={{ marginTop: 10, }}>
+                                <ToggleButtons
+                                    title='Accuracy'
+                                    option1='Misleading'
+                                    option2='Factual'
+                                    onFactual={handleFactualChange}
+                                />
+                            </View>
                             {isFactual ? (
-                                <ToggleButtons
-                                    title='Source Credibility'
-                                    option1='Verified Source'
-                                    option2='Unverified Source'
-                                />
+                                <View style={{ marginTop: 10, }}>
+                                    <ToggleButtons
+                                        title='Source Credibility'
+                                        option1='Verified Source'
+                                        option2='Unverified Source'
+                                    />
+                                </View>
                             ) : (
-                                <ToggleButtons
-                                    title='Source Credibility'
-                                    option1='Fabricated'
-                                    option2='Out of context'
-                                />
+                                <View style={{ marginTop: 10, }}>
+                                    <ToggleButtons
+                                        title='Source Credibility'
+                                        option1='Fabricated'
+                                        option2='Out of context'
+                                    />
+                                </View>
                             )}
-
-                            <ToggleButtons
-                                title='Select Content Risk Level'
-                                option1='Illegal'
-                                option2='Harmful'
-                                option3='Safe'
-                                defaultOption='Harmful'
-                                onIllegal={handleIllegalChange}
-                            />
+                            <View style={{ marginTop: 10, }}>
+                                <ToggleButtons
+                                    title='Select Content Risk Level'
+                                    option1='Illegal'
+                                    option2='Harmful'
+                                    option3='Safe'
+                                    defaultOption='Harmful'
+                                    onIllegal={handleIllegalChange}
+                                />
+                            </View>
                             {isIllegal ? (
                                 <View style={styles.warn}>
                                     <Text style={{ fontSize: 11, fontFamily: fonts.regular }}>
@@ -138,14 +143,14 @@ const PostRateModel = ({ modal, onClose }) => {
                                             value={childExploitation}
                                             onValueChange={setChildExploitation}
                                         />
-                                        <CustomText label={'Child Exploitation'} fontFamily={fonts.light}/>
+                                        <CustomText label={'Child Exploitation'} fontFamily={fonts.light} />
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={terrorismExtremism}
                                             onValueChange={setTerrorismExtremism}
                                         />
-                                        <CustomText label={'Terrorism and Extremism'} fontFamily={fonts.light}/>
+                                        <CustomText label={'Terrorism and Extremism'} fontFamily={fonts.light} />
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
@@ -159,14 +164,14 @@ const PostRateModel = ({ modal, onClose }) => {
                                             value={privacyViolations}
                                             onValueChange={setPrivacyViolations}
                                         />
-                                        <CustomText label={'Privacy Violations'} fontFamily={fonts.light}/>
+                                        <CustomText label={'Privacy Violations'} fontFamily={fonts.light} />
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={copyrightInfringement}
                                             onValueChange={setCopyrightInfringement}
                                         />
-                                        <CustomText label={'Copyright Infringement or Explicit Content'} fontFamily={fonts.light}/>
+                                        <CustomText label={'Copyright Infringement or Explicit Content'} fontFamily={fonts.light} />
                                     </View>
                                 </>
                             ) : (
@@ -183,28 +188,28 @@ const PostRateModel = ({ modal, onClose }) => {
                                             value={abuseHarassment}
                                             onValueChange={setAbuseHarassment}
                                         />
-                                        <CustomText label={'Abuse & Harassment'} fontFamily={fonts.light}/>
+                                        <CustomText label={'Abuse & Harassment'} fontFamily={fonts.light} />
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={intrusiveAdvertising}
                                             onValueChange={setIntrusiveAdvertising}
                                         />
-                                        <CustomText label={'Intrusive Advertising'} fontFamily={fonts.light}/>
+                                        <CustomText label={'Intrusive Advertising'} fontFamily={fonts.light} />
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={sensitiveMedia}
                                             onValueChange={setSensitiveMedia}
                                         />
-                                        <CustomText label={'Sensitive or Disturbing Media'} fontFamily={fonts.light}/>
+                                        <CustomText label={'Sensitive or Disturbing Media'} fontFamily={fonts.light} />
                                     </View>
                                     <View style={styles.checkbox}>
                                         <CustomCheckbox
                                             value={spamContent}
                                             onValueChange={setSpamContent}
                                         />
-                                        <CustomText label={'Potential Spam or Suspicious Content'} fontFamily={fonts.light}/>
+                                        <CustomText label={'Potential Spam or Suspicious Content'} fontFamily={fonts.light} />
                                     </View>
                                 </>
                             )}
