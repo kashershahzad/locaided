@@ -3,26 +3,9 @@ import React, { useState } from 'react'
 import fonts from '../../../../../assets/fonts'
 
 
-const Notificationbar = () => {
+const Notificationbar = ({bottons}) => {
 
-    
-const button = [
-    {
-        title: 'All',
-    },
-    {
-        title: 'Comments',
-    },
-    {
-        title: 'Likes',
-    },
-    {
-        title: 'Mentions',
-    },
-    {
-        title: 'EYS Coins',
-    },
-]
+
 
     const [activeButton, setActiveButton] = useState('All')
     
@@ -34,7 +17,7 @@ const button = [
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View style={styles.container}>
                 {
-                    button.map(((item, i) => (
+                    bottons.map(((item, i) => (
                         <TouchableOpacity
                             key={i}
                             style={[

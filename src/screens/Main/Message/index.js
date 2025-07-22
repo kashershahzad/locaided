@@ -4,6 +4,20 @@ import ScreenWrapper from '../../../../components/ScreenWrapper'
 import MessageHeader from './Molecules/MessageHeader'
 import ToggleButtons from '../Home/Molecules/ToggleButtons'
 import Notificationbar from '../Notification/Molecules/Notificationbar'
+import MessageContainer from './Molecules/MessageContainer'
+
+
+const button = [
+    {
+        title: 'All',
+    },
+    {
+        title: 'Unread',
+    },
+    {
+        title: 'Groups',
+    }
+]
 
 const Message = () => {
     return (
@@ -15,7 +29,10 @@ const Message = () => {
                     option1={'Private'}
                     option2={"Location"}
                 />
-                <Notificationbar/>
+                <View style={styles.container}>
+                    <Notificationbar bottons={button} />
+                </View>
+                <MessageContainer />
             </View>
         </ScreenWrapper>
     )
@@ -23,4 +40,8 @@ const Message = () => {
 
 export default Message
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        marginTop: 15,
+    }
+})

@@ -54,13 +54,32 @@ const Notificationdata = [
     }
 ];
 
+    
+const button = [
+    {
+        title: 'All',
+    },
+    {
+        title: 'Comments',
+    },
+    {
+        title: 'Likes',
+    },
+    {
+        title: 'Mentions',
+    },
+    {
+        title: 'EYS Coins',
+    },
+]
+
 const Notification = () => {
     return (
         <View>
             <Header righticon={Images.filter} title={'Notification Center'} />
             {/* <Emptynotification /> */}
             
-            <Notificationbar />
+            <Notificationbar bottons={button}/>
             <View style={styles.notification}>
                 {Notificationdata.map((item, index) => (
                     <NotificationContainer 

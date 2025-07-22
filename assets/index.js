@@ -80,5 +80,14 @@ export const Images = {
     sostag: require('./tagimages/sos.png'),
     traffictag: require('./tagimages/traffic.png'),
 
+    // chats
+    avatar1: require('./chat/dummyavatar.png'),
+    avatar2: require('./chat/dummyavatar2.png'),
+    avatar3: require('./chat/dummyavatar3.png'),
+    avatar4: require('./chat/dummyavatar4.png'),
+    avatar5: require('./chat/dummyavatar5.png'),
+    redstatus: require('./chat/red.png'),
+    graystatus: require('./chat/gray.png'),
+    greenstatus: require('./chat/green.png'),
 
 }
