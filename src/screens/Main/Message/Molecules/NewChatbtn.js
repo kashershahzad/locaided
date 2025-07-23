@@ -5,12 +5,12 @@ import { Images } from '../../../../../assets'
 import CustomText from '../../../../../components/CustomText'
 import fonts from '../../../../../assets/fonts'
 
-const NewChatbtn = ({ info }) => {
+const NewChatbtn = ({ info , margintop}) => {
     return (
         <>
             {
                 info.map(((item, i) =>(
-                    <TouchableOpacity key={i} style={styles.container} onPress={item.function}>
+                    <TouchableOpacity key={i} style={[styles.container, { marginTop: margintop || 20 }]}  onPress={item.function}>
                         <ImageFast source={item.icon} style={styles.icon} resizeMode={'contain'} />
                         <View style={styles.mincontainer} >
                             <View style={styles.mxcontainer}>
@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#E1E4EA',
         borderRadius: 16,
-        marginTop: 20,
         padding: 10,
 
         flexDirection: 'row',
