@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import ImageFast from '../../../../../components/ImageFast'
 import { Images } from '../../../../../assets'
@@ -10,14 +10,17 @@ const NewChatbtn = ({ info }) => {
         <>
             {
                 info.map(((item, i) =>(
-                    <View key={i} style={styles.container}>
+                    <TouchableOpacity key={i} style={styles.container} onPress={item.function}>
                         <ImageFast source={item.icon} style={styles.icon} resizeMode={'contain'} />
                         <View style={styles.mincontainer} >
+                            <View style={styles.mxcontainer}>
                             <CustomText label={item.title} fontSize={14} fontFamily={fonts.semiBold} />
-                            <CustomText label={item.desc} fontSize={14} fontFamily={fonts.regular} color={'#525866'} />
+                            <ImageFast source={item.status} style={styles.icon3} resizeMode={'contain'}/>
+                            </View>
+                            <CustomText label={item.desc} fontSize={12} fontFamily={fonts.regular} color={'#525866'} />
                         </View>
                         <ImageFast source={Images.arrowright} style={styles.icon2} resizeMode={'contain'} />
-                    </View>
+                    </TouchableOpacity>
                 )))
             }
         </>
@@ -45,12 +48,20 @@ const styles = StyleSheet.create({
     mincontainer: {
         gap: 5,
     },
+    mxcontainer:{
+      flexDirection:'row',
+      gap:5,
+    },
     icon2: {
         height: 20,
         width: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 15,
-        marginLeft: 20,
+        position:'absolute',
+        left:300,
+        top:25,
+
+    },
+    icon3:{
+        height:17,
+        width:56,
     }
 })

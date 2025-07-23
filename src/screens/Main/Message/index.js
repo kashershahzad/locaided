@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import ScreenWrapper from '../../../../components/ScreenWrapper'
 import MessageHeader from './Molecules/MessageHeader'
 import ToggleButtons from '../Home/Molecules/ToggleButtons'
@@ -9,6 +9,7 @@ import { Images } from '../../../../assets'
 import CustomModal from '../../../../components/CustomModal'
 import NewChatModel from './Molecules/NewChatModel'
 import CustomText from '../../../../components/CustomText'
+import PrivateChatmodel from './Molecules/PrivateChatmodel'
 
 
 const button = [
@@ -62,7 +63,9 @@ const ChatInfo = [
 ];
 
 
+
 const Message = () => {
+    const [privatevalue, setprivatevalue] = useState(false)
     const [model, setmodel] = useState(false)
     return (
         <ScreenWrapper
@@ -79,11 +82,15 @@ const Message = () => {
                 <MessageContainer chatinfo={ChatInfo} />
 
                 {
-                    model && 
-                    <NewChatModel model={setmodel} />
+                    model &&
+                    <NewChatModel model={setmodel} privatechat={setprivatevalue} />
                 }
-                
-                
+
+                {
+                    privatevalue &&
+                    <PrivateChatmodel model={setmodel} privatechat={setprivatevalue}/>
+                }
+
             </View>
         </ScreenWrapper>
     )

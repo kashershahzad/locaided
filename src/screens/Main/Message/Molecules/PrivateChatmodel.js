@@ -1,45 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import CustomModal from '../../../../../components/CustomModal'
-import { COLORS } from '../../../../utiles/COLORS'
 import CustomText from '../../../../../components/CustomText'
-import ImageFast from '../../../../../components/ImageFast'
 import { Images } from '../../../../../assets'
+import ImageFast from '../../../../../components/ImageFast'
 import fonts from '../../../../../assets/fonts'
 import CustomHorizontalLine from '../../../../../components/CustomHorizontalLine'
-import NewChatbtn from './NewChatbtn'
+import SearchInput from '../../../../../components/SearchInput'
 
+const PrivateChatmodel = ({ model, privatechat }) => {
+    const [Search, setSearch] = useState('')
+    const closebtn = () => {
 
-
-const NewChatModel = ({ model, privatechat }) => {
-    const privatechatmodel = () => {
         model(false)
-        privatechat(true)
+        privatechat(false)
     }
-    const closebtn = () =>{
-    model(false)
-    privatechat(false)
-   }
-    const btnData = [
-        {
-            title: 'Private Chat',
-            desc: 'Chat 1-on-1 by searching a user.',
-            icon: Images.privatechat,
-            function: privatechatmodel
-        },
-        {
-            title: 'Location Chat',
-            desc: 'Join public chat by location.',
-            icon: Images.chatlocation,
-            status: Images.open
-        },
-        {
-            title: 'Location Chat',
-            desc: 'Create a private room with a secret key.',
-            icon: Images.chatlocation,
-            status: Images.private
-        },
-    ]
     return (
         <View>
             <CustomModal
@@ -51,36 +26,53 @@ const NewChatModel = ({ model, privatechat }) => {
             >
                 <View style={styles.modalContainer}>
                     <View style={styles.modelheader}>
+                        <ImageFast source={Images.back} resizeMode={'contain'} style={styles.backicon} onPress={() => model(true)} />
                         <CustomText label={'Start New Chat'} fontSize={18} fontFamily={fonts.regular} />
                         <ImageFast source={Images.close} resizeMode={'contain'} style={styles.closeicon} onPress={closebtn} />
                     </View>
                     <CustomHorizontalLine />
-                    <NewChatbtn info={btnData} />
+                    <View style={styles.search}>
+                        <SearchInput value={Search} onChangeText={setSearch} placeholder={'Search users by username'} />
+                        
+                    </View>
+
+                    <CustomText label={'Recents'} fontSize={14} fontFamily={fonts.regular} marginLeft={15}/>
                 </View>
             </CustomModal>
         </View>
     )
 }
 
-export default NewChatModel
+export default PrivateChatmodel
 
 const styles = StyleSheet.create({
     modalContainer: {
         paddingVertical: 10,
-        backgroundColor: COLORS.white,
+        backgroundColor: 'white',
         borderRadius: 16,
     },
     modelheader: {
         flexDirection: 'row',
-        justifyContent: "flex-end",
-        gap: 90,
+        justifyContent: 'space-between',
         marginHorizontal: 20,
         marginTop: 10,
-        marginBottom: 15,
+        marginBottom: 10,
     },
     closeicon: {
         height: 12,
         width: 12,
         marginTop: 5,
+    },
+    backicon: {
+        height: 24,
+        width: 24,
+        marginTop: 5,
+    },
+    search:{
+        margin:15,
+        marginBottom:5,
+    },
+    recent:{
+        marginRight:20,
     }
 })

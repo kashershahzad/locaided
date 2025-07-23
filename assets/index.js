@@ -92,5 +92,7 @@ export const Images = {
     chatlocation: require('./chat/chatlocation.png'),
     privatechat: require('./chat/privatechat.png'),
     arrowright: require('./chat/arrowright.png'),
+    open: require('./chat/open.png'),
+    private: require('./chat/private.png'),
 
 }
