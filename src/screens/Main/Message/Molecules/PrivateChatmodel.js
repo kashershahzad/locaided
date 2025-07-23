@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     container: {
-        height: 500,
+        height: 470,
     },
     closeicon: {
         height: 12,
